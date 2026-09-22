@@ -1,0 +1,14 @@
+# HSQC correlations, referencing 1H peak ids (shift1) and 13C ids (shift2)
+@spectrum
+@kind hsqc
+@compound 4-methylpentan-2-one
+@solvent CDCl3
+@temperature 298K
+@reference TMS
+@frequency-MHz 400.13
+@date 2026-09-01
+@operator li
+2d : X1 from=P1 to=Q3 shift1=2.13ppm shift2=30.0ppm strength=0.80
+2d : X2 from=P2 to=Q2 shift1=2.34ppm shift2=47.4ppm strength=0.74
+2d : X3 from=P3 to=Q4 shift1=2.09ppm shift2=24.4ppm strength=0.61
+2d : X4 from=P4 to=Q5 shift1=0.91ppm shift2=22.8ppm strength=0.95

@@ -1,0 +1,16 @@
+# HMBC long-range correlations
+@spectrum
+@kind hmbc
+@compound 4-methylpentan-2-one
+@solvent CDCl3
+@temperature 298K
+@reference TMS
+@frequency-MHz 400.13
+@date 2026-09-01
+@operator li
+2d : M1 from=P2 to=Q1 shift1=2.34ppm shift2=207.8ppm strength=0.66 note="CH2 to carbonyl"
+2d : M2 from=P1 to=Q2 shift1=2.13ppm shift2=47.4ppm strength=0.42 note="acetyl CH3 to C3"
+2d : M3 from=P3 to=Q5 shift1=2.09ppm shift2=22.8ppm strength=0.50 note="CH to methyl C"
+2d : M4 from=P4 to=Q4 shift1=0.91ppm shift2=24.4ppm strength=0.57 note="methyl H to methine C"
+2d : M5 from=P4 to=Q2 shift1=0.91ppm shift2=47.4ppm strength=0.31 note="methyl H to C3 weak"
+# Note: expected weak HMBC P4->Q1 is deliberately absent (missing-edge evidence)

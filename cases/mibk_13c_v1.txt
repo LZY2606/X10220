@@ -1,0 +1,16 @@
+# 13C peak list, 100.62 MHz, CDCl3, 298 K, TMS
+@spectrum
+@kind 1d
+@nucleus 13C
+@compound 4-methylpentan-2-one
+@solvent CDCl3
+@temperature 298K
+@reference TMS
+@frequency-MHz 100.62
+@date 2026-09-01
+@operator li
+1d : Q1 shift=207.8ppm intensity=0.12 integral= note="carbonyl C1"
+1d : Q2 shift=47.4ppm intensity=0.34 integral= note="methylene C3"
+1d : Q3 shift=30.0ppm intensity=0.58 integral= note="acetyl methyl C2"
+1d : Q4 shift=24.4ppm intensity=0.41 integral= note="methine C4"
+1d : Q5 shift=22.8ppm intensity=0.90 integral= note="methyls C5/C6"

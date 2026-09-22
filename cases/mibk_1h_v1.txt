@@ -1,0 +1,15 @@
+# 1H peak list, 400.13 MHz, CDCl3, 298 K, TMS
+@spectrum
+@kind 1d
+@nucleus 1H
+@compound 4-methylpentan-2-one
+@solvent CDCl3
+@temperature 298K
+@reference TMS
+@frequency-MHz 400.13
+@date 2026-09-01
+@operator li
+1d : P1 shift=2.13ppm intensity=1.00 integral=3H mult=s J=0.0Hz note="acetyl CH3"
+1d : P2 shift=2.34ppm intensity=0.68 integral=2H mult=d J=7.0Hz note="methylene C3"
+1d : P3 shift=2.09ppm intensity=0.35 integral=1H mult=sept J=6.8Hz note="methine C4"
+1d : P4 shift=0.91ppm intensity=1.12 integral=6H mult=d J=6.7Hz note="two equivalent methyls C5/C6"

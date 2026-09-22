@@ -1,0 +1,31 @@
+# Expected chemical shifts (reference table, CDCl3, 298 K, TMS)
+@rulepack
+@id MIBK-RULES
+@version v1
+@title MIBK reference assignments v1
+@nucleus 1H
+@shift H1@C2=2.12ppm
+@shift H1@C3=2.35ppm
+@shift H1@C4=2.10ppm
+@shift H1@C5=0.91ppm
+@shift H1@C6=0.91ppm
+@nucleus 13C
+@shift C1=208.0ppm
+@shift C2=30.0ppm
+@shift C3=47.5ppm
+@shift C4=24.5ppm
+@shift C5=22.8ppm
+@shift C6=22.8ppm
+@param proton-tolerance-ppm=0.25
+@param proton-hard-tolerance-ppm=0.80
+@param carbon-tolerance-ppm=2.5
+@param carbon-hard-tolerance-ppm=6.0
+@param match-tolerance-ppm=0.05
+@param bias-threshold-ppm=0.30
+@param bias-correction=off
+@param weight-shift=0.55
+@param weight-mult=0.10
+@param weight-integral=0.10
+@param weight-network=0.25
+@param tie-epsilon=0.005
+@condition solvent=CDCl3

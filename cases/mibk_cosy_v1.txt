@@ -1,0 +1,12 @@
+# COSY vicinal correlations
+@spectrum
+@kind cosy
+@compound 4-methylpentan-2-one
+@solvent CDCl3
+@temperature 298K
+@reference TMS
+@frequency-MHz 400.13
+@date 2026-09-01
+@operator li
+2d : E1 from=P2 to=P3 shift1=2.34ppm shift2=2.09ppm strength=0.55 note="CH2-CH"
+2d : E2 from=P3 to=P4 shift1=2.09ppm shift2=0.91ppm strength=0.72 note="CH-CH3 x2"

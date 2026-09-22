@@ -1,0 +1,18 @@
+# 4-methylpentan-2-one (MIBK), CH3-CO-CH2-CH(CH3)2
+# Coordinates are drawing coordinates (unitless canvas points).
+@structure
+@id MIBK
+@title 4-methylpentan-2-one
+@atom C1 label="C1 carbonyl" element=C x=120 y=110 h=0
+@atom C2 label="C2 acetyl CH3" element=C x=40 y=180 h=3
+@atom C3 label="C3 methylene" element=C x=220 y=110 h=2
+@atom C4 label="C4 methine" element=C x=320 y=180 h=1
+@atom C5 label="C5 methyl" element=C x=420 y=110 h=3
+@atom C6 label="C6 methyl" element=C x=420 y=250 h=3
+@bond C1 C2 order=1
+@bond C1 C3 order=1
+@bond C3 C4 order=1
+@bond C4 C5 order=1
+@bond C4 C6 order=1
+# Symmetry-equivalent methyl groups on C4
+@equiv G1 C5 C6
