@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMR 共振经纬 · 归属候选网络工作台</title>
+<link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">NMR 共振经纬<span class="sub">化学位移 · 耦合候选 · 归属证据室</span></div>
+  <div class="projline">
+    <button id="btn-demo" class="primary">载入离线案例 Exemplin-A</button>
+    <span id="proj-name" class="proj-name">未载入项目</span>
+    <span id="head-badge" class="badge head"></span>
+    <span id="hist-banner" class="hist-banner hidden">历史只读视图</span>
+    <button id="btn-latest" class="hidden">回到最新</button>
+  </div>
+</header>
+<nav class="tabs">
+  <button data-tab="workbench" class="tab active">复核工作台</button>
+  <button data-tab="sources" class="tab">原始输入与版本</button>
+  <button data-tab="archive" class="tab">反例档案 / 机器事件</button>
+  <button data-tab="timeline" class="tab">时间线与分支</button>
+  <button data-tab="io" class="tab">导出 / 删除 / 再导入</button>
+</nav>
+
+<main>
+<section id="tab-workbench" class="tabpanel active">
+  <div class="wb-grid">
+    <div class="col">
+      <div class="card">
+        <div class="card-h">分子骨架（SVG，点击位点联动）
+          <span class="hint">蓝=氢位点 绿=碳位点 红边=观测相关 虚边=缺失预期</span></div>
+        <div id="skeleton-svg"></div>
+      </div>
+      <div class="card">
+        <div class="card-h">谱峰棒图（原始位移 ppm，相对参考标准）
+          <select id="nuc-toggle"><option value="1H">1H</option><option value="13C">13C</option></select>
+        </div>
+        <div id="spectrum-svg"></div>
+        <div class="legend"><i class="dot overlap"></i>重叠峰 <i class="dot unknown"></i>含无法转换值</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-h">峰列表（每个值带稳定身份）</div>
+        <div id="peaks-table"></div>
+      </div>
+      <div class="card">
+        <div class="card-h">COSY / HSQC / HMBC 相关边</div>
+        <div id="edges-table"></div>
+      </div>
+    </div>
+    <div class="col wide">
+      <div class="card">
+        <div class="card-h">候选排名与证据
+          <span id="cand-subject" class="hint"></span></div>
+        <div id="candidate-panel"><div class="empty">点击骨架位点或峰行查看候选。</div></div>
+      </div>
+      <div class="card" id="decide-card">
+        <div class="card-h">人工裁定（生成新分支并显示传播影响）</div>
+        <div id="decide-panel" class="empty">选择一个候选后可接受 / 否定；冲突与撤销都会写入历史。</div>
+      </div>
+      <div class="card">
+        <div class="card-h">最近传播影响</div>
+        <div id="propagation" class="empty">尚无操作。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tab-sources" class="tabpanel">
+  <div class="card">
+    <div class="card-h">已提交源文件（原始输入不可覆盖，修订以新版本+父版本表达）</div>
+    <div id="docs-list"></div>
+  </div>
+  <div class="card">
+    <div class="card-h">提交新版本 / 参数修订 / 条件变更</div>
+    <div class="formrow">
+      <label>逻辑名（沿用旧名=同谱系新版本）<input id="in-name" placeholder="exemplin-a-1h.v1.pk1"/></label>
+      <label>编辑者<input id="in-actor" value="reviewer"/></label>
+      <label>说明<input id="in-note" placeholder="例如：局部改动 H_G"/></label>
+    </div>
+    <textarea id="in-text" rows="8" placeholder="粘贴 NMRB-PEAKS1/1、PEAKS2/1 或 SKELETON/1 文本"></textarea>
+    <div class="btnrow">
+      <button id="btn-submit-source">提交为新版本</button>
+      <button id="btn-conditions">作为条件（溶剂/温度/参考）变更提交</button>
+      <button id="btn-loadcase-file">填入所选案例文件</button>
+      <select id="case-file-select"></select>
+    </div>
+    <div class="formrow">
+      <label>参数（JSON，提交后生成 params 新版本）<textarea id="in-params" rows="6"></textarea></label>
+    </div>
+    <div class="btnrow"><button id="btn-submit-params">提交参数修订</button></div>
+  </div>
+</section>
+
+<section id="tab-archive" class="tabpanel">
+  <div class="card">
+    <div class="card-h">反例档案：机器可读取事件（采纳与未采纳结果都保留）</div>
+    <div id="findings-panel"></div>
+  </div>
+  <div class="card">
+    <div class="card-h">冲突与人工决定</div>
+    <div id="conflicts-panel"></div>
+  </div>
+</section>
+
+<section id="tab-timeline" class="tabpanel">
+  <div class="card">
+    <div class="card-h">事件树（点击任一旧事件恢复当时依赖版本与可见结论）</div>
+    <div id="timeline"></div>
+  </div>
+</section>
+
+<section id="tab-io" class="tabpanel">
+  <div class="card">
+    <div class="card-h">导出 / 删除本地数据库 / 再导入</div>
+    <div class="btnrow">
+      <button id="btn-export" class="primary">导出归档（含全部身份）</button>
+      <input type="file" id="import-file" accept="application/json"/>
+      <button id="btn-import">导入归档</button>
+    </div>
+    <pre id="io-status" class="iostatus"></pre>
+    <p class="hint">验收路径：导出 → 删除本地 nmrb_workbench.db（或换浏览器/刷新）→ 再导入，身份、顺序与来源关系保持。</p>
+  </div>
+</section>
+</main>
+
+<div id="toast" class="toast hidden"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

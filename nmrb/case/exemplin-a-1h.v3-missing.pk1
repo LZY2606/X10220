@@ -1,0 +1,15 @@
+@format NMRB-PEAKS1/1
+#nucleus 1H
+#solvent CDCl3
+#temperature-k 298.15
+#spectrometer-mhz 500.13
+#reference TMS@0ppm
+#compound Exemplin-A 一维氢谱（v1 基线）
+# 行标签 化学位移[ppm] 峰强[任意单位] 积分[H] 多重性
+@h_ar_ab 7.30 100 2.0 d,J=8.0Hz
+@h_ar_c  7.15 82  1.0 dd,J=8.0,2.0Hz
+@h_ar_d  7.155 80 1.0 d,J=8.0Hz
+@h_e     2.62 64  1.0 t,J=7.4Hz
+@h_f     2.62 63  1.0 t,J=7.4Hz
+@h_x     4.12 58  1.0 q,J=7.0Hz
+@h_y     5.12 NA 1.0 br

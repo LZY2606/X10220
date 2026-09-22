@@ -1,0 +1,8 @@
+@format NMRB-PEAKS2/1
+#experiment COSY
+#nuclei 1H,1H
+# f1[ppm] f2[ppm] 强度
+@e_cd 7.15 7.155 strong
+@e_eg 2.62 1.28 strong
+@e_fg 2.62 1.28 medium
+@e_yx 5.12 4.12 weak

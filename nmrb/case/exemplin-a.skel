@@ -1,0 +1,37 @@
+@format NMRB-SKELETON/1
+#compound Exemplin-A（NMRB 教学化合物：对二取代芳环 + 乙基侧链 + 含氧次甲基 + 交换性 OH）
+# 列：碳标签 氢标签 元素环境 预期化学位移[基准ppm] [group=对称组] [protons=等价质子数]
+@s01 C_A H_A aromatic 7.30ppm group=G_AR protons=1
+@s02 C_B H_B aromatic 7.30ppm group=G_AR protons=1
+@s03 C_C H_C aromatic 7.15ppm group=G_AR3 protons=1
+@s04 C_D H_D aromatic 7.16ppm group=G_AR4 protons=1
+@s05 C_E H_E chain 2.62ppm group=G_E protons=1
+@s06 C_F H_F chain 2.62ppm group=G_F protons=1
+@s07 C_G H_G aliphatic 1.28ppm group=G_G protons=3
+@s08 C_X H_X carbonyl-quartet 4.12ppm group=G_X protons=1
+@s09 C_Y H_Y exchangeable-OH 5.12ppm group=G_Y protons=1
+@s10 C_A - carbon 128.5ppm group=G_AR
+@s11 C_B - carbon 128.5ppm group=G_AR
+@s12 C_C - carbon 129.2ppm group=G_AR3
+@s13 C_D - carbon 129.4ppm group=G_AR4
+@s14 C_E - carbon 35.6ppm group=G_E
+@s15 C_F - carbon 35.9ppm group=G_F
+@s16 C_G - carbon 15.4ppm group=G_G
+@s17 C_X - carbon 60.9ppm group=G_X
+@s18 C_Y - carbon 74.3ppm group=G_Y
+# 预期 1H-1H 相邻（COSY 证据）
+@b1 bond H_C H_D vicinal
+@b2 bond H_E H_G vicinal
+@b3 bond H_F H_G vicinal
+@b4 bond H_Y H_X exchangeable-coupling
+# 预期远程（HMBC 证据）；v1 观测数据故意缺少 H_X→C_E（缺边不唯一化）
+@h1 hmbc H_A C_B aromatic-three-bond
+@h2 hmbc H_B C_A aromatic-three-bond
+@h3 hmbc H_C C_D aromatic-three-bond
+@h4 hmbc H_D C_C aromatic-three-bond
+@h5 hmbc H_E C_G ethyl-two-bond
+@h6 hmbc H_F C_G ethyl-two-bond
+@h9 hmbc H_E C_F sidechain-three-bond
+@h10 hmbc H_F C_E sidechain-three-bond
+@h7 hmbc H_X C_E sidechain-three-bond
+@h8 hmbc H_Y C_X hydroxyl-three-bond

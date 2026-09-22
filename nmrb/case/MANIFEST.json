@@ -1,0 +1,39 @@
+{
+  "case_title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "compound": "Exemplin-A",
+  "description": "结构化学小组把 1D/2D NMR peak list 合入同一化合物，为每个核建立可复核归属候选的离线案例包。",
+  "units_and_basis": {
+    "shift": "ppm（相对 #reference 声明的参考标准）",
+    "temperature": "K（#temperature-k）",
+    "spectrometer": "MHz（#spectrometer-mhz）",
+    "integral": "等价质子数 H",
+    "2d_coord": "f1/f2 ppm，#nuclei 声明各轴核种"
+  },
+  "baseline": [
+    "exemplin-a.skel",
+    "exemplin-a-1h.v1.pk1",
+    "exemplin-a-13c.v1.pk1",
+    "exemplin-a-cosy.v1.peak2",
+    "exemplin-a-hsqc.v1.peak2",
+    "exemplin-a-hmbc.v1.peak2"
+  ],
+  "mutations": [
+    {"step": "params_revision", "file": null, "note": "收紧 1H 位移容差 0.25->0.18，降低 shift 权重"},
+    {"step": "local_source_change", "file": "exemplin-a-1h.v2-local.pk1", "note": "只改 H_G 峰 1.28->1.20 ppm；仅依赖该记录的候选过期"},
+    {"step": "local_source_change_13c", "file": "exemplin-a-13c.v2-local.pk1", "note": "只改 C_G 15.4->15.0 ppm"},
+    {"step": "missing_peak", "file": "exemplin-a-1h.v3-missing.pk1", "note": "删除 H_G 峰；G 位点出现 unknown 候选，不向最近峰强制匹配"},
+    {"step": "reference_change", "file": "exemplin-a-1h.v4-reference.pk1", "note": "参考标准整体偏置 +0.22 ppm；仅 1H 候选条件过期，13C 不受影响"}
+  ],
+  "expected_phenomena": [
+    "OVERLAP_PEAK",
+    "SYMMETRY_EQUIVALENT",
+    "MISSING_EXPECTED_EDGE",
+    "GLOBAL_SHIFT_BIAS",
+    "TIED_BEST",
+    "EDITOR_CONFLICT",
+    "MISSING_PEAK",
+    "UNMATCHED_PEAK",
+    "UNCONVERTIBLE_INTENSITY"
+  ],
+  "bad_inputs": ["bad-sample.pk1", "bad-sample2.peak2"]
+}

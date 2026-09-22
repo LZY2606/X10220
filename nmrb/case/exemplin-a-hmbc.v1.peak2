@@ -1,0 +1,11 @@
+@format NMRB-PEAKS2/1
+#experiment HMBC
+#nuclei 1H,13C
+# f1[1H ppm] f2[13C ppm] 强度；故意缺少 4.12→35.6（H_X–C_E）
+@m_a_b 7.30 128.5 weak
+@m_b_a 7.30 128.5 weak
+@m_c_d 7.15 129.4 medium
+@m_d_c 7.155 129.2 medium
+@m_e_g 2.62 15.4 strong
+@m_f_g 2.62 15.4 strong
+@m_y_x 5.12 60.9 weak

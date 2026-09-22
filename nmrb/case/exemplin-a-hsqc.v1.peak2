@@ -1,0 +1,12 @@
+@format NMRB-PEAKS2/1
+#experiment HSQC
+#nuclei 1H,13C
+# f1[1H ppm] f2[13C ppm] 强度
+@q_ab 7.30 128.5 strong
+@q_c  7.15 129.2 strong
+@q_d  7.155 129.4 strong
+@q_e  2.62 35.6 strong
+@q_f  2.62 35.9 strong
+@q_g  1.28 15.4 strong
+@q_x  4.12 60.9 strong
+@q_y  5.12 74.3 medium
