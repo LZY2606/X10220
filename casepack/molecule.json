@@ -1,0 +1,31 @@
+{
+  "id": "TOL",
+  "name": "toluene fragment (casepack skeleton)",
+  "atoms": [
+    {"id": "C1", "element": "C", "sym": "I",  "x": 0.0,  "y": 1.4},
+    {"id": "C2", "element": "C", "sym": "O",  "x": 1.21, "y": 0.7},
+    {"id": "C3", "element": "C", "sym": "M",  "x": 1.21, "y": -0.7},
+    {"id": "C4", "element": "C", "sym": "P",  "x": 0.0,  "y": -1.4},
+    {"id": "C5", "element": "C", "sym": "M",  "x": -1.21, "y": -0.7},
+    {"id": "C6", "element": "C", "sym": "O",  "x": -1.21, "y": 0.7},
+    {"id": "C7", "element": "C", "sym": "Me", "x": 0.0,  "y": 2.8}
+  ],
+  "bonds": [["C1","C2"],["C2","C3"],["C3","C4"],["C4","C5"],["C5","C6"],["C6","C1"],["C1","C7"]],
+  "proton_sites": [
+    {"id": "H2", "attached": "C2", "sym": "O",  "expected_ppm": 7.12, "count": 1},
+    {"id": "H3", "attached": "C3", "sym": "M",  "expected_ppm": 7.19, "count": 1},
+    {"id": "H4", "attached": "C4", "sym": "P",  "expected_ppm": 7.21, "count": 1},
+    {"id": "H5", "attached": "C5", "sym": "M",  "expected_ppm": 7.19, "count": 1},
+    {"id": "H6", "attached": "C6", "sym": "O",  "expected_ppm": 7.12, "count": 1},
+    {"id": "H7", "attached": "C7", "sym": "Me", "expected_ppm": 2.34, "count": 3}
+  ],
+  "carbon_sites": [
+    {"id": "C1", "expected_ppm": 137.8},
+    {"id": "C2", "expected_ppm": 129.0},
+    {"id": "C3", "expected_ppm": 128.3},
+    {"id": "C4", "expected_ppm": 125.6},
+    {"id": "C5", "expected_ppm": 128.3},
+    {"id": "C6", "expected_ppm": 129.0},
+    {"id": "C7", "expected_ppm": 21.3}
+  ]
+}

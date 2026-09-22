@@ -1,0 +1,35 @@
+# nmr-peaklist v3 -- local source change only: HMBC edge pH1->pC5 removed
+# (missing correlation edge). Parent: v2. Everything else identical to v2.
+[meta]
+solvent: CDCl3
+frequency_mhz: 400.13
+temperature_k: 298.0
+reference: TMS-lotB
+[1H]
+id,shift_ppm,intensity,integration,multiplicity
+pH1,7.16,0.71,2.0,m
+pH2,7.23,0.66,2.0,m
+pH3,7.25,0.33,1.0,m
+pH4,2.38,0.95,3.0,s
+[13C]
+id,shift_ppm,intensity
+pC1,137.8,0.20
+pC2,129.0,0.60
+pC3,128.3,0.62
+pC4,125.60,0.55
+pC4b,125.60,0.10
+pC5,21.3,0.45
+[HSQC]
+h,c
+pH1,pC2
+pH2,pC3
+pH3,pC4
+pH4,pC5
+[COSY]
+h1,h2
+pH1,pH2
+pH2,pH3
+[HMBC]
+h,c
+pH4,pC1
+pH3,pC4b
