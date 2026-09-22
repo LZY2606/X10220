@@ -34,3 +34,5 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+*.sqlite3
+nmrwb.sqlite3*
