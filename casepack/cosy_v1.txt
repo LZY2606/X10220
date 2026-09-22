@@ -1,0 +1,5 @@
+# nmrwb-2d v1
+type: COSY
+edge 0.86 1.50 medium
+edge 1.50 1.21 medium
+edge 1.21 0.88 medium

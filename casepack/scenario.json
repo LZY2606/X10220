@@ -1,0 +1,24 @@
+{
+  "case_id": "nmr-resonance-atlas-001",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "compound": "CWB-1 (2-甲基丁烷)",
+  "steps": [
+    {"op": "input", "name": "mol", "format": "nmrwb-mol", "file": "mol_v1.txt"},
+    {"op": "input", "name": "h1", "format": "nmrwb-1d", "file": "h1_v1.txt"},
+    {"op": "input", "name": "c13", "format": "nmrwb-1d", "file": "c13_v1.txt"},
+    {"op": "input", "name": "cosy", "format": "nmrwb-2d", "file": "cosy_v1.txt"},
+    {"op": "input", "name": "hsqc", "format": "nmrwb-2d", "file": "hsqc_v1.txt"},
+    {"op": "input", "name": "hmbc", "format": "nmrwb-2d", "file": "hmbc_v1.txt"},
+    {"op": "compute"},
+    {"op": "params", "updates": {"shift_tolerance_ppm": 0.40}},
+    {"op": "compute"},
+    {"op": "input", "name": "hmbc", "format": "nmrwb-2d", "file": "hmbc_v2.txt"},
+    {"op": "compute"},
+    {"op": "input", "name": "h1", "format": "nmrwb-1d", "file": "h1_v2_bias.txt"},
+    {"op": "compute"},
+    {"op": "decide", "editor": "alice", "atom_id": "H4", "pick": "best", "action": "confirm"},
+    {"op": "decide", "editor": "bao", "atom_id": "H4", "pick": "alternate", "action": "confirm"},
+    {"op": "resolve_conflict", "editor": "alice", "winner": "alice"},
+    {"op": "undo", "editor": "alice", "target": "bao"}
+  ]
+}

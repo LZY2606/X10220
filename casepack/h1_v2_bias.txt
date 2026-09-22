@@ -1,0 +1,12 @@
+# nmrwb-1d v1
+# v2：参考标准重校准（reference 变更），全部峰相对 v1 整体偏置 +0.06 ppm。
+# 溶剂、温度、仪器频率保持不变；旧版本仍可重放。
+nucleus: 1H
+solvent: CDCl3
+frequency_mhz: 400.13
+temperature_k: 298.0
+reference: TMS-recalibrated
+peak 0.92 1000 6.0 d
+peak 0.94 940 3.0 t
+peak 1.27 610 2.0 m
+peak 1.56 320 1.0 m

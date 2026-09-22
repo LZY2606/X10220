@@ -1,0 +1,6 @@
+# nmrwb-2d v1
+type: HSQC
+edge 0.86 22.35 strong
+edge 1.50 30.6 strong
+edge 1.21 41.8 strong
+edge 0.88 11.6 strong

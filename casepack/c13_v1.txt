@@ -1,0 +1,11 @@
+# nmrwb-1d v1
+# 22.35 ppm 处为两个对称甲基 C1/C1b 的合并峰（积分 2.0），产生并列最优候选。
+nucleus: 13C
+solvent: CDCl3
+frequency_mhz: 100.61
+temperature_k: 298.0
+reference: TMS
+peak 11.6 300 1.0 q
+peak 22.35 620 2.0 q
+peak 30.6 340 1.0 d
+peak 41.8 380 1.0 t

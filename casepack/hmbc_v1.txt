@@ -1,0 +1,5 @@
+# nmrwb-2d v1
+type: HMBC
+edge 0.86 30.6 weak
+edge 0.86 41.8 weak
+edge 1.21 11.6 weak

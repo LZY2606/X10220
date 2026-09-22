@@ -1,0 +1,11 @@
+# nmrwb-1d v1
+# 0.86 与 0.88 相距 0.02 ppm（默认重叠阈值 0.05 ppm）-> 重叠峰组，不强制唯一匹配。
+nucleus: 1H
+solvent: CDCl3
+frequency_mhz: 400.13
+temperature_k: 298.0
+reference: TMS
+peak 0.86 1000 6.0 d
+peak 0.88 940 3.0 t
+peak 1.21 610 2.0 m
+peak 1.50 320 1.0 m

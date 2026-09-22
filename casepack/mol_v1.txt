@@ -1,0 +1,22 @@
+# nmrwb-mol v1
+# CWB-1 = 2-甲基丁烷；C1/C1b 与 H1/H1b 为对称（化学等价）原子对。
+# 坐标单位：SVG 画布坐标（px 基准，原点左上角）。
+atom C1 C 20.0-25.0 sym=methyl @ 60 60
+atom C1b C 20.0-25.0 sym=methyl @ 60 150
+atom C2 C 28.0-33.0 @ 150 105
+atom C3 C 39.0-45.0 @ 240 105
+atom C4 C 9.0-14.0 @ 330 105
+atom H1 H 0.70-1.00 sym=methylH @ 20 30
+atom H1b H 0.70-1.00 sym=methylH @ 20 180
+atom H2 H 1.35-1.65 @ 150 55
+atom H3 H 1.05-1.35 @ 240 155
+atom H4 H 0.75-1.00 @ 330 55
+bond C1 C2
+bond C1b C2
+bond C2 C3
+bond C3 C4
+bond C1 H1
+bond C1b H1b
+bond C2 H2
+bond C3 H3
+bond C4 H4
