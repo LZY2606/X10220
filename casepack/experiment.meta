@@ -1,0 +1,6 @@
+solvent=CDCl3
+temperature=298 K
+reference=TMS
+frequency.1H=400 MHz
+frequency.13C=100 MHz
+note=NMR resonance loom case pack; synthetic teaching data

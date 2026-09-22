@@ -1,0 +1,10 @@
+# 1H peak list - NMR resonance loom case pack v1
+# Synthetic teaching data; CDCl3, 400 MHz, TMS reference.
+# Raw tokens preserved on import; rows 1 and 2 are an explicit overlap group.
+nucleus,shift,intensity,integration,multiplicity,overlap_group,note
+1H,1.30,0.82,6,s,ov-methyl,gem-dimethyl singlet (two equivalent CH3 groups)
+1H,1.33,0.41,3,t,ov-methyl,"ethyl CH3 triplet, partially overlaps the singlet"
+1H,2.58,0.55,2,s,,C2 CH2
+1H,3.26,0.12,1,br s,,exchangeable hydroxyl
+1H,4.22,0.48,2,q,,OCH2 quartet
+1H,7.26,n/a,1,s,,residual CHCl3 solvent signal (not part of compound)

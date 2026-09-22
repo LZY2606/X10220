@@ -1,0 +1,50 @@
+{
+  "id": "mol-ehm-001",
+  "name": "ethyl 3-hydroxy-3-methylbutanoate (teaching compound, synthetic data)",
+  "smiles": "CC(C)(O)CC(=O)OCC",
+  "sites": [
+    {"id": "H6a", "nucleus": "1H", "label": "H6a CH3", "expected_shift": 1.24, "expected_mult": "s", "expected_integral": 3, "symmetry_group": "gem-dimethyl", "x": 110, "y": 250},
+    {"id": "H6b", "nucleus": "1H", "label": "H6b CH3", "expected_shift": 1.24, "expected_mult": "s", "expected_integral": 3, "symmetry_group": "gem-dimethyl", "x": 60, "y": 300},
+    {"id": "H2", "nucleus": "1H", "label": "H2 CH2", "expected_shift": 2.52, "expected_mult": "s", "expected_integral": 2, "x": 270, "y": 250},
+    {"id": "HO", "nucleus": "1H", "label": "OH", "expected_shift": 3.2, "expected_mult": "br s", "expected_integral": 1, "x": 130, "y": 120},
+    {"id": "H8", "nucleus": "1H", "label": "H8 OCH2", "expected_shift": 4.16, "expected_mult": "q", "expected_integral": 2, "x": 520, "y": 250},
+    {"id": "H9", "nucleus": "1H", "label": "H9 CH3", "expected_shift": 1.27, "expected_mult": "t", "expected_integral": 3, "x": 650, "y": 300},
+
+    {"id": "C1", "nucleus": "13C", "label": "C1 C=O", "expected_shift": 172.5, "x": 400, "y": 180},
+    {"id": "C2", "nucleus": "13C", "label": "C2 CH2", "expected_shift": 46.2, "x": 280, "y": 180},
+    {"id": "C3", "nucleus": "13C", "label": "C3 C-OH", "expected_shift": 70.1, "x": 160, "y": 180},
+    {"id": "C6", "nucleus": "13C", "label": "C6 (2x CH3)", "expected_shift": 29.6, "x": 90, "y": 250},
+    {"id": "C8", "nucleus": "13C", "label": "C8 OCH2", "expected_shift": 60.8, "x": 520, "y": 180},
+    {"id": "C9", "nucleus": "13C", "label": "C9 CH3", "expected_shift": 14.2, "x": 640, "y": 220}
+  ],
+  "bonds": [
+    {"site_a": "C6", "site_b": "C3", "order": 1},
+    {"site_a": "C3", "site_b": "C2", "order": 1},
+    {"site_a": "C2", "site_b": "C1", "order": 1},
+    {"site_a": "C1", "site_b": "C8", "order": 1},
+    {"site_a": "C8", "site_b": "C9", "order": 1},
+    {"site_a": "H6a", "site_b": "C3", "order": 1},
+    {"site_a": "H6b", "site_b": "C3", "order": 1},
+    {"site_a": "H2", "site_b": "C2", "order": 1},
+    {"site_a": "HO", "site_b": "C3", "order": 1},
+    {"site_a": "H8", "site_b": "C8", "order": 1},
+    {"site_a": "H9", "site_b": "C9", "order": 1}
+  ],
+  "expected_edges": [
+    {"id": "exp-cosy-H2-HO", "kind": "COSY", "from_site": "H2", "to_site": "HO", "bond_distance": 4},
+    {"id": "exp-cosy-H8-H9", "kind": "COSY", "from_site": "H8", "to_site": "H9", "bond_distance": 3},
+
+    {"id": "exp-hsqc-H6a", "kind": "HSQC", "from_site": "H6a", "to_site": "C6", "bond_distance": 1},
+    {"id": "exp-hsqc-H6b", "kind": "HSQC", "from_site": "H6b", "to_site": "C6", "bond_distance": 1},
+    {"id": "exp-hsqc-H2", "kind": "HSQC", "from_site": "H2", "to_site": "C2", "bond_distance": 1},
+    {"id": "exp-hsqc-H8", "kind": "HSQC", "from_site": "H8", "to_site": "C8", "bond_distance": 1},
+    {"id": "exp-hsqc-H9", "kind": "HSQC", "from_site": "H9", "to_site": "C9", "bond_distance": 1},
+
+    {"id": "exp-hmbc-H2-C1", "kind": "HMBC", "from_site": "H2", "to_site": "C1", "bond_distance": 2},
+    {"id": "exp-hmbc-H2-C3", "kind": "HMBC", "from_site": "H2", "to_site": "C3", "bond_distance": 2},
+    {"id": "exp-hmbc-H6-C2", "kind": "HMBC", "from_site": "H6a", "to_site": "C2", "bond_distance": 3},
+    {"id": "exp-hmbc-H6-C2b", "kind": "HMBC", "from_site": "H6b", "to_site": "C2", "bond_distance": 3},
+    {"id": "exp-hmbc-H8-C1", "kind": "HMBC", "from_site": "H8", "to_site": "C1", "bond_distance": 3},
+    {"id": "exp-hmbc-H9-C8", "kind": "HMBC", "from_site": "H9", "to_site": "C8", "bond_distance": 2}
+  ]
+}

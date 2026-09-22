@@ -1,0 +1,39 @@
+{
+  "id": "resonance-loom-v1",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "summary": "结构化学小组把一维与二维 NMR peak list 合入同一化合物，为每个核建立可复核的归属候选。",
+  "initial": [
+    {"path": "molecule.json", "kind": "molecule"},
+    {"path": "experiment.meta", "kind": "meta"},
+    {"path": "peaks-1h.csv", "kind": "peaks"},
+    {"path": "peaks-13c.csv", "kind": "peaks"},
+    {"path": "cosy.csv", "kind": "edge:COSY"},
+    {"path": "hsqc.csv", "kind": "edge:HSQC"},
+    {"path": "hmbc.csv", "kind": "edge:HMBC"}
+  ],
+  "moves": [
+    {"id": "param-revision", "label": "参数修订：放宽容差、关闭偏置修正、放大 tie epsilon",
+     "type": "parameters", "params_file": "params-v2.json"},
+    {"id": "local-source-change", "label": "局部源数据改动：补回缺失的 OCH2->carbonyl HMBC 边",
+     "type": "source", "path": "hmbc.csv", "file": "v2/hmbc.csv",
+     "expect_only_stale": ["H8"]},
+    {"id": "reference-change", "label": "参考标准 TMS->DSS：只让相关候选过期，旧决定可重放",
+     "type": "source", "path": "experiment.meta", "file": "v3/experiment.meta",
+     "expect_global_stale": true},
+    {"id": "conflict", "label": "两个编辑者冲突：不同分支对同一核作出相反裁定并解决",
+     "type": "conflict", "site_id": "HO", "nucleus": "1H"}
+  ],
+  "boundary_facts": [
+    {"id": "overlap", "description": "1.30/1.33 ppm 同属重叠组 ov-methyl，不强制唯一匹配",
+     "peaks": ["hp-peaks-1h-001", "hp-peaks-1h-002"]},
+    {"id": "symmetry", "description": "H6a/H6b 对称等价，共享同一峰，合法并列",
+     "sites": ["H6a", "H6b"]},
+    {"id": "missing-edge", "description": "H2<->OH COSY 与 OCH2->C=O HMBC 缺失只影响证据，不否决候选",
+     "edges": ["exp-cosy-H2-HO", "exp-hmbc-H8-C1"]},
+    {"id": "bias", "description": "1H/13C 整体偏置约 +0.06/+0.3 ppm，可估测并修正",
+     "approx_ppm": {"1H": 0.06, "13C": 0.3}},
+    {"id": "tie", "description": "并列最优候选全部保留（对称并列与分数并列）"},
+    {"id": "impurity", "description": "7.26 ppm 残留 CHCl3 与 47.90 ppm 额外共振不归属到分子",
+     "peaks": ["hp-peaks-1h-006", "cp-peaks-13c-004"]}
+  ]
+}

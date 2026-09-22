@@ -1,0 +1,10 @@
+# 13C{1H} peak list - NMR resonance loom case pack v1
+# CDCl3, 100 MHz. The 47.90 ppm line is an unassigned extra resonance.
+nucleus,shift,intensity,integration,multiplicity,overlap_group,note
+13C,14.55,0.60,,,,ethyl CH3
+13C,29.95,0.95,,,,gem dimethyl carbons (one chemical environment)
+13C,46.55,0.70,,,,C2 CH2
+13C,47.90,0.18,,,,unassigned extra resonance
+13C,61.15,0.66,,,,OCH2
+13C,70.45,0.72,,,,C3 quaternary C-OH
+13C,172.85,0.51,,,,ester carbonyl

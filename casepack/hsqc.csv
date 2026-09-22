@@ -1,0 +1,6 @@
+# HSQC correlation list v1. The hydroxyl has no direct C-H bond.
+from_peak,to_peak,strength
+hp-1h-001,cp-13c-002,0.91
+hp-1h-002,cp-13c-001,0.94
+hp-1h-003,cp-13c-003,0.90
+hp-1h-005,cp-13c-005,0.93

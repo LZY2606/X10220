@@ -1,0 +1,9 @@
+# Reference-standard revision v3: re-referenced spectrum.
+# Solvent/temperature unchanged; shift-dependent candidates should expire,
+# decisions already made remain replayable on their branch.
+solvent=CDCl3
+temperature=298 K
+reference=DSS
+frequency.1H=400 MHz
+frequency.13C=100 MHz
+note=re-referenced from TMS to DSS; offsets shift globally

@@ -1,0 +1,13 @@
+{
+  "algorithm_version": "assign-1.0.0",
+  "shift_tolerance_ppm_h": 0.60,
+  "shift_tolerance_ppm_c": 2.50,
+  "bias_correction": false,
+  "tie_epsilon": 0.05,
+  "min_score": 0.45,
+  "multiplicity_weight": 0.18,
+  "integral_weight": 0.08,
+  "hsqc_weight": 0.18,
+  "cosy_weight": 0.12,
+  "hmbc_weight": 0.12
+}

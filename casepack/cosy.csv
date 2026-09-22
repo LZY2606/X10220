@@ -1,0 +1,4 @@
+# COSY correlation list v1.
+# The H2<->OH correlation is intentionally absent (missing edge scenario).
+from_peak,to_peak,strength,note
+hp-1h-002,hp-1h-005,0.66,ethyl CH3 - OCH2

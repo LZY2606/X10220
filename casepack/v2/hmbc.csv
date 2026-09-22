@@ -1,0 +1,7 @@
+# HMBC correlation list v2: adds the previously missing OCH2 -> carbonyl edge.
+from_peak,to_peak,strength,note
+hp-1h-003,cp-13c-007,0.71,C2 CH2 -> carbonyl
+hp-1h-003,cp-13c-006,0.64,C2 CH2 -> C3
+hp-1h-001,cp-13c-003,0.58,gem CH3 -> C2
+hp-1h-002,cp-13c-005,0.61,ethyl CH3 -> OCH2 carbon
+hp-1h-005,cp-13c-007,0.69,OCH2 -> carbonyl (edge missing in v1)
