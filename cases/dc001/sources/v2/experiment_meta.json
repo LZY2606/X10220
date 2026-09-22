@@ -1,0 +1,12 @@
+{
+  "kind": "experiment_meta",
+  "filename": "experiment_conditions.json",
+  "file_version": 2,
+  "parent_file_version": 1,
+  "change_note": "溶剂改为 C6D6、温度改为 300 K；参考标准仍为 TMS。仅使相关候选过期，旧决定可重放",
+  "nucleus": "1H",
+  "solvent": "C6D6",
+  "temperature": "300 K",
+  "frequency": "500.13 MHz",
+  "reference": "TMS"
+}

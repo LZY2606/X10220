@@ -1,0 +1,13 @@
+{
+  "kind": "hsqc",
+  "filename": "hsqc_peaklist_20260901.csv.json",
+  "file_version": 1,
+  "origin": {"pulse_sequence": "hsqcedetgpsisp2.3", "scans": 8},
+  "rows": [
+    {"id": "HSQC-1", "from": "H-P1", "to": "C-P3", "from_ppm": 7.30, "to_ppm": 129.46, "intensity": 880},
+    {"id": "HSQC-2", "from": "H-P2", "to": "C-P5", "from_ppm": 7.00, "to_ppm": 114.30, "intensity": 912},
+    {"id": "HSQC-3", "from": "H-P3", "to": "C-P4", "from_ppm": 6.00, "to_ppm": 120.16, "intensity": 505},
+    {"id": "HSQC-4", "from": "H-P4", "to": "C-P6", "from_ppm": 4.10, "to_ppm": 68.26,  "intensity": 790},
+    {"id": "HSQC-5", "from": "H-P5", "to": "C-P7", "from_ppm": 1.40, "to_ppm": 15.36,  "intensity": 1204}
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "case_id": "dc001",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "description": "一维(1H/13C)与二维(COSY/HSQC/HMBC) peak list 合并到同一化合物分析。初始版本完整保留化学位移、峰强、积分、多重性、相关边、溶剂与仪器频率；随后依次安排参数修订、只影响局部依赖的源数据改动、互相冲突的人工决定。重放过程实际经过重叠峰、对称原子、缺失相关边、化学位移整体偏置、并列最优候选、两个编辑者冲突。",
+  "compound": "DC-001 教学骨架（对甲氧基取代芳香醚，含 C2/C3 对称等价氢）",
+  "acceptance_features": [
+    "重叠峰不被强制唯一匹配（H-P1/H-P2 与 C-P3/C-P5 重叠组）",
+    "对称原子候选并列（sg_ortho / sg_meta），保留全部合法候选",
+    "缺失相关边只作证据：芳香区 COSY 期望边缺失 -> missing_edge 诊断 + 封顶罚分",
+    "化学位移整体偏置通过参数修订纠正（bias_1h 0.00 -> 0.08），旧快照可重放",
+    "并列最优候选 tied=true，人工接受须显式 acknowledge_ambiguity",
+    "两个编辑者对同一峰接受不同候选 -> conflict_detected + 新分支"
+  ],
+  "sources": [
+    {"kind": "skeleton",        "version": 1, "path": "sources/v1/skeleton.json"},
+    {"kind": "experiment_meta", "version": 1, "path": "sources/v1/experiment_meta.json"},
+    {"kind": "1h_peaks",        "version": 1, "path": "sources/v1/1h_peaks.json"},
+    {"kind": "13c_peaks",       "version": 1, "path": "sources/v1/13c_peaks.json"},
+    {"kind": "hsqc",            "version": 1, "path": "sources/v1/hsqc.json"},
+    {"kind": "cosy",            "version": 1, "path": "sources/v1/cosy.json"},
+    {"kind": "hmbc",            "version": 1, "path": "sources/v1/hmbc.json"},
+    {"kind": "hmbc",            "version": 2, "path": "sources/v2/hmbc.json"},
+    {"kind": "experiment_meta", "version": 2, "path": "sources/v2/experiment_meta.json"}
+  ],
+  "playbook": [
+    {
+      "step": 1,
+      "title": "化学位移整体偏置：修订全局 bias 参数（仅 1H）",
+      "kind": "revise_params",
+      "actor": "alice",
+      "params": {"global_bias_1h_ppm": 0.08},
+      "reason": "复核 TMS 参考后确认 1H 观测存在 +0.08 ppm 整体偏置；13C 不受影响"
+    },
+    {
+      "step": 2,
+      "title": "并列最优+重叠峰：alice 有条件接受 H-P1 的一个对称等价候选（保持 provisional）",
+      "kind": "decide",
+      "actor": "alice",
+      "peak_key": "H-P1",
+      "atom_label": "H3",
+      "verdict": "accepted",
+      "acknowledge_ambiguity": true,
+      "note": "HSQC 指向 C3 但 H3/H3b 对称等价、H-P1 与 H-P2 重叠；保留全部合法候选，仅作暂定归属"
+    },
+    {
+      "step": 3,
+      "title": "普通唯一归属：alice 接受 H-P4->H10（无平局、无重叠）",
+      "kind": "decide",
+      "actor": "alice",
+      "peak_key": "H-P4",
+      "atom_label": "H10",
+      "verdict": "accepted",
+      "note": "COSY(H-P4-H-P5) 与 HMBC(H-P4->C-P1/C-P7) 一致，唯一最优"
+    },
+    {
+      "step": 4,
+      "title": "只影响局部依赖的源数据改动：提交 HMBC v2（补录一条漏拾交叉峰）",
+      "kind": "submit_version",
+      "actor": "carol",
+      "version": 2
+    },
+    {
+      "step": 5,
+      "title": "两个编辑者冲突：bob 在新分支对同一峰 H-P1 接受不同候选",
+      "kind": "decide",
+      "actor": "bob",
+      "peak_key": "H-P1",
+      "atom_label": "H2",
+      "verdict": "accepted",
+      "acknowledge_ambiguity": true,
+      "new_branch": "review-bob-aromatic",
+      "note": "bob 依据补录 HMBC 与芳香区裂分判断 H-P1 更可能为 ortho 位 H2"
+    },
+    {
+      "step": 6,
+      "title": "冲突解决：保留双方为暂定候选，不强制唯一（耦合网络只作证据）",
+      "kind": "resolve_conflict",
+      "actor": "carol",
+      "conflict_event_id": "FILL_BY_TEST",
+      "resolution": "keep_both_provisional"
+    },
+    {
+      "step": 7,
+      "title": "溶剂/温度变更：提交 experiment_meta v2（CDCl3->C6D6, 298K->300K），只使相关候选过期",
+      "kind": "submit_version",
+      "actor": "carol",
+      "version": 2
+    }
+  ]
+}

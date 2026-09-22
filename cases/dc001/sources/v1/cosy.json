@@ -1,0 +1,10 @@
+{
+  "kind": "cosy",
+  "filename": "cosy_peaklist_20260901.csv.json",
+  "file_version": 1,
+  "origin": {"pulse_sequence": "cosygpmfppqf", "scans": 4},
+  "rows": [
+    {"id": "COSY-1", "from": "H-P4", "to": "H-P5", "from_ppm": 4.10, "to_ppm": 1.40, "intensity": 640},
+    {"id": "COSY-2", "from": "H-P1", "to": "H-P2", "from_ppm": 7.30, "to_ppm": 7.00, "intensity": 300}
+  ]
+}

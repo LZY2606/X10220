@@ -1,0 +1,10 @@
+{
+  "kind": "experiment_meta",
+  "filename": "experiment_conditions.json",
+  "file_version": 1,
+  "nucleus": "1H",
+  "solvent": "CDCl3",
+  "temperature": "298 K",
+  "frequency": "500.13 MHz",
+  "reference": "TMS"
+}

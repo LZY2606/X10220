@@ -1,0 +1,59 @@
+{
+  "kind": "skeleton",
+  "filename": "skeleton.json",
+  "file_version": 1,
+  "title": "DC-001 教学骨架：对甲氧基取代芳香醚（含对称原子）",
+  "reference_frame": {
+    "shift_basis": "delta_ppm_TMS",
+    "note": "predicted_shift 为该教学案例的先验化学位移估计（ppm, TMS delta 标尺）"
+  },
+  "atoms": [
+    {"label": "C1", "element": "C", "nucleus": "13C", "symmetry_group": "sg_ipso",  "predicted_shift": 160.0},
+    {"label": "C2", "element": "C", "nucleus": "13C", "symmetry_group": "sg_ortho", "predicted_shift": 114.2},
+    {"label": "C3", "element": "C", "nucleus": "13C", "symmetry_group": "sg_meta",  "predicted_shift": 129.4},
+    {"label": "C4", "element": "C", "nucleus": "13C", "symmetry_group": "sg_para",  "predicted_shift": 133.6},
+    {"label": "C5", "element": "C", "nucleus": "13C", "symmetry_group": "sg_C5",    "predicted_shift": 120.1},
+    {"label": "C10", "element": "C", "nucleus": "13C", "symmetry_group": "sg_C10", "predicted_shift": 68.2},
+    {"label": "C11", "element": "C", "nucleus": "13C", "symmetry_group": "sg_C11", "predicted_shift": 15.3},
+
+    {"label": "H2", "element": "H", "nucleus": "1H", "symmetry_group": "sg_ortho", "equivalent_to": "H2b", "attached_to": "C2", "protons": 1, "predicted_shift": 6.92},
+    {"label": "H2b", "element": "H", "nucleus": "1H", "symmetry_group": "sg_ortho", "equivalent_to": "H2", "attached_to": "C2", "protons": 1, "predicted_shift": 6.92},
+    {"label": "H3", "element": "H", "nucleus": "1H", "symmetry_group": "sg_meta", "equivalent_to": "H3b", "attached_to": "C3", "protons": 1, "predicted_shift": 7.22},
+    {"label": "H3b", "element": "H", "nucleus": "1H", "symmetry_group": "sg_meta", "equivalent_to": "H3", "attached_to": "C3", "protons": 1, "predicted_shift": 7.22},
+    {"label": "H5", "element": "H", "nucleus": "1H", "symmetry_group": "sg_H5", "attached_to": "C5", "protons": 1, "predicted_shift": 5.92},
+    {"label": "H10", "element": "H", "nucleus": "1H", "symmetry_group": "sg_H10", "attached_to": "C10", "protons": 2, "predicted_shift": 4.02, "multiplicity": "q"},
+    {"label": "H11", "element": "H", "nucleus": "1H", "symmetry_group": "sg_H11", "attached_to": "C11", "protons": 3, "predicted_shift": 1.32, "multiplicity": "t"}
+  ],
+  "bonds": [
+    {"from": "C1", "to": "C2", "order": 2},
+    {"from": "C2", "to": "C3", "order": 1},
+    {"from": "C3", "to": "C4", "order": 2},
+    {"from": "C4", "to": "C5", "order": 1},
+    {"from": "C5", "to": "C1", "order": 2},
+    {"from": "C1", "to": "C10", "order": 1},
+    {"from": "C10", "to": "C11", "order": 1},
+    {"from": "C2", "to": "H2", "order": 1},
+    {"from": "C2", "to": "H2b", "order": 1},
+    {"from": "C3", "to": "H3", "order": 1},
+    {"from": "C3", "to": "H3b", "order": 1},
+    {"from": "C5", "to": "H5", "order": 1},
+    {"from": "C10", "to": "H10", "order": 1},
+    {"from": "C11", "to": "H11", "order": 1}
+  ],
+  "expected_coupling": {
+    "COSY": [
+      ["H2", "H3"], ["H2", "H3b"], ["H2b", "H3"], ["H2b", "H3b"],
+      ["H10", "H11"]
+    ],
+    "HSQC": [
+      ["H2", "C2"], ["H2b", "C2"], ["H3", "C3"], ["H3b", "C3"],
+      ["H5", "C5"], ["H10", "C10"], ["H11", "C11"]
+    ],
+    "HMBC": [
+      ["H2", "C4"], ["H2", "C10"],
+      ["H3", "C1"], ["H3", "C5"],
+      ["H10", "C1"], ["H10", "C11"],
+      ["H11", "C10"]
+    ]
+  }
+}

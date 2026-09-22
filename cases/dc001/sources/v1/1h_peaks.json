@@ -1,0 +1,13 @@
+{
+  "kind": "1h_peaks",
+  "filename": "1h_peaks_pulse_20260901.txt.json",
+  "file_version": 1,
+  "origin": {"instrument_pipeline": "topspin-export", "exported_by": "lab-robot-2"},
+  "rows": [
+    {"id": "H-P1", "shift": 7.30, "intensity": 1820, "integration": 2, "multiplicity": "d"},
+    {"id": "H-P2", "shift": 7.00, "intensity": 1905, "integration": 2, "multiplicity": "d"},
+    {"id": "H-P3", "shift": 6.00, "intensity": 940,  "integration": 1, "multiplicity": "dd"},
+    {"id": "H-P4", "shift": 4.10, "intensity": 1760, "integration": 2, "multiplicity": "q"},
+    {"id": "H-P5", "shift": 1.40, "intensity": 2610, "integration": 3, "multiplicity": "t"}
+  ]
+}

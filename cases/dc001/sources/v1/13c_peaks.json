@@ -1,0 +1,15 @@
+{
+  "kind": "13c_peaks",
+  "filename": "13c_peaks_pulse_20260901.txt.json",
+  "file_version": 1,
+  "origin": {"instrument_pipeline": "topspin-export", "exported_by": "lab-robot-2"},
+  "rows": [
+    {"id": "C-P1", "shift": 160.10, "intensity": 410},
+    {"id": "C-P2", "shift": 133.66, "intensity": 505},
+    {"id": "C-P3", "shift": 129.46, "intensity": 612},
+    {"id": "C-P4", "shift": 120.16, "intensity": 388},
+    {"id": "C-P5", "shift": 114.30, "intensity": 720},
+    {"id": "C-P6", "shift": 68.26,  "intensity": 655},
+    {"id": "C-P7", "shift": 15.36,  "intensity": 980}
+  ]
+}

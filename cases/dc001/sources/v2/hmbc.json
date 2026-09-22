@@ -1,0 +1,13 @@
+{
+  "kind": "hmbc",
+  "filename": "hmbc_peaklist_20260901.csv.json",
+  "file_version": 2,
+  "parent_file_version": 1,
+  "change_note": "复核原谱后补录一条此前漏拾的 HMBC 交叉峰 H-P1->C-P1（2J/3J 远程相关）；仅该直接来源变化",
+  "origin": {"pulse_sequence": "hmbcgplpndqf", "scans": 16, "reprocessed_by": "lab-robot-2"},
+  "rows": [
+    {"id": "HMBC-1", "from": "H-P4", "to": "C-P1", "from_ppm": 4.10, "to_ppm": 160.10, "intensity": 410},
+    {"id": "HMBC-2", "from": "H-P4", "to": "C-P7", "from_ppm": 4.10, "to_ppm": 15.36,  "intensity": 288},
+    {"id": "HMBC-3", "from": "H-P1", "to": "C-P1", "from_ppm": 7.30, "to_ppm": 160.10, "intensity": 355}
+  ]
+}
