@@ -1,0 +1,556 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "case_id": "resonance-evidence-room",
+    "name": "4-ethoxyphenol NMR resonance evidence room",
+    "file_version": "v2",
+    "source_files": [
+      "peaklist-4-ethoxyphenol-v2.json"
+    ]
+  },
+  "parameters": {
+    "rule_version": "rules-v1",
+    "seed": 260923
+  },
+  "molecule": {
+    "id": "4-ethoxyphenol",
+    "name": "4-ethoxyphenol",
+    "atoms": [
+      {
+        "id": "C1",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 180,
+        "y": 70,
+        "expected_shift_ppm": {
+          "13C": 151.8
+        },
+        "environment": "phenolic ipso carbon"
+      },
+      {
+        "id": "C2",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 130,
+        "y": 100,
+        "expected_shift_ppm": {
+          "13C": 116.2
+        },
+        "environment": "aromatic CH"
+      },
+      {
+        "id": "C3",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 130,
+        "y": 170,
+        "expected_shift_ppm": {
+          "13C": 115.4
+        },
+        "environment": "aromatic CH"
+      },
+      {
+        "id": "C4",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 180,
+        "y": 200,
+        "expected_shift_ppm": {
+          "13C": 153.2
+        },
+        "environment": "ether ipso carbon"
+      },
+      {
+        "id": "C5",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 230,
+        "y": 170,
+        "expected_shift_ppm": {
+          "13C": 115.4
+        },
+        "environment": "aromatic CH"
+      },
+      {
+        "id": "C6",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 230,
+        "y": 100,
+        "expected_shift_ppm": {
+          "13C": 116.2
+        },
+        "environment": "aromatic CH"
+      },
+      {
+        "id": "C7",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 310,
+        "y": 220,
+        "expected_shift_ppm": {
+          "13C": 64.5
+        },
+        "environment": "ethoxy methylene"
+      },
+      {
+        "id": "C8",
+        "element": "C",
+        "nucleus": "13C",
+        "x": 390,
+        "y": 250,
+        "expected_shift_ppm": {
+          "13C": 14.8
+        },
+        "environment": "ethoxy methyl group"
+      },
+      {
+        "id": "H2",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 80,
+        "y": 90,
+        "attached_to": "C2",
+        "expected_shift_ppm": {
+          "1H": 6.75
+        },
+        "expected_multiplicity": [
+          "d"
+        ],
+        "proton_count": 1
+      },
+      {
+        "id": "H3",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 80,
+        "y": 180,
+        "attached_to": "C3",
+        "expected_shift_ppm": {
+          "1H": 6.8
+        },
+        "expected_multiplicity": [
+          "d"
+        ],
+        "proton_count": 1
+      },
+      {
+        "id": "H5",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 280,
+        "y": 180,
+        "attached_to": "C5",
+        "expected_shift_ppm": {
+          "1H": 6.8
+        },
+        "expected_multiplicity": [
+          "d"
+        ],
+        "proton_count": 1
+      },
+      {
+        "id": "H6",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 280,
+        "y": 90,
+        "attached_to": "C6",
+        "expected_shift_ppm": {
+          "1H": 6.75
+        },
+        "expected_multiplicity": [
+          "d"
+        ],
+        "proton_count": 1
+      },
+      {
+        "id": "H7",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 320,
+        "y": 280,
+        "attached_to": "C7",
+        "expected_shift_ppm": {
+          "1H": 4.1
+        },
+        "expected_multiplicity": [
+          "q"
+        ],
+        "proton_count": 2
+      },
+      {
+        "id": "H8",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 410,
+        "y": 310,
+        "attached_to": "C8",
+        "expected_shift_ppm": {
+          "1H": 1.45
+        },
+        "expected_multiplicity": [
+          "t"
+        ],
+        "proton_count": 3
+      },
+      {
+        "id": "H9",
+        "element": "H",
+        "nucleus": "1H",
+        "x": 170,
+        "y": 20,
+        "attached_to": "O1",
+        "expected_shift_ppm": {
+          "1H": 5.0
+        },
+        "expected_multiplicity": [
+          "br s"
+        ],
+        "proton_count": 1,
+        "exchangeable": true,
+        "temperature_sensitive": true
+      },
+      {
+        "id": "O1",
+        "element": "O",
+        "x": 220,
+        "y": 30
+      },
+      {
+        "id": "O2",
+        "element": "O",
+        "x": 270,
+        "y": 230
+      }
+    ],
+    "bonds": [
+      [
+        "C1",
+        "C2",
+        "aromatic"
+      ],
+      [
+        "C2",
+        "C3",
+        "aromatic"
+      ],
+      [
+        "C3",
+        "C4",
+        "aromatic"
+      ],
+      [
+        "C4",
+        "C5",
+        "aromatic"
+      ],
+      [
+        "C5",
+        "C6",
+        "aromatic"
+      ],
+      [
+        "C6",
+        "C1",
+        "aromatic"
+      ],
+      [
+        "C1",
+        "O1",
+        "single"
+      ],
+      [
+        "O1",
+        "H9",
+        "single"
+      ],
+      [
+        "C4",
+        "O2",
+        "single"
+      ],
+      [
+        "O2",
+        "C7",
+        "single"
+      ],
+      [
+        "C7",
+        "C8",
+        "single"
+      ],
+      [
+        "C2",
+        "H2",
+        "single"
+      ],
+      [
+        "C3",
+        "H3",
+        "single"
+      ],
+      [
+        "C5",
+        "H5",
+        "single"
+      ],
+      [
+        "C6",
+        "H6",
+        "single"
+      ],
+      [
+        "C7",
+        "H7",
+        "single"
+      ],
+      [
+        "C8",
+        "H8",
+        "single"
+      ]
+    ],
+    "symmetry_groups": [
+      [
+        "C2",
+        "C6"
+      ],
+      [
+        "C3",
+        "C5"
+      ],
+      [
+        "H2",
+        "H6"
+      ],
+      [
+        "H3",
+        "H5"
+      ]
+    ]
+  },
+  "one_dimensional": {
+    "1H": {
+      "metadata": {
+        "solvent": "CDCl3",
+        "instrument_frequency_mhz": 500.13,
+        "temperature_k": 298,
+        "reference_standard": "TMS",
+        "spectrum_representation": "1H chemical shifts in ppm on delta scale"
+      },
+      "peaks": [
+        {
+          "id": "p_ar_a",
+          "shift_ppm": 6.9,
+          "intensity": 0.82,
+          "integration": 2,
+          "multiplicity": "d",
+          "overlap_group": "aromatic-overlap"
+        },
+        {
+          "id": "p_ar_b",
+          "shift_ppm": 6.9,
+          "intensity": 0.79,
+          "integration": 2,
+          "multiplicity": "d",
+          "overlap_group": "aromatic-overlap"
+        },
+        {
+          "id": "p_och2",
+          "shift_ppm": 4.25,
+          "intensity": 0.91,
+          "integration": 2,
+          "multiplicity": "q"
+        },
+        {
+          "id": "p_oh",
+          "shift_ppm": 5.0,
+          "intensity": 0.18,
+          "integration": 1,
+          "multiplicity": "br s",
+          "note": "re-acquired exchangeable resonance; v1 had no observable OH peak"
+        },
+        {
+          "id": "p_ch3",
+          "shift_ppm": 1.6,
+          "intensity": 1.0,
+          "integration": 3,
+          "multiplicity": "t"
+        },
+        {
+          "id": "p_impurity",
+          "shift_ppm": 2.2,
+          "intensity": 0.08,
+          "integration": 1,
+          "multiplicity": "br s"
+        }
+      ]
+    },
+    "13C": {
+      "metadata": {
+        "solvent": "CDCl3",
+        "instrument_frequency_mhz": 125.77,
+        "temperature_k": 298,
+        "reference_standard": "TMS",
+        "spectrum_representation": "13C chemical shifts in ppm on delta scale"
+      },
+      "peaks": [
+        {
+          "id": "pc1",
+          "shift_ppm": 151.8,
+          "intensity": "n/a"
+        },
+        {
+          "id": "pc4",
+          "shift_ppm": 153.2,
+          "intensity": 0.22
+        },
+        {
+          "id": "pc26",
+          "shift_ppm": 116.2,
+          "intensity": 0.61
+        },
+        {
+          "id": "pc35",
+          "shift_ppm": 115.4,
+          "intensity": 0.64
+        },
+        {
+          "id": "pc7",
+          "shift_ppm": 64.5,
+          "intensity": 0.72
+        },
+        {
+          "id": "pc8",
+          "shift_ppm": 14.8,
+          "intensity": 1.0
+        }
+      ]
+    }
+  },
+  "cosy": {
+    "metadata": {
+      "experiment": "gradient COSY",
+      "frequency_mhz": 500.13
+    },
+    "edges": [
+      {
+        "id": "cosy_ar",
+        "from": "p_ar_a",
+        "to": "p_ar_b",
+        "coordinates_ppm": {
+          "f1": 6.91,
+          "f2": 6.89
+        },
+        "intensity": 0.31
+      },
+      {
+        "id": "cosy_ethyl",
+        "from": "p_och2",
+        "to": "p_ch3",
+        "coordinates_ppm": {
+          "f1": 4.25,
+          "f2": 1.6
+        },
+        "intensity": 0.74
+      }
+    ]
+  },
+  "hsqc": {
+    "metadata": {
+      "experiment": "1H-13C HSQC",
+      "frequencies_mhz": [
+        500.13,
+        125.77
+      ]
+    },
+    "edges": [
+      {
+        "id": "hsqc_ar_a",
+        "from": "p_ar_a",
+        "to": "pc26",
+        "coordinates_ppm": {
+          "f1": 116.2,
+          "f2": 6.91
+        },
+        "intensity": 0.55
+      },
+      {
+        "id": "hsqc_ar_b",
+        "from": "p_ar_b",
+        "to": "pc35",
+        "coordinates_ppm": {
+          "f1": 115.4,
+          "f2": 6.89
+        },
+        "intensity": 0.58
+      },
+      {
+        "id": "hsqc_och2",
+        "from": "p_och2",
+        "to": "pc7",
+        "coordinates_ppm": {
+          "f1": 64.5,
+          "f2": 4.25
+        },
+        "intensity": 0.8
+      },
+      {
+        "id": "hsqc_ch3",
+        "from": "p_ch3",
+        "to": "pc8",
+        "coordinates_ppm": {
+          "f1": 14.8,
+          "f2": 1.6
+        },
+        "intensity": 0.91
+      }
+    ]
+  },
+  "hmbc": {
+    "metadata": {
+      "experiment": "1H-13C HMBC",
+      "frequencies_mhz": [
+        500.13,
+        125.77
+      ],
+      "long_range_bond_count": [
+        2,
+        3
+      ]
+    },
+    "edges": [
+      {
+        "id": "hmbc_och2_c8",
+        "from": "p_och2",
+        "to": "pc8",
+        "coordinates_ppm": {
+          "f1": 14.8,
+          "f2": 4.25
+        },
+        "intensity": 0.62
+      },
+      {
+        "id": "hmbc_och2_c4",
+        "from": "p_och2",
+        "to": "pc4",
+        "coordinates_ppm": {
+          "f1": 153.2,
+          "f2": 4.25
+        },
+        "intensity": 0.44
+      },
+      {
+        "id": "hmbc_ar_a_c1",
+        "from": "p_ar_a",
+        "to": "pc1",
+        "coordinates_ppm": {
+          "f1": 151.8,
+          "f2": 6.91
+        },
+        "intensity": 0.37
+      }
+    ]
+  }
+}
