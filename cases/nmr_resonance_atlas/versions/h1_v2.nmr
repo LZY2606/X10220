@@ -1,0 +1,16 @@
+@document h1
+@kind 1d
+@version 2
+@parent_version 1
+@nucleus 1H
+@solvent CDCl3
+@temperature 298 K
+@reference TMS 0.0 ppm
+@spectrometer_frequency 400.13 MHz
+@columns id shift intensity integral multiplicity j_hz
+# Re-referenced after internal-standard correction: all lines shifted +0.11 ppm.
+# The shift is a global bias, to be fitted rather than forced into assignments.
+peak Hp1 2.210 ppm 1000 a.u. 3.0 H-equiv s
+peak Hp2 2.662 ppm  480 a.u. 1.0 H-equiv m
+peak Hp3 1.203 ppm  900 a.u. 3.0 H-equiv d 7.0 Hz
+peak Hp4 1.217 ppm  880 a.u. 3.0 H-equiv d 6.9 Hz

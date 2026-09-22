@@ -1,0 +1,11 @@
+@document soft
+@kind 1d
+@version 1
+@nucleus 1H
+@solvent CDCl3
+@reference TMS 0.0 ppm
+@spectrometer_frequency 400.13 MHz
+@columns id shift intensity integral multiplicity
+# "furlong" is not a valid chemical-shift unit: row is retained with a
+# diagnostic instead of being dropped.
+peak Hp9 1.0 furlong 100 a.u. 1.0 H-equiv s

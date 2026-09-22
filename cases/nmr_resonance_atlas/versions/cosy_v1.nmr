@@ -1,0 +1,11 @@
+@document cosy
+@kind 2d
+@version 1
+@experiment COSY
+@solvent CDCl3
+@temperature 298 K
+@reference TMS 0.0 ppm
+@spectrometer_frequency 400.13 MHz
+@columns id shift_f1 shift_f2 intensity multiplicity
+edge Ecosy1 2.552 ppm 1.093 ppm 300 a.u.
+edge Ecosy2 2.552 ppm 1.107 ppm 295 a.u.

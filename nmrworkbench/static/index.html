@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMR 归属候选网络工作台</title>
+<link rel="stylesheet" href="/static/styles.css"/>
+</head>
+<body>
+<header>
+  <h1>NMR 共振经纬 · 归属候选证据室</h1>
+  <div class="toolbar">
+    <label>项目
+      <select id="projectSelect"></select>
+    </label>
+    <button id="newProjectBtn">新建项目</button>
+    <button id="loadCaseBtn">载入离线案例包</button>
+    <label>分支 <select id="branchSelect"></select></label>
+    <label class="hist">重放到事件
+      <input type="range" id="seqSlider" min="0" max="0" value="0"/>
+      <span id="seqLabel">head</span>
+    </label>
+    <button id="headBtn">回到当前</button>
+  </div>
+  <div id="status" class="status"></div>
+  <div id="conflictBanner" class="conflict hidden"></div>
+</header>
+
+<main>
+  <section class="panel import">
+    <h2>1 · 原始输入（不可覆盖，只可新版本）</h2>
+    <div class="row">
+      <input id="logicalId" placeholder="逻辑 id, 例如 h1"/>
+      <input id="fileName" placeholder="文件名 h1_v1.nmr"/>
+    </div>
+    <textarea id="sourceText" rows="8" spellcheck="false"
+      placeholder="@document h1&#10;@kind 1d&#10;@nucleus 1H ..."></textarea>
+    <div class="row">
+      <button id="submitSourceBtn">提交原始来源</button>
+      <button id="showFormatBtn">格式帮助 / 错误样例</button>
+    </div>
+    <pre id="sourceDiagnostics" class="diag hidden"></pre>
+
+    <h3>参数修订（生成新事件）</h3>
+    <div class="row">
+      <input id="tolH" placeholder="1H 容差 ppm" value="0.10"/>
+      <input id="tolC" placeholder="13C 容差 ppm" value="0.50"/>
+      <input id="reason" placeholder="修订理由"/>
+      <button id="paramBtn">保存参数版本</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>2 · 联动视图（稳定身份）</h2>
+    <div class="views">
+      <div class="viewbox"><h3>分子骨架</h3><div id="molecule"></div></div>
+      <div class="viewbox"><h3>一维峰表</h3><div id="peaks"></div></div>
+    </div>
+    <div class="viewbox"><h3>COSY / HSQC / HMBC 相关边（缺失边显式保留）</h3>
+      <div id="edges"></div></div>
+    <div class="viewbox"><h3>候选排名与人工裁定</h3>
+      <div id="candidates"></div></div>
+  </section>
+
+  <section class="panel">
+    <h2>3 · 历史 / 溯源 / 导出导入</h2>
+    <div class="row">
+      <button id="exportBtn">导出 JSON 包</button>
+      <input id="importFile" type="file" accept="application/json"/>
+      <button id="refreshBtn">刷新视图</button>
+    </div>
+    <div class="twocol">
+      <div><h3>事件链（点击可重放）</h3><div id="eventLog"></div></div>
+      <div><h3>对象溯源</h3><pre id="provenance" class="prov">点击任意峰 / 边 / 原子 / 候选查看来源、算法版本、参数指纹与决定。</pre></div>
+    </div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

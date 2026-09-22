@@ -1,0 +1,25 @@
+# NMR Resonance Atlas — offline case pack
+# Compound "ISPK-7": a small isopropyl ketone with an exchangeable OH.
+#   O=C(CH3)-CH(CH3)2 skeleton below; NMR-visible nuclei only.
+@document skel
+@kind skeleton
+@version 1
+atom C0 C 13C predicted 212.0 ppm at 60 60
+atom C1 C 13C predicted 30.0  ppm at 150 60
+atom C2 C 13C predicted 34.0  ppm at 60 150
+atom C3 C 13C predicted 18.0  ppm at 60 240
+atom O0 O -- at 10 60
+atom H1 1H 1H predicted 2.10 ppm at 205 60
+atom H2 1H 1H predicted 2.55 ppm at 60 195
+atom H3 1H 1H predicted 1.10 ppm at 60 300
+atom H4 1H 1H predicted 1.10 ppm at 120 300
+atom H6 1H 1H predicted 3.50 ppm at -30 60 exchangeable
+bond b1 C0 C1 1
+bond b2 C0 C2 1
+bond b3 C2 C3 1
+bond b4 C0 O0 2
+bond b5 C1 H1 1
+bond b6 C2 H2 1
+bond b7 C3 H3 1
+bond b8 C3 H4 1
+bond b9 O0 H6 1

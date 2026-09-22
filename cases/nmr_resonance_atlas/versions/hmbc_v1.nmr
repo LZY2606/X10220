@@ -1,0 +1,13 @@
+@document hmbc
+@kind 2d
+@version 1
+@experiment HMBC
+@solvent CDCl3
+@temperature 298 K
+@reference TMS 0.0 ppm
+@spectrometer_frequency 400.13 MHz
+@columns id shift_f1 shift_f2 intensity multiplicity
+edge Ehmbc1 2.100 ppm 212.30 ppm 260 a.u.
+edge Ehmbc2 2.552 ppm 212.30 ppm 240 a.u.
+edge Ehmbc3 1.093 ppm 34.22 ppm 210 a.u.
+edge Ehmbc4 1.107 ppm 34.22 ppm 205 a.u.

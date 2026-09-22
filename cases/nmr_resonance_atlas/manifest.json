@@ -1,0 +1,30 @@
+{
+  "case_id": "nmr_resonance_atlas",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "compound": "ISPK-7 (isopropyl methyl ketone with exchangeable OH)",
+  "description": "Merges 1H/13C 1D peak lists with COSY/HSQC/HMBC correlations under one compound and builds reviewable assignment candidates.",
+  "baseline": [
+    {"logical_id": "skel",  "file": "versions/skeleton_v1.nmr"},
+    {"logical_id": "h1",    "file": "versions/h1_v1.nmr"},
+    {"logical_id": "c13",   "file": "versions/c13_v1.nmr"},
+    {"logical_id": "cosy",  "file": "versions/cosy_v1.nmr"},
+    {"logical_id": "hsqc",  "file": "versions/hsqc_v1.nmr"},
+    {"logical_id": "hmbc",  "file": "versions/hmbc_v1.nmr"}
+  ],
+  "revisions": [
+    {"logical_id": "h1", "file": "versions/h1_v2.nmr",
+     "label": "parameter revision: fit global +0.11 ppm referencing bias",
+     "parameters": {"shift_tolerance": {"1H": 0.05, "13C": 0.5}}},
+    {"logical_id": "h1", "file": "versions/h1_v3.nmr",
+     "label": "condition change only: solvent/temperature/reference expires candidates"}
+  ],
+  "acceptance_situations": [
+    "overlapping_peaks", "symmetry_atoms", "missing_correlation_edge",
+    "global_shift_bias", "tied_best_candidates", "two_editor_conflict"
+  ],
+  "format_errors": [
+    {"file": "errors/bad_unknown_kind.nmr", "expect_rejected": true},
+    {"file": "errors/bad_missing_nucleus.nmr", "expect_rejected": true},
+    {"file": "errors/warning_unconvertible.nmr", "expect_rejected": false}
+  ]
+}

@@ -1,0 +1,13 @@
+@document c13
+@kind 1d
+@version 1
+@nucleus 13C
+@solvent CDCl3
+@temperature 298 K
+@reference TMS 0.0 ppm
+@spectrometer_frequency 100.61 MHz
+@columns id shift intensity integral multiplicity
+peak Cp0 212.30 ppm 220 a.u. 1.0 H-equiv s
+peak Cp1 30.15 ppm 410 a.u. 1.0 H-equiv s
+peak Cp2 34.22 ppm 380 a.u. 1.0 H-equiv s
+peak Cp3 18.05 ppm 500 a.u. 2.0 H-equiv s

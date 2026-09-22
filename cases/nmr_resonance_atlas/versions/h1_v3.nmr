@@ -1,0 +1,16 @@
+@document h1
+@kind 1d
+@version 3
+@parent_version 2
+@nucleus 1H
+@solvent DMSO-d6
+@temperature 305 K
+@reference residual-solvent(DMSO-d6) 2.50 ppm
+@spectrometer_frequency 400.13 MHz
+@columns id shift intensity integral multiplicity j_hz
+# Same reported peak lines as v2; only solvent/temperature/reference changed.
+# Candidates derived from v1/v2 conditions must expire, old decisions replay.
+peak Hp1 2.210 ppm 1000 a.u. 3.0 H-equiv s
+peak Hp2 2.662 ppm  480 a.u. 1.0 H-equiv m
+peak Hp3 1.203 ppm  900 a.u. 3.0 H-equiv d 7.0 Hz
+peak Hp4 1.217 ppm  880 a.u. 3.0 H-equiv d 6.9 Hz
