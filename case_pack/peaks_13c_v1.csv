@@ -1,0 +1,10 @@
+peak_id,shift_ppm,intensity,integration,multiplicity,solvent,temperature,reference,instrument_frequency_mhz
+C-A,190.8,0.60,1,s,CDCl3,298K,TMS,100.61
+C-B,151.5,0.90,1,s,CDCl3,298K,TMS,100.61
+C-C,146.8,0.88,1,s,CDCl3,298K,TMS,100.61
+C-D,130.2,1.00,1,s,CDCl3,298K,TMS,100.61
+C-E,124.5,0.70,1,s,CDCl3,298K,TMS,100.61
+C-F,114.2,0.80,1,s,CDCl3,298K,TMS,100.61
+C-G,110.9,0.78,1,s,CDCl3,298K,TMS,100.61
+C-H,64.4,0.82,1,s,CDCl3,298K,TMS,100.61
+C-I,56.1,0.95,1,s,CDCl3,298K,TMS,100.61

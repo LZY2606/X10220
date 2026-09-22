@@ -1,0 +1,5 @@
+edge_id,from_h_ppm,to_c_ppm,from_atom,to_atom
+M-1,9.80,130.2,H0,C4
+M-2,3.92,146.8,H9,C3
+M-3,4.16,146.8,H7a,C3
+M-4,7.40,151.5,H2,C1
