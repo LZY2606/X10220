@@ -1,0 +1,21 @@
+{
+  "name": "ethylbenzene (乙苯)",
+  "atoms": [
+    {"id": "C1", "element": "C", "x": 0.0, "y": -1.0, "c_shift": 144.2, "sym": "G1"},
+    {"id": "C2", "element": "C", "x": 0.87, "y": -0.5, "c_shift": 128.40, "sym": "G2"},
+    {"id": "C6", "element": "C", "x": -0.87, "y": -0.5, "c_shift": 128.40, "sym": "G2"},
+    {"id": "C3", "element": "C", "x": 0.87, "y": 0.5, "c_shift": 128.45, "sym": "G3"},
+    {"id": "C5", "element": "C", "x": -0.87, "y": 0.5, "c_shift": 128.45, "sym": "G3"},
+    {"id": "C4", "element": "C", "x": 0.0, "y": 1.0, "c_shift": 125.70, "sym": "G4"},
+    {"id": "C7", "element": "C", "x": 0.0, "y": -2.0, "c_shift": 34.5, "sym": "G7"},
+    {"id": "C8", "element": "C", "x": 0.0, "y": -3.0, "c_shift": 15.8, "sym": "G8"},
+    {"id": "H2", "element": "H", "x": 1.6, "y": -0.9, "h_shift": 7.19, "nh": 1, "mult": "m", "sym": "G5", "attached": "C2"},
+    {"id": "H6", "element": "H", "x": -1.6, "y": -0.9, "h_shift": 7.19, "nh": 1, "mult": "m", "sym": "G5", "attached": "C6"},
+    {"id": "H3", "element": "H", "x": 1.6, "y": 0.9, "h_shift": 7.23, "nh": 1, "mult": "m", "sym": "G6", "attached": "C3"},
+    {"id": "H5", "element": "H", "x": -1.6, "y": 0.9, "h_shift": 7.23, "nh": 1, "mult": "m", "sym": "G6", "attached": "C5"},
+    {"id": "H4", "element": "H", "x": 0.0, "y": 1.8, "h_shift": 7.17, "nh": 1, "mult": "m", "sym": "G9", "attached": "C4"},
+    {"id": "H7", "element": "H", "x": 0.9, "y": -2.0, "h_shift": 2.62, "nh": 2, "mult": "q", "sym": "G10", "attached": "C7"},
+    {"id": "H8", "element": "H", "x": 0.9, "y": -3.0, "h_shift": 1.21, "nh": 3, "mult": "t", "sym": "G11", "attached": "C8"}
+  ],
+  "bonds": [["C1","C2"],["C2","C3"],["C3","C4"],["C4","C5"],["C5","C6"],["C6","C1"],["C1","C7"],["C7","C8"]]
+}

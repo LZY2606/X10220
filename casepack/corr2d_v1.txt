@@ -1,0 +1,13 @@
+# kind: HSQC
+id,a,b,strength
+e1,p3,c5,strong
+e2,p4,c6,strong
+e3,p1,c2,medium
+e7,p2,c3,medium
+# kind: COSY
+id,a,b,strength
+e4,p3,p4,strong
+# kind: HMBC
+id,a,b,strength
+e5,p3,c1,weak
+e6,p4,c5,weak

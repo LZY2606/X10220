@@ -1,0 +1,4 @@
+solvent: CDCl3
+temperature_K: 298.0
+reference: TMS
+freq_mhz: 400.13

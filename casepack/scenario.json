@@ -1,0 +1,20 @@
+{
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "narrative": "结构化学小组把乙苯的 1D(1H/13C) 与 2D(COSY/HSQC/HMBC) peak list 合到同一化合物分析，为每个核建立可复核的归属候选；随后安排一次参数修订（溶剂 CDCl3→DMSO-d6）、一次只影响局部依赖的源数据改动（p4 化学位移 1.22→1.24 ppm）、一次化学位移整体偏置（全部 1H +0.10 ppm，模拟参考标准变更），以及 alice 与 bob 对 H2 归属的冲突决定。",
+  "steps": [
+    {"op": "import", "kind": "molecule", "label": "乙苯骨架 v1", "file": "molecule.json", "actor": "casepack"},
+    {"op": "import", "kind": "params", "label": "仪器参数 v1 (CDCl3/TMS/400MHz)", "file": "params_v1.txt", "actor": "casepack"},
+    {"op": "import", "kind": "peaks1d", "label": "1D peak list v1", "file": "peaks1d_v1.txt", "actor": "casepack"},
+    {"op": "import", "kind": "corr2d", "label": "2D 相关边 v1", "file": "corr2d_v1.txt", "actor": "casepack"},
+    {"op": "compute", "actor": "casepack"},
+    {"op": "import", "kind": "params", "label": "参数修订 v2：溶剂改 DMSO-d6", "file": "params_v2.txt", "parent_file": "params_v1.txt", "actor": "casepack"},
+    {"op": "compute", "actor": "casepack"},
+    {"op": "import", "kind": "peaks1d", "label": "源数据局部修订 v2：p4 位移 1.22→1.24", "file": "peaks1d_v2.txt", "parent_file": "peaks1d_v1.txt", "actor": "casepack"},
+    {"op": "compute", "actor": "casepack"},
+    {"op": "import", "kind": "peaks1d", "label": "整体偏置 v3：全部 1H +0.10 ppm（参考标准变更）", "file": "peaks1d_v3.txt", "parent_file": "peaks1d_v2.txt", "actor": "casepack"},
+    {"op": "compute", "actor": "casepack"},
+    {"op": "decide", "actor": "alice", "nucleus": "H2", "peak_local": "p1", "action": "accept", "note": "alice: H2 归属 p1"},
+    {"op": "decide", "actor": "bob", "nucleus": "H2", "peak_local": "p2", "action": "accept", "note": "bob: H2 归属 p2（与 alice 冲突）"},
+    {"op": "resolve", "actor": "reviewer", "nucleus": "H2", "chosen_actor": "alice"}
+  ]
+}
