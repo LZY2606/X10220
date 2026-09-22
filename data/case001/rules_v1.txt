@@ -1,0 +1,23 @@
+@nbr-case/rules
+# rules_version: v1
+# note: basline priors for ethylbenzene
+PARAM algo_version, assign-1.0.0
+PARAM shift_window_ppm, 0.50
+PARAM w_shift, 1.0
+PARAM w_integral, 0.4
+PARAM w_evidence, 0.6
+PARAM w_missing_edge, 0.2
+PARAM bias_threshold_ppm, 0.08
+PARAM overlap_tolerance_ppm, 0.03
+PARAM tie_eps, 0.02
+PRIOR C1, 13C, 28.9ppm, 0.6ppm
+PRIOR C2, 13C, 15.6ppm, 0.6ppm
+PRIOR C3, 13C, 144.2ppm, 0.6ppm
+PRIOR C4, 13C, 128.5ppm, 0.6ppm
+PRIOR C5, 13C, 128.3ppm, 0.6ppm
+PRIOR C6, 13C, 125.7ppm, 0.6ppm
+PRIOR H1, 1H, 2.65ppm, 0.08ppm
+PRIOR H5, 1H, 1.22ppm, 0.08ppm
+PRIOR H2, 1H, 7.20ppm, 0.08ppm
+PRIOR H3, 1H, 7.29ppm, 0.08ppm
+PRIOR H4, 1H, 7.18ppm, 0.08ppm

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>NMR 共振经纬 · 候选归属证据室</title>
+<style>
+  :root { --bg:#0f1420; --panel:#171e2e; --ink:#e8edf6; --mut:#93a0b8;
+          --accent:#5db0ff; --ok:#4cc38a; --warn:#e0a94d; --bad:#e06c75;
+          --line:#28324a; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:13px/1.45 -apple-system,Segoe UI,Roboto,sans-serif;
+         background:var(--bg); color:var(--ink); }
+  header { padding:10px 16px; border-bottom:1px solid var(--line);
+           display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  header h1 { font-size:15px; margin:0; font-weight:600; }
+  button,select,input,textarea { background:#10182a; color:var(--ink);
+     border:1px solid var(--line); border-radius:6px; padding:5px 9px;
+     font:inherit; }
+  button { cursor:pointer; }
+  button.primary { border-color:var(--accent); color:var(--accent); }
+  button.accept { border-color:var(--ok); color:var(--ok); }
+  button.reject { border-color:var(--bad); color:var(--bad); }
+  .wrap { display:grid; grid-template-columns: 300px 1fr 360px; gap:10px;
+          padding:10px; }
+  .panel { background:var(--panel); border:1px solid var(--line);
+           border-radius:8px; padding:10px; overflow:auto; max-height:82vh; }
+  .panel h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em;
+              color:var(--mut); margin:0 0 8px; }
+  .row { display:flex; gap:6px; align-items:center; margin:4px 0; }
+  .item { padding:4px 6px; border-radius:5px; cursor:pointer; }
+  .item:hover { background:#1e2940; }
+  .item.active { background:#223252; outline:1px solid var(--accent); }
+  .muted { color:var(--mut); }
+  .tag { display:inline-block; font-size:10px; padding:0 6px; border-radius:9px;
+         border:1px solid var(--line); color:var(--mut); margin-right:4px; }
+  .tag.ok{color:var(--ok);border-color:var(--ok);}
+  .tag.warn{color:var(--warn);border-color:var(--warn);}
+  .tag.bad{color:var(--bad);border-color:var(--bad);}
+  svg { width:100%; display:block; }
+  .cand { border:1px solid var(--line); border-radius:6px; padding:6px;
+          margin:6px 0; }
+  .cand.top { border-color:var(--accent); }
+  .cand.tied { border-style:dashed; border-color:var(--warn); }
+  .cand.rej { opacity:.55; }
+  pre { white-space:pre-wrap; word-break:break-word; background:#0c1322;
+        border:1px solid var(--line); border-radius:6px; padding:8px;
+        max-height:220px; overflow:auto; }
+  details { margin-top:6px; }
+  summary { cursor:pointer; color:var(--mut); }
+  .judgement { border-left:3px solid var(--line); padding:3px 7px; margin:4px 0; }
+  .judgement.warning{border-color:var(--warn);}
+  .judgement.info{border-color:var(--accent);}
+  #toast { position:fixed; bottom:14px; right:14px; max-width:420px; }
+  .toast { background:#10182a; border:1px solid var(--accent); padding:8px 11px;
+           border-radius:7px; margin-top:6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>NMR 共振经纬 · 候选归属证据室</h1>
+  <label>项目 <input id="pid" value="demo" size="8"></label>
+  <button class="primary" onclick="createProject()">新建</button>
+  <button onclick="loadCase()">载入仓库样例</button>
+  <label>分支 <select id="branch" onchange="load()"></select></label>
+  <label>回溯事件 <select id="atEvent" onchange="load()"></select></label>
+  <span id="clockTip" class="muted"></span>
+  <span style="flex:1"></span>
+  <button onclick="exportBundle()">导出</button>
+  <button onclick="document.getElementById('imp').click()">导入</button>
+  <input id="imp" type="file" accept="application/json" style="display:none"
+         onchange="importBundle(this.files[0])">
+</header>
+
+<div class="wrap">
+  <div class="panel" id="leftPanel">
+    <h2>来源 / 版本 / 判定事件</h2>
+    <div id="sources"></div>
+    <h2 style="margin-top:12px">分支与历史</h2>
+    <div id="history"></div>
+    <h2 style="margin-top:12px">判定事件（机器可读）</h2>
+    <div id="judgements"></div>
+  </div>
+
+  <div class="panel">
+    <h2>谱峰轴 · 相关边 · 分子骨架（点击联动）</h2>
+    <div class="row">
+      <span class="muted">核种</span>
+      <select id="isoSel" onchange="render()">
+        <option value="1H">1H</option>
+        <option value="13C">13C</option>
+      </select>
+      <span id="selInfo" class="muted"></span>
+    </div>
+    <svg id="peakSvg" height="170"></svg>
+    <svg id="skelSvg" height="330"></svg>
+    <details>
+      <summary>原始输入片段（只读，含单位/基准）</summary>
+      <pre id="rawBox" class="muted">选择左侧某个来源版本查看原文。</pre>
+    </details>
+  </div>
+
+  <div class="panel">
+    <h2>候选排名与人工裁定</h2>
+    <div id="cands" class="muted">点击峰或骨架核查看候选。</div>
+    <h2 style="margin-top:12px">全局偏置 / 统计</h2>
+    <div id="stats"></div>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

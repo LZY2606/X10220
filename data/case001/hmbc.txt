@@ -1,0 +1,9 @@
+@nbr-case/hmbc
+# solvent: CDCl3
+# frequency: 400.61MHz
+# experiment: HMBC
+# file_version: v1
+EDGE m1, 1H:h1, 13C:c3, 0.60
+EDGE m2, 1H:h1, 13C:c4, 0.40
+EDGE m3, 1H:h5, 13C:c1, 0.55
+EDGE m4, 1H:h2, 13C:c3, 0.45

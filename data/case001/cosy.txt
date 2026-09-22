@@ -1,0 +1,9 @@
+@nbr-case/cosy
+# solvent: CDCl3
+# frequency: 400.13MHz
+# experiment: COSY
+# file_version: v1
+EDGE x1, 1H:h1, 1H:h5, 0.70
+EDGE x2, 1H:h2, 1H:h3, 0.55
+EDGE x3, 1H:h3, 1H:h4, 0.45
+EDGE x4, 1H:h2, 1H:h4, 0.30

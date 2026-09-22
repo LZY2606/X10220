@@ -1,0 +1,28 @@
+@nbr-case/skeleton
+# molecule: ethylbenzene
+# smiles: CCc1ccccc1
+# coord_basis: 2D schematic canvas, unit = layout-unit
+# model: one node per NMR resonance environment; equiv_size records symmetry
+# symmetry: ortho class degenerate 2x (positions 2,6); meta class 2x (3,5)
+# file_version: v1
+ATOM C1, C, 13C, 13C-CH2, 1, 0.0, 0.0
+ATOM C2, C, 13C, 13C-CH3, 1, -2.2, 0.0
+ATOM C3, C, 13C, 13C-ipso, 1, 2.2, 0.0
+ATOM C4, C, 13C, 13C-ortho, 2, 3.4, 1.3
+ATOM C5, C, 13C, 13C-meta, 2, 2.6, 3.2
+ATOM C6, C, 13C, 13C-para, 1, 0.6, 3.6
+ATOM H1, H, 1H, 1H-CH2, 2, 0.0, -1.3
+ATOM H5, H, 1H, 1H-CH3, 3, -2.2, -1.3
+ATOM H2, H, 1H, 1H-ortho, 2, 4.4, 1.3
+ATOM H3, H, 1H, 1H-meta, 2, 3.4, 3.6
+ATOM H4, H, 1H, 1H-para, 1, -0.4, 4.0
+BOND C2, C1, 1
+BOND C1, C3, 1
+BOND C3, C4, 1
+BOND C4, C5, 2
+BOND C5, C6, 1
+BOND C1, H1, 1
+BOND C2, H5, 1
+BOND C4, H2, 1
+BOND C5, H3, 1
+BOND C6, H4, 1

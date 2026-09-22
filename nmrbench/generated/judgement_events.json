@@ -1,0 +1,799 @@
+[
+  {
+    "scenario": "baseline",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h4+h2",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.02,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "overlap",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h2+h4",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.0,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ],
+    "changed_records": [
+      {
+        "type": "peak",
+        "id": "h4",
+        "present_before": true,
+        "present_after": true
+      }
+    ],
+    "scope_expectation": "local"
+  },
+  {
+    "scenario": "symmetry",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h4+h2",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.02,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ],
+    "changed_records": [
+      {
+        "type": "meta",
+        "id": "meta",
+        "changed_keys": [
+          "coord_basis",
+          "file_version",
+          "model",
+          "molecule",
+          "smiles",
+          "symmetry"
+        ]
+      }
+    ],
+    "scope_expectation": "local"
+  },
+  {
+    "scenario": "missing_edge",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h4+h2",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.02,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "MISSING_EXPECTED_HSQC",
+        "severity": "info",
+        "object": "H1",
+        "message": "expected correlation absent; recorded as weak negative evidence only, never a veto",
+        "basis": {
+          "isotope": "1H",
+          "source_present": true
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ],
+    "changed_records": [
+      {
+        "type": "edge",
+        "id": "q1",
+        "present_before": true,
+        "present_after": false
+      }
+    ],
+    "scope_expectation": "local"
+  },
+  {
+    "scenario": "global_bias",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h4+h2",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.02,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "GLOBAL_SHIFT_BIAS",
+        "severity": "warning",
+        "object": "run:1H",
+        "message": "coherent shift offset detected on one dimension; candidates are scored against priors and flagged, not silently re-referenced",
+        "basis": {
+          "isotope": "1H",
+          "detected": true,
+          "offset_ppm": 0.12,
+          "method": "median-residual",
+          "n": 5,
+          "threshold_ppm": 0.08
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ],
+    "changed_records": [
+      {
+        "type": "peak",
+        "id": "h1",
+        "present_before": true,
+        "present_after": true
+      },
+      {
+        "type": "peak",
+        "id": "h2",
+        "present_before": true,
+        "present_after": true
+      },
+      {
+        "type": "peak",
+        "id": "h3",
+        "present_before": true,
+        "present_after": true
+      },
+      {
+        "type": "peak",
+        "id": "h4",
+        "present_before": true,
+        "present_after": true
+      },
+      {
+        "type": "peak",
+        "id": "h5",
+        "present_before": true,
+        "present_after": true
+      }
+    ],
+    "scope_expectation": "local"
+  },
+  {
+    "scenario": "tied_best",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h4+h2",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.02,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "TIED_BEST_CANDIDATES",
+        "severity": "info",
+        "object": "C4",
+        "message": "tied/ambiguous; all legal candidates retained",
+        "basis": {
+          "candidates": [
+            "C:C4->c4",
+            "C:C4->c5"
+          ],
+          "tie_eps": 0.3
+        }
+      },
+      {
+        "code": "TIED_BEST_CANDIDATES",
+        "severity": "info",
+        "object": "C5",
+        "message": "tied/ambiguous; all legal candidates retained",
+        "basis": {
+          "candidates": [
+            "C:C5->c5",
+            "C:C5->c4"
+          ],
+          "tie_eps": 0.3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ],
+    "changed_records": [
+      {
+        "type": "param",
+        "id": "shift_window_ppm",
+        "before": 0.5,
+        "after": 0.2
+      },
+      {
+        "type": "param",
+        "id": "tie_eps",
+        "before": 0.02,
+        "after": 0.3
+      }
+    ],
+    "scope_expectation": "global"
+  },
+  {
+    "scenario": "solvent_meta",
+    "judgements": [
+      {
+        "code": "OVERLAP_NOT_FORCED",
+        "severity": "info",
+        "object": "G:1H:h4+h2",
+        "message": "overlapping peaks retained as separate candidates; no unique match is forced",
+        "basis": {
+          "spread_ppm": 0.02,
+          "tolerance_ppm": 0.03
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C4"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "13C-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "13C",
+          "members": [
+            "C5"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH2",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H1"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-CH3",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H5"
+          ],
+          "equiv_size": 3
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-ortho",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H2"
+          ],
+          "equiv_size": 2
+        }
+      },
+      {
+        "code": "SYMMETRY_EQUIVALENCE_PRESERVED",
+        "severity": "info",
+        "object": "1H-meta",
+        "message": "symmetry-equivalent nuclei share priors and peaks; they are not split into distinct forced assignments",
+        "basis": {
+          "isotope": "1H",
+          "members": [
+            "H3"
+          ],
+          "equiv_size": 2
+        }
+      }
+    ],
+    "changed_records": [
+      {
+        "type": "meta",
+        "id": "meta",
+        "changed_keys": [
+          "file_version",
+          "frequency",
+          "nucleus",
+          "reference",
+          "solvent",
+          "temperature"
+        ]
+      }
+    ],
+    "scope_expectation": "local"
+  }
+]

@@ -1,0 +1,12 @@
+@nbr-case/1h
+# solvent: CDCl3
+# temperature: 298.15K
+# reference: TMS 0ppm
+# frequency: 400.13MHz
+# nucleus: 1H
+# file_version: v1
+PEAK h1, 2.65ppm, 0.42 a.u., 2 count, q
+PEAK h2, 7.20ppm, 0.55 a.u., 2 count, m
+PEAK h3, 7.29ppm, 0.50 a.u., 2 count, m
+PEAK h4, 7.18ppm, 0.28 a.u., 1 count, m
+PEAK h5, 1.22ppm, 0.60 a.u., 3 count, t

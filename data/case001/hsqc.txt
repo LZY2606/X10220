@@ -1,0 +1,10 @@
+@nbr-case/hsqc
+# solvent: CDCl3
+# frequency: 400.13MHz
+# experiment: HSQC
+# file_version: v1
+EDGE q1, 1H:h1, 13C:c1, 0.80
+EDGE q2, 1H:h5, 13C:c2, 0.90
+EDGE q3, 1H:h2, 13C:c4, 0.55
+EDGE q4, 1H:h3, 13C:c5, 0.50
+EDGE q5, 1H:h4, 13C:c6, 0.35
