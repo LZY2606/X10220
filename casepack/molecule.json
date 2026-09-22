@@ -1,0 +1,25 @@
+{
+  "compound": "p-xylene (1,4-dimethylbenzene)",
+  "sites": [
+    {"site": "C1", "nucleus": "13C", "pred_ppm": 134.5, "symmetry_group": "gCq", "x": 0.0, "y": 1.0},
+    {"site": "C4", "nucleus": "13C", "pred_ppm": 134.5, "symmetry_group": "gCq", "x": 0.0, "y": -1.0},
+    {"site": "C2", "nucleus": "13C", "pred_ppm": 129.0, "symmetry_group": "gCH", "x": 0.866, "y": 0.5},
+    {"site": "C3", "nucleus": "13C", "pred_ppm": 129.0, "symmetry_group": "gCH", "x": 0.866, "y": -0.5},
+    {"site": "C5", "nucleus": "13C", "pred_ppm": 129.0, "symmetry_group": "gCH", "x": -0.866, "y": -0.5},
+    {"site": "C6", "nucleus": "13C", "pred_ppm": 129.0, "symmetry_group": "gCH", "x": -0.866, "y": 0.5},
+    {"site": "C7", "nucleus": "13C", "pred_ppm": 21.0, "symmetry_group": "gMe", "x": 0.0, "y": 2.0},
+    {"site": "C8", "nucleus": "13C", "pred_ppm": 21.0, "symmetry_group": "gMe", "x": 0.0, "y": -2.0},
+    {"site": "H2", "nucleus": "1H", "pred_ppm": 7.05, "symmetry_group": "gHar", "x": 1.6, "y": 0.9},
+    {"site": "H3", "nucleus": "1H", "pred_ppm": 7.05, "symmetry_group": "gHar", "x": 1.6, "y": -0.9},
+    {"site": "H5", "nucleus": "1H", "pred_ppm": 7.05, "symmetry_group": "gHar", "x": -1.6, "y": -0.9},
+    {"site": "H6", "nucleus": "1H", "pred_ppm": 7.05, "symmetry_group": "gHar", "x": -1.6, "y": 0.9},
+    {"site": "H7", "nucleus": "1H", "pred_ppm": 2.30, "symmetry_group": "gMeH", "x": 0.75, "y": 2.15},
+    {"site": "H8", "nucleus": "1H", "pred_ppm": 2.30, "symmetry_group": "gMeH", "x": 0.75, "y": -2.15}
+  ],
+  "bonds": [
+    ["C1", "C2"], ["C2", "C3"], ["C3", "C4"], ["C4", "C5"], ["C5", "C6"], ["C6", "C1"],
+    ["C1", "C7"], ["C4", "C8"],
+    ["C2", "H2"], ["C3", "H3"], ["C5", "H5"], ["C6", "H6"],
+    ["C7", "H7"], ["C8", "H8"]
+  ]
+}

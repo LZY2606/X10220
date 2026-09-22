@@ -1,0 +1,4 @@
+peak_id,nucleus,shift,intensity,integral,multiplicity,overlap_group
+pkC1,13C,129.0 ppm,500,4,s,
+pkC2,13C,134.5 ppm,300,2,s,
+pkC3,13C,21.0 ppm,450,2,s,

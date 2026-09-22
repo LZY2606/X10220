@@ -1,0 +1,6 @@
+{
+  "solvent": {"value": "CDCl3", "affects": ["1H", "13C"]},
+  "temperature": {"value": "25 °C", "affects": ["1H", "13C"]},
+  "reference": {"value": "TMS", "affects": ["1H", "13C"]},
+  "frequency": {"value": "400 MHz", "affects": ["1H", "13C"]}
+}

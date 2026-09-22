@@ -1,0 +1,4 @@
+peak_id,nucleus,shift,intensity,integral,multiplicity,overlap_group
+pkHov,1H,7.05 ppm,1750,overlap,m,ov1
+pkH3,1H,2.26 ppm,610,3,s,
+pkH4,1H,2.34 ppm,590,3,s,

@@ -1,0 +1,32 @@
+{
+  "archive": "NMR 共振经纬：化学位移、耦合候选与归属证据室 — 反例档案",
+  "judgments": [
+    {"scenario": "baseline-preserved",
+     "basis": "化学位移、峰强、积分、多重性、COSY/HSQC/HMBC 相关边、溶剂与仪器频率都按原文件和版本保留；原始输入不可覆盖，修订以新版本加父版本关系表达",
+     "outcome": "baseline-v1-intact"},
+    {"scenario": "missing-correlation-edges",
+     "basis": "缺失相关边只削弱证据分，不消除候选；耦合网络只用作证据",
+     "outcome": "candidates-retained-with-less-evidence"},
+    {"scenario": "shift-bias-local-invalidation",
+     "basis": "化学位移整体偏置只使依赖该文档的候选过期，其余候选保持当前",
+     "outcome": "only-13c-candidates-stale"},
+    {"scenario": "conditions-scoped-expiry",
+     "basis": "溶剂、温度或参考标准变更时只使相关候选过期，旧决定仍可重放",
+     "outcome": "only-affected-nuclei-stale"},
+    {"scenario": "overlap-no-forced-unique",
+     "basis": "重叠峰和缺峰不能被强制唯一匹配；接受重叠候选时保留全部合法候选",
+     "outcome": "non-unique-accept-alternatives-retained"},
+    {"scenario": "tie-retained",
+     "basis": "并列最优候选全部保留，不自动选择",
+     "outcome": "tie-candidates-kept"},
+    {"scenario": "symmetric-atoms",
+     "basis": "对称原子上的归属传播到对称组，不视为唯一决定",
+     "outcome": "symmetric-impact-recorded"},
+    {"scenario": "editor-conflict",
+     "basis": "两个编辑者冲突写入历史，解决与撤销同样是事件",
+     "outcome": "conflict-detected-and-resolved"},
+    {"scenario": "missing-peak-not-forced",
+     "basis": "容差收紧后无候选的核保持未知状态，不被强制匹配",
+     "outcome": "unknown-state-recorded"}
+  ]
+}

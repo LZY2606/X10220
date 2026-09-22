@@ -1,0 +1,5 @@
+edge_id,kind,peak_a,peak_b
+hm1,HMBC,pkH2,pkC2
+hm2,HMBC,pkH2,pkC1
+hm3,HMBC,pkH1,pkC2
+hm4,HMBC,pkH1,pkC3
