@@ -1,0 +1,13 @@
+{
+  "format":"nmr-1d/v1",
+  "nucleus":"1H",
+  "frequency":{"raw":"400.13","unit":"MHz"},
+  "conditions":{"solvent":{"name":"CDCl3","raw_representation":"CDCl3, 0.05% TMS"},"temperature":{"raw":"298","unit":"K"},"reference":{"name":"TMS","shift":{"raw":"0","unit":"ppm"}}},
+  "peaks":[
+    {"id":"pk_h_ar26","shift":{"raw":"7.20","unit":"ppm"},"intensity":{"raw":"0.82","unit":"rel"},"integral":{"raw":"2","unit":"H"},"multiplicity":{"code":"d","raw_text":"d, J≈8 Hz"},"overlaps_with":["pk_h_ar35"],"notes":"low-resolution accidental overlap declared in the laboratory peak list"},
+    {"id":"pk_h_ar35","shift":{"raw":"7.18","unit":"ppm"},"intensity":{"raw":"0.76","unit":"rel"},"integral":{"raw":"2","unit":"H"},"multiplicity":{"code":"d","raw_text":"d, J≈8 Hz"},"overlaps_with":["pk_h_ar26"]},
+    {"id":"pk_h_ch2","shift":{"raw":"2.68","unit":"ppm"},"intensity":{"raw":"0.64","unit":"rel"},"integral":{"raw":"2","unit":"H"},"multiplicity":"q"},
+    {"id":"pk_h_ch3","shift":{"raw":"1.31","unit":"ppm"},"intensity":{"raw":"1.00","unit":"rel"},"integral":{"raw":"3","unit":"H"},"multiplicity":"t"},
+    {"id":"pk_h_bad_intensity","shift":{"raw":"8.10","unit":"ppm"},"intensity":{"raw":"strong","unit":"rel"},"integral":{"raw":"unknown","unit":"H"},"multiplicity":"br s","notes":"unconverted quantities are retained with diagnostics"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "format":"nmr-2d/v1",
+  "experiment":"HSQC",
+  "nuclei":["1H","13C"],
+  "frequency_1":{"raw":"400.13","unit":"MHz"},
+  "frequency_2":{"raw":"100.62","unit":"MHz"},
+  "conditions":{"solvent":{"name":"CDCl3"},"temperature":{"raw":"298","unit":"K"},"reference":{"name":"TMS"}},
+  "correlations":[
+    {"id":"hsqc_ortho","from_peak":"pk_h_ar26","to_peak":"pk_c_ortho","coordinates":{"h_ppm":"7.20","c_ppm":"129.3"}},
+    {"id":"hsqc_meta","from_peak":"pk_h_ar35","to_peak":"pk_c_meta","coordinates":{"h_ppm":"7.18","c_ppm":"115.2"}},
+    {"id":"hsqc_ch2","from_peak":"pk_h_ch2","to_peak":"pk_c_ch2","coordinates":{"h_ppm":"2.68","c_ppm":"28.1"}},
+    {"id":"hsqc_ch3","from_peak":"pk_h_ch3","to_peak":"pk_c_ch3","coordinates":{"h_ppm":"1.31","c_ppm":"15.5"}}
+  ]
+}

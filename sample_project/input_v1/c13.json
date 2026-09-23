@@ -1,0 +1,14 @@
+{
+  "format":"nmr-1d/v1",
+  "nucleus":"13C",
+  "frequency":{"raw":"100.62","unit":"MHz"},
+  "conditions":{"solvent":{"name":"CDCl3","raw_representation":"CDCl3, 0.05% TMS"},"temperature":{"raw":"298","unit":"K"},"reference":{"name":"TMS","shift":{"raw":"0","unit":"ppm"}}},
+  "peaks":[
+    {"id":"pk_c_oh","shift":{"raw":"154.0","unit":"ppm"},"intensity":{"raw":"0.18","unit":"rel"}},
+    {"id":"pk_c_ortho","shift":{"raw":"129.3","unit":"ppm"},"intensity":{"raw":"0.46","unit":"rel"},"notes":"symmetric ortho pair C2/C6"},
+    {"id":"pk_c_meta","shift":{"raw":"115.2","unit":"ppm"},"intensity":{"raw":"0.52","unit":"rel"},"notes":"symmetric meta pair C3/C5"},
+    {"id":"pk_c_ipso","shift":{"raw":"136.5","unit":"ppm"},"intensity":{"raw":"0.12","unit":"rel"}},
+    {"id":"pk_c_ch2","shift":{"raw":"28.1","unit":"ppm"},"intensity":{"raw":"0.61","unit":"rel"}},
+    {"id":"pk_c_ch3","shift":{"raw":"15.5","unit":"ppm"},"intensity":{"raw":"0.70","unit":"rel"}}
+  ]
+}

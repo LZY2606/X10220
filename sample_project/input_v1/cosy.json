@@ -1,0 +1,10 @@
+{
+  "format":"nmr-2d/v1",
+  "experiment":"COSY",
+  "nuclei":["1H","1H"],
+  "frequency_1":{"raw":"400.13","unit":"MHz"},
+  "conditions":{"solvent":{"name":"CDCl3"},"temperature":{"raw":"298","unit":"K"},"reference":{"name":"TMS"}},
+  "correlations":[
+    {"id":"cosy_ethyl","from_peak":"pk_h_ch2","to_peak":"pk_h_ch3","strength":{"raw":"strong"},"coordinates":{"f2_ppm":"2.68","f1_ppm":"1.31"}}
+  ]
+}

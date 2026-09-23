@@ -1,0 +1,30 @@
+{
+  "format": "nmr-skeleton/v1",
+  "nuclei": [
+    {"id":"C1","label":"ipso-CH2CH3","element":"C","observed_nucleus":"13C","atom_class":"aromatic_quaternary","prior_shift":{"raw":"136.5","unit":"ppm"},"svg":{"x":210,"y":180}},
+    {"id":"C2","label":"ortho-2","element":"C","observed_nucleus":"13C","atom_class":"aromatic_ch","symmetry_group":"aryl_ortho_pair","prior_shift":{"raw":"129.3","unit":"ppm"},"svg":{"x":160,"y":150}},
+    {"id":"C3","label":"meta-3","element":"C","observed_nucleus":"13C","atom_class":"aromatic_ch","symmetry_group":"aryl_meta_pair","prior_shift":{"raw":"115.2","unit":"ppm"},"svg":{"x":160,"y":90}},
+    {"id":"C4","label":"ipso-OH","element":"C","observed_nucleus":"13C","atom_class":"aromatic_quaternary","prior_shift":{"raw":"154.0","unit":"ppm"},"svg":{"x":210,"y":60}},
+    {"id":"C5","label":"meta-5","element":"C","observed_nucleus":"13C","atom_class":"aromatic_ch","symmetry_group":"aryl_meta_pair","prior_shift":{"raw":"115.2","unit":"ppm"},"svg":{"x":260,"y":90}},
+    {"id":"C6","label":"ortho-6","element":"C","observed_nucleus":"13C","atom_class":"aromatic_ch","symmetry_group":"aryl_ortho_pair","prior_shift":{"raw":"129.3","unit":"ppm"},"svg":{"x":260,"y":150}},
+    {"id":"C7","label":"CH2","element":"C","observed_nucleus":"13C","atom_class":"methylene","prior_shift":{"raw":"28.1","unit":"ppm"},"svg":{"x":300,"y":220}},
+    {"id":"C8","label":"CH3","element":"C","observed_nucleus":"13C","atom_class":"methyl","prior_shift":{"raw":"15.5","unit":"ppm"},"svg":{"x":360,"y":260}},
+    {"id":"H_C2","label":"H-2","element":"H","observed_nucleus":"1H","atom_class":"aromatic_proton","symmetry_group":"aryl_ortho_pair","prior_shift":{"raw":"7.10","unit":"ppm"},"expected_multiplicity":"d","attached_to":"C2","svg":{"x":110,"y":150}},
+    {"id":"H_C3","label":"H-3","element":"H","observed_nucleus":"1H","atom_class":"aromatic_proton","symmetry_group":"aryl_meta_pair","prior_shift":{"raw":"7.08","unit":"ppm"},"expected_multiplicity":"d","attached_to":"C3","svg":{"x":110,"y":90}},
+    {"id":"H_C4","label":"H-OH","element":"H","observed_nucleus":"1H","atom_class":"exchangeable_proton","prior_shift":{"raw":"9.40","unit":"ppm"},"expected_multiplicity":"s","svg":{"x":210,"y":15}},
+    {"id":"H_C5","label":"H-5","element":"H","observed_nucleus":"1H","atom_class":"aromatic_proton","symmetry_group":"aryl_meta_pair","prior_shift":{"raw":"7.08","unit":"ppm"},"expected_multiplicity":"d","attached_to":"C5","svg":{"x":310,"y":90}},
+    {"id":"H_C6","label":"H-6","element":"H","observed_nucleus":"1H","atom_class":"aromatic_proton","symmetry_group":"aryl_ortho_pair","prior_shift":{"raw":"7.10","unit":"ppm"},"expected_multiplicity":"d","attached_to":"C6","svg":{"x":310,"y":150}},
+    {"id":"H_C7","label":"H2-7","element":"H","observed_nucleus":"1H","atom_class":"methylene_proton","prior_shift":{"raw":"2.58","unit":"ppm"},"expected_multiplicity":"q","attached_to":"C7","svg":{"x":300,"y":270}},
+    {"id":"H_C8","label":"H3-8","element":"H","observed_nucleus":"1H","atom_class":"methyl_proton","symmetry_group":"methyl_equivalence","prior_shift":{"raw":"1.21","unit":"ppm"},"expected_multiplicity":"t","attached_to":"C8","svg":{"x":410,"y":260}}
+  ],
+  "bonds": [
+    {"id":"b_C1_C2","from":"C1","to":"C2","order":2},{"id":"b_C2_C3","from":"C2","to":"C3","order":1},
+    {"id":"b_C3_C4","from":"C3","to":"C4","order":2},{"id":"b_C4_C5","from":"C4","to":"C5","order":1},
+    {"id":"b_C5_C6","from":"C5","to":"C6","order":2},{"id":"b_C6_C1","from":"C6","to":"C1","order":1},
+    {"id":"b_C1_C7","from":"C1","to":"C7","order":1},{"id":"b_C7_C8","from":"C7","to":"C8","order":1},
+    {"id":"b_C2_H2","from":"C2","to":"H_C2","order":1},{"id":"b_C3_H3","from":"C3","to":"H_C3","order":1},
+    {"id":"b_C4_HOH","from":"C4","to":"H_C4","order":1},{"id":"b_C5_H5","from":"C5","to":"H_C5","order":1},
+    {"id":"b_C6_H6","from":"C6","to":"H_C6","order":1},{"id":"b_C7_H7","from":"C7","to":"H_C7","order":1},
+    {"id":"b_C8_H8","from":"C8","to":"H_C8","order":1}
+  ]
+}
