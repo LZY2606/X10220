@@ -1,0 +1,2 @@
+"""NMR resonance attribution workbench."""
+
