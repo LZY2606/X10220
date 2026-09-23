@@ -1,0 +1,18 @@
+{
+  "case_id": "nmr-resonance-evidence-room",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "molecule": "3,5-dihydroxypentan-2-one (offline teaching bundle)",
+  "documents": [
+    {"id": "baseline-spectra", "file": "baseline_spectra.json", "description": "initial immutable 1D/2D peak-list source"},
+    {"id": "local-hmbc-patch", "file": "local_hmbc_patch.json", "description": "one direct-source revision adding the initially missing H3-C1 HMBC edge"}
+  ],
+  "scenarios": [
+    "overlapped OH3/H3 resonances",
+    "symmetric methyl and methylene nuclei",
+    "missing HSQC, COSY and HMBC evidence treated only as non-rejecting evidence",
+    "global 1H and 13C chemical-shift bias",
+    "p-H3 tied alternative peak picks",
+    "two-editor candidate conflict resolved in a review branch"
+  ],
+  "fixed_seed": 20260923
+}

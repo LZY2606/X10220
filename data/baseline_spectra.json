@@ -1,0 +1,53 @@
+{
+  "schema": "nmr-peak-list/1.0",
+  "records": [
+    {"record_type": "condition", "id": "cond-1h", "isotope_or_nucleus": "1H", "isotopes": ["1H"], "solvent": "CDCl3", "temperature": 298, "spectrometer_frequency": "400.13 MHz", "reference_standard": "TMS 0.00 ppm"},
+    {"record_type": "condition", "id": "cond-13c", "isotope_or_nucleus": "13C", "isotopes": ["13C"], "solvent": "CDCl3", "temperature": 298, "spectrometer_frequency": "100.62 MHz", "reference_standard": "TMS 0.00 ppm"},
+
+    {"record_type": "peak", "id": "p-H1", "isotope_or_nucleus": "1H", "shift": "2.23 ppm", "intensity": 0.91, "integration": 3, "multiplicity": "s", "condition_id": "cond-1h", "overlap_group": null},
+    {"record_type": "peak", "id": "p-H3", "isotope_or_nucleus": "1H", "shift": "4.33 ppm", "intensity": 0.68, "integration": 2, "multiplicity": "m", "condition_id": "cond-1h", "overlap_group": "ovp-H3-OH3"},
+    {"record_type": "peak", "id": "p-H3a", "isotope_or_nucleus": "1H", "shift": "4.33 ppm", "intensity": 0.23, "integration": 2, "multiplicity": "m", "condition_id": "cond-1h", "overlap_group": "tie-duplicate-pick"},
+    {"record_type": "peak", "id": "p-H4", "isotope_or_nucleus": "1H", "shift": "1.88 ppm", "intensity": 0.52, "integration": 2, "multiplicity": "m", "condition_id": "cond-1h"},
+    {"record_type": "peak", "id": "p-H5", "isotope_or_nucleus": "1H", "shift": "3.82 ppm", "intensity": 0.61, "integration": 2, "multiplicity": "t", "condition_id": "cond-1h"},
+
+    {"record_type": "peak", "id": "p-C1", "isotope_or_nucleus": "13C", "shift": "207.1 ppm", "intensity": 0.42, "condition_id": "cond-13c"},
+    {"record_type": "peak", "id": "p-C2", "isotope_or_nucleus": "13C", "shift": "30.4 ppm", "intensity": 0.78, "condition_id": "cond-13c"},
+    {"record_type": "peak", "id": "p-C3", "isotope_or_nucleus": "13C", "shift": "69.0 ppm", "intensity": 0.54, "condition_id": "cond-13c"},
+    {"record_type": "peak", "id": "p-C4", "isotope_or_nucleus": "13C", "shift": "38.1 ppm", "intensity": 0.50, "condition_id": "cond-13c"},
+    {"record_type": "peak", "id": "p-C5", "isotope_or_nucleus": "13C", "shift": "60.7 ppm", "intensity": 0.63, "condition_id": "cond-13c"},
+
+    {"record_type": "edge", "id": "e-hsqc-H1-C2", "isotope_or_nucleus": "2D", "edge_type": "HSQC", "from_peak": "p-H1", "to_peak": "p-C2", "strength": 0.95, "condition_id": "cond-1h", "raw": "HSQC cross peak; ppm/ppm axes"},
+    {"record_type": "edge", "id": "e-hsqc-H4-C4", "isotope_or_nucleus": "2D", "edge_type": "HSQC", "from_peak": "p-H4", "to_peak": "p-C4", "strength": 0.79, "condition_id": "cond-1h", "raw": "HSQC cross peak; ppm/ppm axes"},
+    {"record_type": "edge", "id": "e-hsqc-H5-C5", "isotope_or_nucleus": "2D", "edge_type": "HSQC", "from_peak": "p-H5", "to_peak": "p-C5", "strength": 0.86, "condition_id": "cond-1h", "raw": "HSQC cross peak; ppm/ppm axes"},
+
+    {"record_type": "edge", "id": "e-cosy-H3-H4", "isotope_or_nucleus": "2D", "edge_type": "COSY", "from_peak": "p-H3", "to_peak": "p-H4", "strength": 0.82, "condition_id": "cond-1h", "raw": "COSY scalar-correlation evidence"},
+
+    {"record_type": "edge", "id": "e-hmbc-H1-C1", "isotope_or_nucleus": "2D", "edge_type": "HMBC", "from_peak": "p-H1", "to_peak": "p-C1", "strength": 0.72, "condition_id": "cond-1h", "raw": "HMBC long-range evidence"},
+    {"record_type": "edge", "id": "e-hmbc-H4-C3", "isotope_or_nucleus": "2D", "edge_type": "HMBC", "from_peak": "p-H4", "to_peak": "p-C3", "strength": 0.61, "condition_id": "cond-1h", "raw": "HMBC long-range evidence"},
+    {"record_type": "edge", "id": "e-hmbc-H4-C5", "isotope_or_nucleus": "2D", "edge_type": "HMBC", "from_peak": "p-H4", "to_peak": "p-C5", "strength": 0.58, "condition_id": "cond-1h", "raw": "HMBC long-range evidence"},
+    {"record_type": "edge", "id": "e-hmbc-H5-C3", "isotope_or_nucleus": "2D", "edge_type": "HMBC", "from_peak": "p-H5", "to_peak": "p-C3", "strength": 0.55, "condition_id": "cond-1h", "raw": "HMBC long-range evidence"},
+
+    {"record_type": "nucleus", "id": "H1a", "isotope_or_nucleus": "1H", "label": "CH3-C(=O) H a", "predicted_shift": "2.05 ppm", "attached_carbon": "C2", "equivalence_group": "H1", "group_size": 3, "x": 45, "y": 70},
+    {"record_type": "nucleus", "id": "H1b", "isotope_or_nucleus": "1H", "label": "CH3-C(=O) H b", "predicted_shift": "2.05 ppm", "attached_carbon": "C2", "equivalence_group": "H1", "group_size": 3, "x": 45, "y": 88},
+    {"record_type": "nucleus", "id": "H1c", "isotope_or_nucleus": "1H", "label": "CH3-C(=O) H c", "predicted_shift": "2.05 ppm", "attached_carbon": "C2", "equivalence_group": "H1", "group_size": 3, "x": 30, "y": 79},
+    {"record_type": "nucleus", "id": "H3a", "isotope_or_nucleus": "1H", "label": "CHOH Ha", "predicted_shift": "4.15 ppm", "attached_carbon": "C3", "equivalence_group": "H3", "group_size": 1, "x": 145, "y": 82},
+    {"record_type": "nucleus", "id": "H3b", "isotope_or_nucleus": "1H", "label": "CHOH Hb", "predicted_shift": "4.15 ppm", "attached_carbon": "C3", "equivalence_group": "H3", "group_size": 1, "x": 160, "y": 96},
+    {"record_type": "nucleus", "id": "OH3", "isotope_or_nucleus": "1H", "label": "C3 exchangeable OH", "predicted_shift": "4.15 ppm", "attached_carbon": "C3", "equivalence_group": "OH3", "group_size": 1, "x": 170, "y": 66},
+    {"record_type": "nucleus", "id": "H4a", "isotope_or_nucleus": "1H", "label": "CH2 Ha", "predicted_shift": "1.70 ppm", "attached_carbon": "C4", "equivalence_group": "H4", "group_size": 1, "x": 245, "y": 92},
+    {"record_type": "nucleus", "id": "H4b", "isotope_or_nucleus": "1H", "label": "CH2 Hb", "predicted_shift": "1.70 ppm", "attached_carbon": "C4", "equivalence_group": "H4", "group_size": 1, "x": 260, "y": 106},
+    {"record_type": "nucleus", "id": "H5a", "isotope_or_nucleus": "1H", "label": "CH2OH Ha", "predicted_shift": "3.64 ppm", "attached_carbon": "C5", "equivalence_group": "H5", "group_size": 1, "x": 345, "y": 82},
+    {"record_type": "nucleus", "id": "H5b", "isotope_or_nucleus": "1H", "label": "CH2OH Hb", "predicted_shift": "3.64 ppm", "attached_carbon": "C5", "equivalence_group": "H5", "group_size": 1, "x": 360, "y": 96},
+    {"record_type": "nucleus", "id": "OH5", "isotope_or_nucleus": "1H", "label": "terminal exchangeable OH; expected peak missing through exchange", "predicted_shift": "2.50 ppm", "attached_carbon": "C5", "equivalence_group": "OH5", "group_size": 1, "x": 375, "y": 62},
+
+    {"record_type": "nucleus", "id": "C1", "isotope_or_nucleus": "13C", "label": "C=O", "predicted_shift": "206.6 ppm", "equivalence_group": "C1", "x": 105, "y": 35},
+    {"record_type": "nucleus", "id": "C2", "isotope_or_nucleus": "13C", "label": "acetyl CH3 carbon", "predicted_shift": "29.9 ppm", "equivalence_group": "C2", "x": 55, "y": 42},
+    {"record_type": "nucleus", "id": "C3", "isotope_or_nucleus": "13C", "label": "CHOH carbon", "predicted_shift": "68.5 ppm", "equivalence_group": "C3", "x": 155, "y": 42},
+    {"record_type": "nucleus", "id": "C4", "isotope_or_nucleus": "13C", "label": "middle CH2 carbon", "predicted_shift": "37.6 ppm", "equivalence_group": "C4", "x": 255, "y": 42},
+    {"record_type": "nucleus", "id": "C5", "isotope_or_nucleus": "13C", "label": "CH2OH carbon", "predicted_shift": "60.2 ppm", "equivalence_group": "C5", "x": 355, "y": 42},
+
+    {"record_type": "bond", "id": "b-C1-C2", "isotope_or_nucleus": "skeleton", "bonded_to": "C2"},
+    {"record_type": "bond", "id": "b-C1-C3", "isotope_or_nucleus": "skeleton", "bonded_to": "C3"},
+    {"record_type": "bond", "id": "b-C3-C4", "isotope_or_nucleus": "skeleton", "bonded_to": "C4"},
+    {"record_type": "bond", "id": "b-C4-C5", "isotope_or_nucleus": "skeleton", "bonded_to": "C5"}
+  ]
+}

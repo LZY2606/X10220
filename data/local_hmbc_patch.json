@@ -1,0 +1,6 @@
+{
+  "schema": "nmr-peak-list/1.0",
+  "records": [
+    {"record_type": "edge", "id": "e-hmbc-H3-C1-local", "isotope_or_nucleus": "2D", "edge_type": "HMBC", "from_peak": "p-H3", "to_peak": "p-C1", "strength": 0.63, "condition_id": "cond-1h", "raw": "locally re-read HMBC long-range evidence; ppm/ppm axes"}
+  ]
+}
