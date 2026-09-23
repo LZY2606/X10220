@@ -1,0 +1,19 @@
+{
+  "name": "editor_conflict",
+  "title": "两个编辑者冲突全程留痕并可解决",
+  "description": "只改动一个直接来源：两次互相冲突的人工决定。editor-A 确认 H2->pk-H2，editor-B 否定同一候选；冲突必须被记录为机器可读事件，解决与撤销都写入历史。",
+  "steps": [
+    {"op": "decide", "atom_id": "H2", "peak_key": "pk-H2", "verdict": "confirmed", "actor": "editor-A"},
+    {"op": "decide", "atom_id": "H2", "peak_key": "pk-H2", "verdict": "rejected", "actor": "editor-B"},
+    {"op": "resolve", "atom_id": "H2", "peak_key": "pk-H2", "chosen_verdict": "confirmed", "actor": "editor-A",
+     "note": "COSY/HSQC 证据完整，采纳 editor-A 的确认"}
+  ],
+  "expectations": [
+    {"assert": "conflict_recorded", "atom_id": "H2", "peak_key": "pk-H2",
+     "basis": "两位编辑者的相反决定都保留在历史中"},
+    {"assert": "conflict_resolved", "atom_id": "H2", "peak_key": "pk-H2", "chosen_verdict": "confirmed",
+     "basis": "解决事件写入历史，最终状态为 confirmed"},
+    {"assert": "status", "atom_id": "H2", "peak_key": "pk-H2", "status": "confirmed",
+     "basis": "解决后候选状态为 confirmed"}
+  ]
+}

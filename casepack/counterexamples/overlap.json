@@ -1,0 +1,22 @@
+{
+  "name": "overlap",
+  "title": "重叠峰不能被强制唯一匹配",
+  "description": "只改动一个直接来源：peaks-1h 新增与 pk-H6 相距 0.01 ppm 的重叠峰 pk-Hov。重叠组内候选必须全部保留且标记 overlap，确认其一不得排挤其它合法候选。",
+  "steps": [
+    {"op": "revise_input", "kind": "peaks-1h", "patch": {"add_peaks": [
+      {"peak_key": "pk-Hov", "nucleus": "1H", "shift_raw": "0.92", "intensity_raw": "0.30", "integration_raw": "1.0", "multiplicity": "s"}
+    ]}},
+    {"op": "compute"},
+    {"op": "decide", "atom_id": "H6", "peak_key": "pk-H6", "verdict": "confirmed", "actor": "reviewer-A"}
+  ],
+  "expectations": [
+    {"assert": "flag_present", "atom_id": "H6", "peak_key": "pk-H6", "flag": "overlap",
+     "basis": "pk-H6 与 pk-Hov 相距 0.01 ppm < 重叠容差 0.02 ppm"},
+    {"assert": "status", "atom_id": "H7", "peak_key": "pk-Hov", "status": "pending",
+     "basis": "重叠峰未被强制唯一匹配，H7 对 pk-Hov 的合法候选保留"},
+    {"assert": "status", "atom_id": "H7", "peak_key": "pk-H6", "status": "pending",
+     "basis": "对称甲基共享同一峰，确认 H6->pk-H6 不得排挤 H7->pk-H6"},
+    {"assert": "not_displaced_by", "atom_id": "H6", "peak_key": "pk-Hov", "by_seq_of": "confirmed",
+     "basis": "重叠组内另一候选只能保留，不得被确认动作自动否定"}
+  ]
+}

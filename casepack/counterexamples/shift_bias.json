@@ -1,0 +1,19 @@
+{
+  "name": "shift_bias",
+  "title": "化学位移整体偏置只使相关候选过期",
+  "description": "只改动一个直接来源：参考标准变更（TMS -> 未校准参考）并给出 13C 整体 +0.5 ppm 偏置的新版本。只有 13C 候选过期；1H 候选保持当前；旧决定仍可重放。",
+  "steps": [
+    {"op": "decide", "atom_id": "H4", "peak_key": "pk-H4", "verdict": "confirmed", "actor": "reviewer-A"},
+    {"op": "context", "context": {"reference": "uncalibrated-TMS"}, "affected_nuclei": ["13C"],
+     "reason": "参考标准变更，13C 化学位移整体偏置 +0.5 ppm"},
+    {"op": "revise_input", "kind": "peaks-13c", "patch": {"shift_ppm": {"nucleus": "13C", "delta": 0.5}}}
+  ],
+  "expectations": [
+    {"assert": "status", "atom_id": "C2", "peak_key": "pk-C2", "status": "stale",
+     "basis": "13C 候选因参考标准变更过期，但旧状态仍可查看"},
+    {"assert": "status", "atom_id": "H4", "peak_key": "pk-H4", "status": "confirmed",
+     "basis": "1H 候选不受 13C 偏置影响，旧决定保持有效"},
+    {"assert": "replayable", "atom_id": "H4", "peak_key": "pk-H4",
+     "basis": "回到偏置前的事件时，可见结论恢复为当时状态"}
+  ]
+}

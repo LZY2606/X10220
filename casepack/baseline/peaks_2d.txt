@@ -1,0 +1,15 @@
+# 2D 相关边 — COSY / HSQC / HMBC, 引用 1H 与 13C 文件中的峰键
+edge,COSY,pk-H2,pk-H3
+edge,COSY,pk-H4,pk-H5
+edge,COSY,pk-H5,pk-H6
+edge,HSQC,pk-H2,pk-C2
+edge,HSQC,pk-H3,pk-C3
+edge,HSQC,pk-H4,pk-C4
+edge,HSQC,pk-H5,pk-C5
+edge,HSQC,pk-H6,pk-C6
+edge,HMBC,pk-H2,pk-C1
+edge,HMBC,pk-H3,pk-C1
+edge,HMBC,pk-H4,pk-C1
+edge,HMBC,pk-H5,pk-C4
+edge,HMBC,pk-H6,pk-C4
+edge,HMBC,pk-H6,pk-C5

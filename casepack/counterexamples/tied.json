@@ -1,0 +1,22 @@
+{
+  "name": "tied",
+  "title": "并列最优候选全部保留",
+  "description": "只改动一个直接来源：peaks-13c 用等距双峰 pk-C2a/pk-C2b(27.7/27.9) 替换 pk-C2(27.8)。两者得分完全一致，系统必须并列保留且标记 tied，不得任选其一。",
+  "steps": [
+    {"op": "revise_input", "kind": "peaks-13c", "patch": {
+      "remove_peaks": ["pk-C2"],
+      "add_peaks": [
+        {"peak_key": "pk-C2a", "nucleus": "13C", "shift_raw": "27.7", "intensity_raw": "0.30", "integration_raw": "", "multiplicity": ""},
+        {"peak_key": "pk-C2b", "nucleus": "13C", "shift_raw": "27.9", "intensity_raw": "0.31", "integration_raw": "", "multiplicity": ""}
+      ]}},
+    {"op": "compute"}
+  ],
+  "expectations": [
+    {"assert": "tied", "atom_id": "C2", "count": 2,
+     "basis": "pk-C2a 与 pk-C2b 对 C2 的得分相同，并列最优全部保留"},
+    {"assert": "flag_present", "atom_id": "C2", "peak_key": "pk-C2a", "flag": "tied",
+     "basis": "并列候选必须带 tied 标记"},
+    {"assert": "diagnostic_present", "kind": "peaks-2d",
+     "basis": "HSQC 边 pk-H2->pk-C2 成为悬空引用，保留在原位置并附诊断"}
+  ]
+}

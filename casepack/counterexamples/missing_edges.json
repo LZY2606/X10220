@@ -1,0 +1,20 @@
+{
+  "name": "missing_edges",
+  "title": "缺失相关边只削弱证据，不构成拒绝",
+  "description": "只改动一个直接来源：peaks-2d 移除 HMBC 边 pk-H2->pk-C1 与 pk-H3->pk-C1。耦合网络只用作证据：相关候选得分下降、证据缺口被记录，但候选保留且不得被标记为拒绝。",
+  "steps": [
+    {"op": "revise_input", "kind": "peaks-2d", "patch": {"remove_edges": [
+      {"edge_type": "HMBC", "a_key": "pk-H2", "b_key": "pk-C1"},
+      {"edge_type": "HMBC", "a_key": "pk-H3", "b_key": "pk-C1"}
+    ]}},
+    {"op": "compute"}
+  ],
+  "expectations": [
+    {"assert": "status", "atom_id": "H2", "peak_key": "pk-H2", "status": "pending",
+     "basis": "缺失 HMBC 边仅降低证据项，候选不得被拒绝"},
+    {"assert": "status", "atom_id": "C1", "peak_key": "pk-C1", "status": "pending",
+     "basis": "C1 的 HMBC 证据缺口记录为 evidence gap，候选保留"},
+    {"assert": "evidence_gap", "atom_id": "H2", "peak_key": "pk-H2",
+     "basis": "评分理由中必须出现 evidence gap 记录"}
+  ]
+}

@@ -1,0 +1,7 @@
+# 13C NMR peak list — 同一化合物分析, CDCl3, 100.6 MHz(由 400.13 MHz 仪器导出), TMS
+peak,13C,pk-C1,173.8,0.35,,
+peak,13C,pk-C4,64.1,0.62,,
+peak,13C,pk-C2,27.8,0.55,,
+peak,13C,pk-C5,25.6,0.50,,
+peak,13C,pk-C6,19.1,0.90,,
+peak,13C,pk-C3,9.2,0.48,,

@@ -1,0 +1,16 @@
+{
+  "name": "symmetric",
+  "title": "对称原子共享候选，不得强行区分",
+  "description": "只改动一个直接来源：一次人工确认 C6->pk-C6。对称组 G1 的 C7 对同一峰 pk-C6 的候选必须保持合法，传播影响中标记为 kept。",
+  "steps": [
+    {"op": "decide", "atom_id": "C6", "peak_key": "pk-C6", "verdict": "confirmed", "actor": "reviewer-A"}
+  ],
+  "expectations": [
+    {"assert": "status", "atom_id": "C6", "peak_key": "pk-C6", "status": "confirmed",
+     "basis": "人工确认生效"},
+    {"assert": "status", "atom_id": "C7", "peak_key": "pk-C6", "status": "pending",
+     "basis": "对称原子 C7 与 C6 共享 19.1 ppm 峰，合法候选保留"},
+    {"assert": "impact_kept", "atom_id": "C7", "peak_key": "pk-C6",
+     "basis": "传播影响读数中该候选的 effect 为 kept，理由为 symmetric"}
+  ]
+}

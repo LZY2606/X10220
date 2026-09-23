@@ -1,0 +1,11 @@
+# 1H NMR peak list — 丙酸异丁酯, CDCl3, 400.13 MHz, 298 K, TMS 内标
+# 原始表示按原文件保留：化学位移 ppm、峰强(相对)、积分(H 数)、多重性
+context,solvent,CDCl3
+context,instrument_mhz,400.13
+context,temperature_K,298
+context,reference,TMS
+peak,1H,pk-H4,3.85,0.78,2.0,d
+peak,1H,pk-H2,2.30,0.81,2.0,q
+peak,1H,pk-H5,1.95,0.42,1.0,m
+peak,1H,pk-H3,1.10,0.95,3.0,t
+peak,1H,pk-H6,0.91,1.00,6.0,d
