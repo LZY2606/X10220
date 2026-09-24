@@ -1,0 +1,12 @@
+!nmrlite 1
+!kind peaklist-1h
+!solvent CDCl3
+!frequency_mhz 400.13
+!reference TMS
+# 1H 峰表 v2：重新定标后整体偏置 +0.05 ppm（其余不变）
+H01 8.00 0.95 2.0 d
+H02 6.89 0.61 1.0 d
+H03 6.91 0.63 1.0 d
+H04 3.91 1.00 3.0 s
+H05 3.99 1.00 3.0 s
+H06 5.65 0.22 1.0 s
