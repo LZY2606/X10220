@@ -1,0 +1,4 @@
+"""NMR 共振经纬：化学位移、耦合候选与归属证据室。"""
+
+__version__ = "1.0.0"
+ALGORITHM_VERSION = "erw-assign-1.0.0"
