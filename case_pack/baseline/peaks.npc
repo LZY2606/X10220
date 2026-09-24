@@ -1,0 +1,23 @@
+# NMR-WORKBENCH 1D peak list - baseline v1
+# Compound: ethyl 2,2-dimethyl-3-oxobutanoate (training compound "ester-X")
+# One row = one reported line in the spectrum. Overlapping resonances stay on
+# one row; the integration is the *combined* proton count of the overlap.
+NMR-WORKBENCH peaks1d v1
+[1H]
+@	nucleus	shift	intensity	integration	multiplicity	reference	annotation
+	1H	1.28 ppm	1.00 rel	9H	t	TMS	OVERLAP: G2 methyls (6H s) coincide with ethyl CH3 H6 (3H t)
+	1H	1.20 ppm	0.62 rel	3H	s	TMS	acetyl methyl H4 (C4 methyl protons)
+	1H	2.55 ppm	0.31 rel	2H	s	TMS	diastereotopic CH2 H2a/H2b; geminal COSY self-coupling unresolved
+	1H	3.71 ppm	0.18 rel	1H	s	TMS	stray line with no skeletal nucleus (UNKNOWN candidate)
+	1H	4.18 ppm	0.34 rel	2H	q	TMS	ethyl OCH2 H5a/H5b
+	1H	7.26 ppm	0.05 rel	1H	s	TMS	residual CHCl3 solvent peak, not compound
+[13C]
+@	nucleus	shift	intensity	integration	multiplicity	reference	annotation
+	13C	14.3 ppm	0.40 rel	1C	s	TMS	ethyl CH3 C6
+	13C	23.4 ppm	0.45 rel	1C	s	TMS	G2 equivalent methyl carbons C8/C9 (one line, two carbons)
+	13C	24.9 ppm	0.55 rel	1C	s	TMS	acetyl methyl C4
+	13C	27.2 ppm	0.07 rel	1C	s	TMS	weak unassigned carbon line (impurity / rotamer)
+	13C	46.2 ppm	0.36 rel	1C	s	TMS	methylene C2
+	13C	60.9 ppm	0.44 rel	1C	s	TMS	ethyl OCH2 C5
+	13C	207.3 ppm	0.28 rel	1C	s	TMS	ketone carbonyl C3
+	13C	172.1 ppm	0.30 rel	1C	s	TMS	ester carbonyl C1

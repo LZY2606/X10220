@@ -1,0 +1,24 @@
+# NMR-WORKBENCH 2D correlation edge list - baseline v1
+# f1 = direct (1H) dimension ppm, f2 = indirect dimension ppm.
+# Deliberately missing edges are catalogued in case_pack/README.md:
+#   * HSQC  H4 -> C4 is absent (the diagnostic "missing edge")
+#   * HMBC  H4 -> C1 (4J) is not observed (weak long-range, absent on purpose)
+#   * COSY  H2a <-> H2b geminal cross peak unresolved (one overlapped line)
+NMR-WORKBENCH edges2d v1
+[COSY]
+@	experiment	shift_f1	shift_f2	intensity	reference	annotation
+	COSY	1.28 ppm	4.18 ppm	0.44 rel	TMS	ethyl CH3 H6 <-> OCH2 H5
+[HSQC]
+@	experiment	shift_f1	shift_f2	intensity	reference	annotation
+	HSQC	1.28 ppm	14.3 ppm	0.50 rel	TMS	ethyl CH3 -> C6 (shares overlapped f1 line)
+	HSQC	1.28 ppm	23.4 ppm	0.48 rel	TMS	G2 methyls -> equivalent C8/C9 (shares overlapped f1 line)
+	HSQC	2.55 ppm	46.2 ppm	0.35 rel	TMS	CH2 H2a/H2b -> C2
+	HSQC	4.18 ppm	60.9 ppm	0.41 rel	TMS	OCH2 H5a/H5b -> C5
+[HMBC]
+@	experiment	shift_f1	shift_f2	intensity	reference	annotation
+	HMBC	1.28 ppm	46.2 ppm	0.22 rel	TMS	G2 methyls -> quaternary C2 (2J)
+	HMBC	1.28 ppm	172.1 ppm	0.18 rel	TMS	G2 methyls -> ester C=O C1 (3J)
+	HMBC	1.20 ppm	207.3 ppm	0.25 rel	TMS	acetyl H4 -> ketone C3 (2J)
+	HMBC	2.55 ppm	207.3 ppm	0.16 rel	TMS	H2 -> ketone C3 (2J)
+	HMBC	2.55 ppm	172.1 ppm	0.15 rel	TMS	H2 -> ester C1 (2J)
+	HMBC	4.18 ppm	172.1 ppm	0.20 rel	TMS	OCH2 H5 -> ester C1 (3J via O)
