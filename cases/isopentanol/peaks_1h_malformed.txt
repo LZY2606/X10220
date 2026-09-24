@@ -1,0 +1,11 @@
+# NMR1D v1
+# nucleus=1H
+# solvent=CDCl3
+# frequency_MHz=400.0
+# reference=TMS
+# columns: shift_ppm intensity integral multiplicity
+# malformed sample: missing temperature header, one unconvertible shift, one bad column count
+0.919 1.00 6.02 d
+abc 0.35 2.01 m
+1.541 0.42
+3.611 0.55 1.98 t

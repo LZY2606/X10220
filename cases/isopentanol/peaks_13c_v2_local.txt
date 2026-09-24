@@ -1,0 +1,12 @@
+# NMR1D v1
+# nucleus=13C
+# solvent=CDCl3
+# temperature_K=298.0
+# frequency_MHz=100.6
+# reference=TMS
+# columns: shift_ppm intensity integral multiplicity
+# revision: only the S2 carbon peak moved (local source change)
+22.55 1.00 2.00 q
+25.35 0.60 1.00 d
+41.20 0.55 1.00 t
+60.85 0.70 1.00 t

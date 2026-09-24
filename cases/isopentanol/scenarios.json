@@ -1,0 +1,97 @@
+{
+  "case_id": "isopentanol",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "molecule": "3-methyl-1-butanol (isopentanol)",
+  "description": "结构化学小组把 1H/13C 一维 peak list 与 COSY/HSQC/HMBC 边合并到同一化合物，逐核建立可复核归属候选；随后触发六类边界条件并回放历史。",
+  "clock_epoch": "2026-09-24T00:00:00+09:00",
+  "seed": 20260924,
+  "baseline": {
+    "files": {
+      "structure": "structure_v1.nmrstruct",
+      "context": "context_v1.ctx",
+      "peaks_1h": "peaks_1h_v1.txt",
+      "peaks_13c": "peaks_13c_v1.txt",
+      "edges": "edges_v1.edges"
+    }
+  },
+  "mainline": [
+    {"op": "submit", "label": "基线导入", "files": ["structure_v1.nmrstruct", "context_v1.ctx", "peaks_1h_v1.txt", "peaks_13c_v1.txt", "edges_v1.edges"]},
+    {"op": "params", "label": "参数修订：放宽 1H 容差", "params": {"tol_1h_ppm": 0.08}},
+    {"op": "submit", "label": "局部源数据修订：仅 S2 的 1H 峰移动", "files": ["peaks_1h_v2_local.txt"]},
+    {"op": "submit", "label": "局部源数据修订：仅 S2 的 13C 峰移动", "files": ["peaks_13c_v2_local.txt"]},
+    {"op": "branch", "label": "编辑者 Bob 开分支", "branch": "bob-review", "from_tail": true},
+    {"op": "decide", "label": "Alice 在主线接受 S1/S2/S3 的 1H 归属", "branch": "main", "decisions": [
+      {"nucleus": "S1@1H", "peak": "3.611", "decision": "accept", "editor": "alice"},
+      {"nucleus": "S2@1H", "peak": "1.512", "decision": "accept", "editor": "alice"},
+      {"nucleus": "S3@1H", "peak": "1.541", "decision": "accept", "editor": "alice"}
+    ]},
+    {"op": "decide", "label": "Bob 在自己分支给出冲突归属", "branch": "bob-review", "decisions": [
+      {"nucleus": "S2@1H", "peak": "1.541", "decision": "accept", "editor": "bob"},
+      {"nucleus": "S3@1H", "peak": "1.512", "decision": "accept", "editor": "bob"}
+    ]},
+    {"op": "merge", "label": "合并 Bob 分支：检出冲突并按证据解决", "source": "bob-review", "target": "main", "resolution": {"S2@1H": "1.512", "S3@1H": "1.541"}},
+    {"op": "submit", "label": "参考标准变更：仅 1H 参考 TMS->DSS", "files": ["context_refchange.ctx"]},
+    {"op": "check", "label": "复核：1H 候选过期、13C 仍当前、旧决定可重放", "expect": {"stale_isotope": ["1H"], "fresh_isotope": ["13C"], "decisions_replayable": 6}}
+  ],
+  "counterexamples": [
+    {
+      "key": "overlap",
+      "title": "重叠峰不得被强制唯一匹配",
+      "changed_source": "peaks_1h",
+      "files": ["structure_v1.nmrstruct", "context_v1.ctx", "peaks_1h_overlap.txt", "peaks_13c_v1.txt", "edges_v1.edges"],
+      "params": {"tol_1h_ppm": 0.08},
+      "judgment": {"code": "OVERLAP_NOT_UNIQUE", "rule": "overlapping peaks MUST yield >=2 legal candidates; coupling network is evidence only", "expect": {"nuclei_ambiguous": ["S2@1H", "S3@1H"], "force_unique": false}}
+    },
+    {
+      "key": "symmetry",
+      "title": "对称原子：等价位点保留全部合法候选",
+      "changed_source": "structure",
+      "files": ["structure_sym.nmrstruct", "context_v1.ctx", "peaks_1h_v1.txt", "peaks_13c_v1.txt", "edges_v1.edges"],
+      "params": {"tol_1h_ppm": 0.08},
+      "judgment": {"code": "EQUIVALENT_SITES_AMBIGUOUS", "rule": "symmetry-equivalent nuclei cannot be uniquely distinguished; all legal mappings retained", "expect": {"equiv_group": "G1", "nuclei_ambiguous": ["S4@1H", "S5@1H"]}}
+    },
+    {
+      "key": "missing_edge",
+      "title": "缺失相关边：只作为证据缺口",
+      "changed_source": "edges",
+      "files": ["structure_v1.nmrstruct", "context_v1.ctx", "peaks_1h_v1.txt", "peaks_13c_v1.txt", "edges_missing.edges"],
+      "params": {"tol_1h_ppm": 0.08},
+      "judgment": {"code": "MISSING_EDGE_IS_EVIDENCE_ONLY", "rule": "an absent expected COSY edge downgrades evidence; it does not reject candidates or force uniqueness", "expect": {"missing_expected_edge": ["cosy:1.469:1.541"], "candidates_still_legal": true}}
+    },
+    {
+      "key": "shift_bias",
+      "title": "化学位移整体偏置",
+      "changed_source": "peaks_1h",
+      "files": ["structure_v1.nmrstruct", "context_v1.ctx", "peaks_1h_bias.txt", "peaks_13c_v1.txt", "edges_v1.edges"],
+      "params": {},
+      "judgment": {"code": "GLOBAL_SHIFT_BIAS", "rule": "a uniform +0.05 ppm bias is diagnosed, not silently absorbed; out-of-tolerance rows are rejected with reason and recover after parameter revision", "expect": {"bias_1h_ppm_min": 0.04, "rejected_reason": "SHIFT_OUT_OF_TOLERANCE", "recover_after_params": {"tol_1h_ppm": 0.08}}}
+    },
+    {
+      "key": "tied",
+      "title": "并列最优候选",
+      "changed_source": "peaks_1h",
+      "files": ["structure_v1.nmrstruct", "context_v1.ctx", "peaks_1h_tie.txt", "peaks_13c_v1.txt", "edges_v1.edges"],
+      "params": {"tol_1h_ppm": 0.08},
+      "judgment": {"code": "TIED_TOP_CANDIDATES", "rule": "scores within tie_threshold are co-ranked; rank is not arbitrarily broken", "expect": {"nucleus": "S2@1H", "tied_peaks": ["1.469", "1.471"]}}
+    },
+    {
+      "key": "editor_conflict",
+      "title": "两个编辑者冲突",
+      "changed_source": null,
+      "files": ["structure_v1.nmrstruct", "context_v1.ctx", "peaks_1h_v1.txt", "peaks_13c_v1.txt", "edges_v1.edges"],
+      "params": {"tol_1h_ppm": 0.08},
+      "branches": [
+        {"name": "alice", "decisions": [
+          {"nucleus": "S2@1H", "peak": "1.469", "decision": "accept", "editor": "alice"},
+          {"nucleus": "S3@1H", "peak": "1.541", "decision": "accept", "editor": "alice"}
+        ]},
+        {"name": "bob", "decisions": [
+          {"nucleus": "S2@1H", "peak": "1.541", "decision": "accept", "editor": "bob"},
+          {"nucleus": "S3@1H", "peak": "1.469", "decision": "accept", "editor": "bob"}
+        ]}
+      ],
+      "merge_resolution": {"S2@1H": "1.469", "S3@1H": "1.541"},
+      "judgment": {"code": "EDITOR_CONFLICT_RESOLVED", "rule": "cross-branch disagreement is surfaced with both sides retained; resolution is a new merge event, history is not rewritten", "expect": {"conflicting_nuclei": ["S2@1H", "S3@1H"], "history_append_only": true}}
+    }
+  ]
+}

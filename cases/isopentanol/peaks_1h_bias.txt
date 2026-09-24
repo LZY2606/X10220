@@ -1,0 +1,13 @@
+# NMR1D v1
+# nucleus=1H
+# solvent=CDCl3
+# temperature_K=298.0
+# frequency_MHz=400.0
+# reference=TMS
+# columns: shift_ppm intensity integral multiplicity
+# variant: global +0.05 ppm referencing bias on every 1H peak
+0.969 1.00 6.02 d
+1.519 0.35 2.01 m
+1.591 0.42 1.02 m
+1.652 0.10 1.00 brs
+3.661 0.55 1.98 t

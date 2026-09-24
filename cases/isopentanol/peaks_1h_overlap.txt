@@ -1,0 +1,12 @@
+# NMR1D v1
+# nucleus=1H
+# solvent=CDCl3
+# temperature_K=298.0
+# frequency_MHz=400.0
+# reference=TMS
+# columns: shift_ppm intensity integral multiplicity
+# variant: S2/S3 proton peaks merged into one unresolved overlapping peak
+0.919 1.00 6.02 d
+1.505 0.77 3.03 m|ov
+1.602 0.10 1.00 brs
+3.611 0.55 1.98 t

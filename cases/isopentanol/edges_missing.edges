@@ -1,0 +1,13 @@
+# NMREDGES v1
+# columns: experiment shift_a_ppm shift_b_ppm intensity
+# variant: the COSY edge between the S2 and S3 protons is absent from the file
+hsqc 3.611 60.85 strong
+hsqc 1.469 39.95 strong
+hsqc 1.541 25.35 strong
+hsqc 0.919 22.55 strong
+cosy 3.611 1.469 medium
+cosy 1.541 0.919 strong
+hmbc 3.611 39.95 weak
+hmbc 3.611 25.35 weak
+hmbc 0.919 25.35 weak
+hmbc 0.919 39.95 weak

@@ -1,0 +1,17 @@
+# NMRSTRUCT v1
+# isopentanol (3-methyl-1-butanol) — case pack baseline structure
+# site: site_id element label ref_1h_ppm ref_13c_ppm h_count
+site S1 C  CH2-OH - 60.9 2
+site S2 C  CH2    1.47 40.0 2
+site S3 CH CH     1.54 25.4 1
+site S4 C  CH3-a  0.92 22.6 3
+site S5 C  CH3-b  0.92 22.6 3
+site O1 O OH     1.60 - 1
+# bond: site_a site_b
+bond S1 S2
+bond S2 S3
+bond S3 S4
+bond S3 S5
+bond S1 O1
+# equiv: group_id site_id ...
+equiv G1 S4 S5

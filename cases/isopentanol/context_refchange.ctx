@@ -1,0 +1,7 @@
+# NMRCTX v1
+solvent=CDCl3
+temperature_K=298.0
+freq_1h_MHz=400.0
+freq_13c_MHz=100.6
+ref_1h=DSS
+ref_13c=TMS

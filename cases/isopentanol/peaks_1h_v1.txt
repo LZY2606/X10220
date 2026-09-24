@@ -1,0 +1,12 @@
+# NMR1D v1
+# nucleus=1H
+# solvent=CDCl3
+# temperature_K=298.0
+# frequency_MHz=400.0
+# reference=TMS
+# columns: shift_ppm intensity integral multiplicity
+0.919 1.00 6.02 d
+1.469 0.35 2.01 m
+1.541 0.42 1.02 m
+1.602 0.10 1.00 brs
+3.611 0.55 1.98 t
