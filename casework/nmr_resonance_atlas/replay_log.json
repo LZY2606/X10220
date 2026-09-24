@@ -1,0 +1,34 @@
+{
+  "script_id": "nmr-resonance-atlas-replay",
+  "narrative": "导入基线 → 核对原始保留 → 生成候选 → 两次确认 → 一次参数修订 → 一次局部源数据改动 → 依次触发六个边界反例 → 两编辑者冲突与解决 → 一次撤销。",
+  "steps": [
+    {"op": "project", "actor": "system"},
+    {"op": "commit_inputs", "actor": "chen"},
+    {"op": "commit_params", "actor": "chen"},
+    {"op": "judgment", "actor": "chen", "judgment": {
+      "rule": "baseline.preserved", "adopted": true,
+      "statement": "化学位移、峰强、积分、多重性、COSY/HSQC/HMBC 相关边、溶剂与仪器频率都按原文件和版本保留",
+      "scope": {"streams": ["peaks_1h", "peaks_13c", "edges_cosy", "edges_hsqc", "edges_hmbc", "skeleton", "conditions"]},
+      "outcome": "raw_inputs_immutable"}},
+    {"op": "regenerate", "actor": "chen"},
+    {"op": "decide", "actor": "chen", "as": "d-hc", "kind": "1H", "atom": "H7", "peak": "p-h-3", "verdict": "confirm", "rationale": "CH2 四重峰，积分 2H，HSQC 指向 27.9 ppm 碳"},
+    {"op": "decide", "actor": "garcia", "as": "d-hd", "kind": "1H", "atom": "H8", "peak": "p-h-4", "verdict": "confirm", "rationale": "CH3 三重峰，与 CH2 有 COSY"},
+    {"op": "revise_params", "actor": "chen", "patch": {"shift_tolerance_ppm": 0.2}, "changed_keys": ["shift_tolerance_ppm"], "note": "参数修订：放宽位移容差"},
+    {"op": "revise_input", "actor": "garcia", "stream": "edges_hmbc", "from_baseline": false,
+     "mutation": {"op": "add_edge", "edge": {"edge_id": "e-hmbc-5", "kind": "HMBC", "from_peak": "p-h-4", "to_peak": "p-c-5"}},
+     "note": "局部源数据改动：补一条 HMBC 边，只应影响 HMBC 依赖"},
+    {"op": "regenerate", "actor": "chen"},
+    {"op": "counterexample", "id": "cx-overlap"},
+    {"op": "counterexample", "id": "cx-symmetry"},
+    {"op": "counterexample", "id": "cx-missing-edge"},
+    {"op": "counterexample", "id": "cx-shift-offset"},
+    {"op": "counterexample", "id": "cx-tied-best"},
+    {"op": "counterexample", "id": "cx-conditions"},
+    {"op": "conflict", "as": "cx-editor-conflict", "kind": "1H", "atom": "H2", "peak": "p-h-1",
+     "confirm_by": "chen", "reject_by": "garcia",
+     "confirm_rationale": "邻位等价质子归属 7.12 ppm 重叠峰",
+     "reject_rationale": "重叠峰证据不足，反对唯一归属"},
+    {"op": "resolve_conflict", "actor": "chen", "side": "confirm", "rationale": "组会裁定：接受归属但保留重叠标记"},
+    {"op": "undo", "actor": "garcia", "target": "d-hd", "rationale": "撤销早先确认，待补 HSQC 遥感数据"}
+  ]
+}

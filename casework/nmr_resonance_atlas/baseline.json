@@ -1,0 +1,136 @@
+{
+  "case_id": "nmr-resonance-atlas",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "compound": {
+    "name": "4-乙基苯甲醚 (1-ethyl-4-methoxybenzene)",
+    "formula": "C9H12O",
+    "narrative": "结构化学小组把 1H/13C 一维 peak list 与 COSY/HSQC/HMBC 二维相关边合到同一个化合物分析中，为每个核建立可复核的归属候选。"
+  },
+  "params": {
+    "shift_tolerance_ppm": 0.15,
+    "overlap_tolerance_ppm": 0.03,
+    "weights": {"shift": 0.4, "integration": 0.2, "multiplicity": 0.15, "correlation": 0.25}
+  },
+  "inputs": {
+    "conditions": {
+      "source_file": {"name": "EAN-042/conditions.json", "version": "1.0"},
+      "data": {
+        "solvent": "CDCl3",
+        "field": {"value": 400, "unit": "MHz"},
+        "temperature": {"value": 25, "unit": "C"},
+        "reference": "TMS"
+      }
+    },
+    "peaks_1h": {
+      "source_file": {"name": "EAN-042/1H_peaks_v1.csv", "version": "1.0"},
+      "data": {
+        "peaks": [
+          {"peak_id": "p-h-1", "shift": {"value": 7.12, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.98, "unit": "arb"}, "integration": {"value": 2.0, "unit": "H"}, "multiplicity": "d"},
+          {"peak_id": "p-h-2", "shift": {"value": 6.83, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 1.0, "unit": "arb"}, "integration": {"value": 2.0, "unit": "H"}, "multiplicity": "d"},
+          {"peak_id": "p-h-3", "shift": {"value": 2.58, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.99, "unit": "arb"}, "integration": {"value": 2.0, "unit": "H"}, "multiplicity": "q"},
+          {"peak_id": "p-h-4", "shift": {"value": 1.21, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 1.49, "unit": "arb"}, "integration": {"value": 3.0, "unit": "H"}, "multiplicity": "t"},
+          {"peak_id": "p-h-5", "shift": {"value": 3.78, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 1.48, "unit": "arb"}, "integration": {"value": 3.0, "unit": "H"}, "multiplicity": "s"},
+          {"peak_id": "p-h-6", "shift": {"value": 2904.0, "unit": "Hz", "reference": "TMS"}, "intensity": {"value": 0.12, "unit": "arb"}, "integration": {"value": 0.1, "unit": "H"}, "multiplicity": "s"},
+          {"peak_id": "p-h-7", "shift": {"value": 530.0, "unit": "Hz"}, "intensity": {"value": 0.03, "unit": "arb"}, "integration": {"value": 0.05, "unit": "H"}, "multiplicity": "s"}
+        ]
+      }
+    },
+    "peaks_13c": {
+      "source_file": {"name": "EAN-042/13C_peaks_v1.csv", "version": "1.0"},
+      "data": {
+        "peaks": [
+          {"peak_id": "p-c-1", "shift": {"value": 157.7, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.41, "unit": "arb"}},
+          {"peak_id": "p-c-2", "shift": {"value": 129.4, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 1.0, "unit": "arb"}},
+          {"peak_id": "p-c-3", "shift": {"value": 113.7, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.97, "unit": "arb"}},
+          {"peak_id": "p-c-4", "shift": {"value": 134.2, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.38, "unit": "arb"}},
+          {"peak_id": "p-c-5", "shift": {"value": 27.9, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.86, "unit": "arb"}},
+          {"peak_id": "p-c-6", "shift": {"value": 16.2, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.9, "unit": "arb"}},
+          {"peak_id": "p-c-7", "shift": {"value": 55.2, "unit": "ppm", "reference": "TMS"}, "intensity": {"value": 0.95, "unit": "arb"}}
+        ]
+      }
+    },
+    "edges_cosy": {
+      "source_file": {"name": "EAN-042/COSY_edges_v1.json", "version": "1.0"},
+      "data": {
+        "edges": [
+          {"edge_id": "e-cosy-1", "kind": "COSY", "from_peak": "p-h-1", "to_peak": "p-h-2"},
+          {"edge_id": "e-cosy-2", "kind": "COSY", "from_peak": "p-h-3", "to_peak": "p-h-4"}
+        ]
+      }
+    },
+    "edges_hsqc": {
+      "source_file": {"name": "EAN-042/HSQC_edges_v1.json", "version": "1.0"},
+      "data": {
+        "edges": [
+          {"edge_id": "e-hsqc-1", "kind": "HSQC", "from_peak": "p-h-1", "to_peak": "p-c-2"},
+          {"edge_id": "e-hsqc-2", "kind": "HSQC", "from_peak": "p-h-2", "to_peak": "p-c-3"},
+          {"edge_id": "e-hsqc-3", "kind": "HSQC", "from_peak": "p-h-3", "to_peak": "p-c-5"},
+          {"edge_id": "e-hsqc-4", "kind": "HSQC", "from_peak": "p-h-4", "to_peak": "p-c-6"},
+          {"edge_id": "e-hsqc-5", "kind": "HSQC", "from_peak": "p-h-5", "to_peak": "p-c-7"}
+        ]
+      }
+    },
+    "edges_hmbc": {
+      "source_file": {"name": "EAN-042/HMBC_edges_v1.json", "version": "1.0"},
+      "data": {
+        "edges": [
+          {"edge_id": "e-hmbc-1", "kind": "HMBC", "from_peak": "p-h-1", "to_peak": "p-c-1"},
+          {"edge_id": "e-hmbc-2", "kind": "HMBC", "from_peak": "p-h-1", "to_peak": "p-c-4"},
+          {"edge_id": "e-hmbc-3", "kind": "HMBC", "from_peak": "p-h-3", "to_peak": "p-c-4"},
+          {"edge_id": "e-hmbc-4", "kind": "HMBC", "from_peak": "p-h-5", "to_peak": "p-c-1"}
+        ]
+      }
+    },
+    "skeleton": {
+      "source_file": {"name": "EAN-042/skeleton_v1.json", "version": "1.0"},
+      "data": {
+        "atoms": [
+          {"atom_id": "C1", "element": "C", "x": 200, "y": 60},
+          {"atom_id": "C2", "element": "C", "x": 262, "y": 96},
+          {"atom_id": "C3", "element": "C", "x": 262, "y": 168},
+          {"atom_id": "C4", "element": "C", "x": 200, "y": 204},
+          {"atom_id": "C5", "element": "C", "x": 138, "y": 168},
+          {"atom_id": "C6", "element": "C", "x": 138, "y": 96},
+          {"atom_id": "O1", "element": "O", "x": 200, "y": 22},
+          {"atom_id": "C9", "element": "C", "x": 140, "y": 10},
+          {"atom_id": "C7", "element": "C", "x": 200, "y": 258},
+          {"atom_id": "C8", "element": "C", "x": 200, "y": 310},
+          {"atom_id": "H2", "element": "H", "x": 302, "y": 92},
+          {"atom_id": "H3", "element": "H", "x": 302, "y": 172},
+          {"atom_id": "H5", "element": "H", "x": 98, "y": 172},
+          {"atom_id": "H6", "element": "H", "x": 98, "y": 92},
+          {"atom_id": "H7", "element": "H", "x": 240, "y": 262},
+          {"atom_id": "H8", "element": "H", "x": 240, "y": 314},
+          {"atom_id": "H9", "element": "H", "x": 100, "y": 10}
+        ],
+        "bonds": [
+          ["C1", "C2"], ["C2", "C3"], ["C3", "C4"], ["C4", "C5"], ["C5", "C6"], ["C6", "C1"],
+          ["C1", "O1"], ["O1", "C9"], ["C4", "C7"], ["C7", "C8"],
+          ["C2", "H2"], ["C3", "H3"], ["C5", "H5"], ["C6", "H6"]
+        ],
+        "symmetry_groups": [
+          {"group_id": "sg-ortho", "atom_ids": ["C2", "C6", "H2", "H6"]},
+          {"group_id": "sg-meta", "atom_ids": ["C3", "C5", "H3", "H5"]}
+        ],
+        "proton_sites": [
+          {"label": "hA", "atom_ids": ["H2", "H6"], "expected_range_ppm": [6.95, 7.3], "expected_multiplicity": "d", "proton_count": 2, "expected_edges": ["e-cosy-1"]},
+          {"label": "hB", "atom_ids": ["H3", "H5"], "expected_range_ppm": [6.7, 6.95], "expected_multiplicity": "d", "proton_count": 2, "expected_edges": ["e-cosy-1"]},
+          {"label": "hC", "atom_ids": ["H7"], "expected_range_ppm": [2.45, 2.75], "expected_multiplicity": "q", "proton_count": 2, "expected_edges": ["e-cosy-2"]},
+          {"label": "hD", "atom_ids": ["H8"], "expected_range_ppm": [1.1, 1.35], "expected_multiplicity": "t", "proton_count": 3, "expected_edges": ["e-cosy-2"]},
+          {"label": "hE", "atom_ids": ["H9"], "expected_range_ppm": [3.65, 3.9], "expected_multiplicity": "s", "proton_count": 3, "expected_edges": []}
+        ],
+        "carbon_sites": [
+          {"atom_id": "C1", "expected_range_ppm": [155.0, 160.0], "expected_edges": ["e-hmbc-1", "e-hmbc-4"]},
+          {"atom_id": "C2", "expected_range_ppm": [128.0, 131.0], "symmetry_group": "sg-ortho", "expected_edges": ["e-hsqc-1"]},
+          {"atom_id": "C6", "expected_range_ppm": [128.0, 131.0], "symmetry_group": "sg-ortho", "expected_edges": ["e-hsqc-1"]},
+          {"atom_id": "C3", "expected_range_ppm": [112.0, 115.0], "symmetry_group": "sg-meta", "expected_edges": ["e-hsqc-2"]},
+          {"atom_id": "C5", "expected_range_ppm": [112.0, 115.0], "symmetry_group": "sg-meta", "expected_edges": ["e-hsqc-2"]},
+          {"atom_id": "C4", "expected_range_ppm": [132.0, 136.0], "expected_edges": ["e-hmbc-2", "e-hmbc-3"]},
+          {"atom_id": "C7", "expected_range_ppm": [26.0, 30.0], "expected_edges": ["e-hsqc-3"]},
+          {"atom_id": "C8", "expected_range_ppm": [14.0, 18.0], "expected_edges": ["e-hsqc-4"]},
+          {"atom_id": "C9", "expected_range_ppm": [54.0, 56.0], "expected_edges": ["e-hsqc-5"]}
+        ]
+      }
+    }
+  }
+}

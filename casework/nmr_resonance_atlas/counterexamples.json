@@ -1,0 +1,108 @@
+{
+  "archive_id": "nmr-resonance-atlas-counterexamples",
+  "baseline_ref": "baseline.json",
+  "policy": "每个反例从基线出发只改动一个直接来源；被采纳与未采纳的结果都保留；判断依据以机器可读事件表达。",
+  "entries": [
+    {
+      "id": "cx-overlap",
+      "title": "重叠峰：不强制唯一匹配",
+      "mutation": {"stream": "peaks_1h", "op": "set_peak_shift", "peak_id": "p-h-2", "value": 7.11},
+      "expected_scope": {"affected_streams": ["peaks_1h"], "unaffected_streams": ["peaks_13c", "edges_hsqc"]},
+      "judgments": [
+        {"rule": "overlap.no_forced_unique", "adopted": true,
+         "statement": "重叠峰和缺峰不能被强制唯一匹配，耦合网络只用作证据",
+         "scope": {"peaks": ["p-h-1", "p-h-2"]},
+         "outcome": "all_legal_candidates_kept"},
+        {"rule": "overlap.force_unique", "adopted": false,
+         "statement": "提议：把重叠峰按最近化学位移强制唯一匹配",
+         "scope": {"peaks": ["p-h-1", "p-h-2"]},
+         "outcome": "rejected",
+         "rationale": "违反 overlap.no_forced_unique：重叠峰必须保留全部合法候选"}
+      ]
+    },
+    {
+      "id": "cx-symmetry",
+      "title": "对称原子：等价核产生并列合法候选",
+      "mutation": {"stream": "skeleton", "op": "patch_carbon_site", "atom_id": "C6", "key": "expected_range_ppm", "value": [140.0, 142.0]},
+      "expected_scope": {"affected_streams": ["skeleton"], "unaffected_streams": ["peaks_1h", "peaks_13c"]},
+      "judgments": [
+        {"rule": "symmetry.degenerate_kept", "adopted": true,
+         "statement": "对称等价原子（C2/C6、H2/H6 等）各自保留归属候选，不得合并为单一归属",
+         "scope": {"symmetry_groups": ["sg-ortho", "sg-meta"]},
+         "outcome": "degenerate_candidates_kept"},
+        {"rule": "symmetry.collapse", "adopted": false,
+         "statement": "提议：把对称等价原子合并为一条归属记录",
+         "outcome": "rejected",
+         "rationale": "违反 symmetry.degenerate_kept：合并会丢失逐原子可复核性"}
+      ]
+    },
+    {
+      "id": "cx-missing-edge",
+      "title": "缺失相关边：耦合网络只作证据",
+      "mutation": {"stream": "edges_cosy", "op": "remove_edge", "edge_id": "e-cosy-1"},
+      "expected_scope": {"affected_streams": ["edges_cosy"], "unaffected_streams": ["peaks_1h", "peaks_13c"]},
+      "judgments": [
+        {"rule": "coupling.evidence_only", "adopted": true,
+         "statement": "缺失 COSY/HSQC/HMBC 相关边只降低证据分，候选保留并标记 missing_evidence",
+         "scope": {"edges": ["e-cosy-1"]},
+         "outcome": "candidates_kept_with_missing_evidence"},
+        {"rule": "coupling.hard_constraint", "adopted": false,
+         "statement": "提议：缺边即删除对应候选",
+         "outcome": "rejected",
+         "rationale": "违反 coupling.evidence_only：耦合网络不是硬约束"}
+      ]
+    },
+    {
+      "id": "cx-shift-offset",
+      "title": "化学位移整体偏置：过期范围限于直接依赖",
+      "mutation": {"stream": "peaks_1h", "op": "offset_all_shifts", "delta_ppm": 0.35},
+      "expected_scope": {"affected_streams": ["peaks_1h"], "unaffected_streams": ["peaks_13c", "edges_cosy", "edges_hsqc", "edges_hmbc"]},
+      "judgments": [
+        {"rule": "staleness.local_scope", "adopted": true,
+         "statement": "局部输入变化只使依赖它的结果过期；过期结果仍可查看但不能冒充当前结果",
+         "scope": {"streams": ["peaks_1h"]},
+         "outcome": "only_dependents_staled"}
+      ]
+    },
+    {
+      "id": "cx-tied-best",
+      "title": "并列最优候选：全部保留",
+      "mutation": {"stream": "peaks_1h", "op": "set_peak_shift", "peak_id": "p-h-2", "value": 7.12},
+      "expected_scope": {"affected_streams": ["peaks_1h"], "unaffected_streams": ["peaks_13c"]},
+      "judgments": [
+        {"rule": "tie.all_legal_kept", "adopted": true,
+         "statement": "无法唯一决定时保留全部合法候选并标记 tied_best",
+         "scope": {"atoms": ["H2", "H6"]},
+         "outcome": "tied_candidates_kept"},
+        {"rule": "tie.pick_first", "adopted": false,
+         "statement": "提议：并列时按峰表顺序取第一个",
+         "outcome": "rejected",
+         "rationale": "违反 tie.all_legal_kept：顺序不是证据"}
+      ]
+    },
+    {
+      "id": "cx-conditions",
+      "title": "溶剂/温度/参考标准变更：只使相关候选过期，旧决定仍可重放",
+      "mutation": {"stream": "conditions", "op": "replace_data", "data": {"solvent": "DMSO-d6", "field": {"value": 400, "unit": "MHz"}, "temperature": {"value": "ambient"}, "reference": "unknown"}},
+      "expected_scope": {"affected_streams": ["conditions"], "unaffected_streams": ["peaks_1h", "peaks_13c", "edges_cosy"]},
+      "judgments": [
+        {"rule": "conditions.selective_stale", "adopted": true,
+         "statement": "溶剂、温度或参考标准变更时只使相关候选过期，旧决定仍可重放",
+         "scope": {"streams": ["conditions"]},
+         "outcome": "condition_dependents_staled_decisions_replayable"}
+      ]
+    },
+    {
+      "id": "cx-editor-conflict",
+      "title": "两个编辑者冲突：双方都写入历史",
+      "mutation": null,
+      "expected_scope": {"affected_streams": [], "unaffected_streams": ["peaks_1h", "peaks_13c", "skeleton"]},
+      "judgments": [
+        {"rule": "decision.conflict_recorded", "adopted": true,
+         "statement": "冲突决定各自生成新分支并写入历史，解决事件显式选择其一，撤销也写入历史",
+         "scope": {"editors": ["chen", "garcia"]},
+         "outcome": "conflict_recorded_and_resolved"}
+      ]
+    }
+  ]
+}
