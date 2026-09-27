@@ -1,0 +1,15 @@
+{
+  "title": "对称原子：镜像位置并列保留",
+  "summary": "对位二取代苯环的 H2/H6、H3/H5 是对称等价原子；p1 到 H2 与 H6 的候选必须同分并列，且都标注对称来源。",
+  "actions": [
+    {"type": "compute"}
+  ],
+  "expected": [
+    {"check": "candidate_min", "peak_label": "p1", "count": 2},
+    {"check": "score_equal", "peak_label": "p1", "atom_labels": ["H2", "H6"]},
+    {"check": "candidate_reason", "peak_label": "p1", "atom_label": "H2", "contains": "symmetric_atoms"},
+    {"check": "candidate_reason", "peak_label": "p1", "atom_label": "H6", "contains": "symmetric_atoms"},
+    {"check": "candidate_reason", "peak_label": "p1", "atom_label": "H2", "contains": "tied_best"},
+    {"check": "score_equal", "peak_label": "c2", "atom_labels": ["C2", "C6"]}
+  ]
+}

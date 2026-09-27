@@ -1,0 +1,22 @@
+{
+  "id": "nmr_resonance_atlas",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "compound": "1-bromo-4-methoxybenzene",
+  "skeleton": "skeleton.json",
+  "conditions": "conditions.json",
+  "sources": {
+    "peaks_1h": "baseline/peaks_1h.csv",
+    "peaks_13c": "baseline/peaks_13c.csv",
+    "cosy": "baseline/cosy.csv",
+    "hsqc": "baseline/hsqc.csv",
+    "hmbc": "baseline/hmbc.csv"
+  },
+  "scenarios": [
+    "overlap_peaks",
+    "symmetric_atoms",
+    "missing_edges",
+    "shift_bias",
+    "tied_candidates",
+    "editor_conflict"
+  ]
+}

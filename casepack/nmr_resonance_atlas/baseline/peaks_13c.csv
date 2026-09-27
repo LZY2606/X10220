@@ -1,0 +1,7 @@
+# 13C peak list, 100.61 MHz, CDCl3, 298.0 K, reference TMS
+peak,nucleus,shift_ppm,intensity,integration,multiplicity
+c1,13C,159.6,0.42,,s
+c2,13C,132.1,0.71,,s
+c3,13C,122.4,0.80,,s
+c4,13C,115.6,1.00,,s
+c5,13C,55.7,0.90,,q

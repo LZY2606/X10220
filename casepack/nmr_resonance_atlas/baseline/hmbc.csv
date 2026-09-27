@@ -1,0 +1,7 @@
+# HMBC long-range 1H-13C correlation edges
+kind,a,b
+HMBC,p1,c3
+HMBC,p1,c1
+HMBC,p2,c2
+HMBC,p2,c3
+HMBC,p3,c1

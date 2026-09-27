@@ -1,0 +1,18 @@
+{
+  "title": "并列最优与参数修订：修订产生新版本",
+  "summary": "先计算基线候选，再由审阅者修订 COSY 证据权重；旧参数版本与旧运行保留，新运行仍保留 H2/H6 并列最优。",
+  "actions": [
+    {"type": "compute"},
+    {"type": "decision", "action": "adjust_params", "editor": "carol",
+     "note": "将 COSY 证据权重从 0.15 修订为 0.10",
+     "params": {"evidence_bonus": {"COSY": 0.10}}}
+  ],
+  "expected": [
+    {"check": "event_exists", "type": "params_adjusted"},
+    {"check": "event_exists", "type": "run_computed"},
+    {"check": "score_equal", "peak_label": "p1", "atom_labels": ["H2", "H6"]},
+    {"check": "candidate_reason", "peak_label": "p1", "atom_label": "H2", "contains": "tied_best"},
+    {"check": "candidate_reason", "peak_label": "p1", "atom_label": "H6", "contains": "tied_best"},
+    {"check": "stale_count", "min": 12}
+  ]
+}

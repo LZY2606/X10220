@@ -1,0 +1,17 @@
+{
+  "title": "缺失相关边：耦合网络只作证据",
+  "summary": "COSY 边在新版本中整体缺失；候选不被删除，只出现 missing_edge 判定与分数下降，13C 候选身份保持不变。",
+  "actions": [
+    {"type": "compute"},
+    {"type": "commit_source", "kind": "cosy", "file": "cosy.csv"},
+    {"type": "compute"}
+  ],
+  "expected": [
+    {"check": "event_exists", "type": "source_committed"},
+    {"check": "candidate_min", "peak_label": "p1", "count": 2},
+    {"check": "candidate_reason", "peak_label": "p1", "atom_label": "H2", "contains": "missing_edge:COSY"},
+    {"check": "candidate_current", "peak_label": "c1", "atom_label": "C4", "present": true},
+    {"check": "candidate_current", "peak_label": "c3", "atom_label": "C1", "present": true},
+    {"check": "stale_count", "min": 5}
+  ]
+}

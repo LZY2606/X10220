@@ -1,0 +1,5 @@
+# revision of the 1H peak list: every shift is offset by +0.08 ppm (reference mismatch)
+peak,nucleus,shift_ppm,intensity,integration,multiplicity
+p1,1H,7.49,0.88,2.01,d
+p2,1H,6.91,0.95,2.03,d
+p3,1H,3.87,1.00,3.00,s

@@ -1,0 +1,5 @@
+# HSQC one-bond 1H-13C correlation edges
+kind,a,b
+HSQC,p1,c2
+HSQC,p2,c4
+HSQC,p3,c5

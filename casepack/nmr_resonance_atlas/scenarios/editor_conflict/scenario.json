@@ -1,0 +1,20 @@
+{
+  "title": "两个编辑者冲突：兄弟分支互不相覆",
+  "summary": "alice 从主干确认 p1->H2，bob 回到主干否定同一候选；产生 conflict_detected，随后以保留 alice、撤销 bob 解决，全部写入历史。",
+  "actions": [
+    {"type": "compute"},
+    {"type": "decision", "action": "confirm", "editor": "alice",
+     "find": {"peak": "p1", "atom": "H2"}, "note": "HSQC/HMBC 证据一致，采纳 p1->H2"},
+    {"type": "decision", "action": "reject", "editor": "bob",
+     "find": {"peak": "p1", "atom": "H2"}, "base_branch": "main",
+     "note": "怀疑存在重叠峰，不应确认"},
+    {"type": "resolve", "keep_editor": "alice", "drop_editor": "bob"}
+  ],
+  "expected": [
+    {"check": "event_exists", "type": "conflict_detected"},
+    {"check": "event_exists", "type": "conflict_resolved"},
+    {"check": "event_exists", "type": "decision_undone"},
+    {"check": "conflict_open", "count": 0},
+    {"check": "effective_decision", "peak_label": "p1", "atom_label": "H2", "action": "confirm"}
+  ]
+}

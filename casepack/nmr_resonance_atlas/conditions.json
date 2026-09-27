@@ -1,0 +1,8 @@
+{
+  "solvent": "CDCl3",
+  "temperature": "298.0",
+  "reference": "TMS",
+  "frequency_mhz": "400.13",
+  "temperature_note": "raw value in kelvin as written in the acquisition sheet",
+  "frequency_note": "1H channel frequency in MHz as reported by the instrument"
+}

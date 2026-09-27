@@ -1,0 +1,45 @@
+{
+  "compound": "1-bromo-4-methoxybenzene",
+  "formula": "C7H7BrO",
+  "coord_system": "2D skeletal diagram coordinates, arbitrary drawing units, origin at top-left, +x to the right, +y downward; not physical molecular coordinates",
+  "atoms": [
+    {"label": "C1", "element": "C", "expected_ppm": 122.4, "window_ppm": 6.0, "x": 100, "y": 40,
+     "note": "ipso carbon bonded to Br"},
+    {"label": "C2", "element": "C", "expected_ppm": 132.1, "window_ppm": 6.0, "sym_group": "ortho_c", "x": 152, "y": 70},
+    {"label": "C3", "element": "C", "expected_ppm": 115.6, "window_ppm": 6.0, "sym_group": "meta_c", "x": 152, "y": 130},
+    {"label": "C4", "element": "C", "expected_ppm": 159.6, "window_ppm": 6.0, "x": 100, "y": 160,
+     "note": "ipso carbon bonded to OMe"},
+    {"label": "C5", "element": "C", "expected_ppm": 115.6, "window_ppm": 6.0, "sym_group": "meta_c", "x": 48, "y": 130},
+    {"label": "C6", "element": "C", "expected_ppm": 132.1, "window_ppm": 6.0, "sym_group": "ortho_c", "x": 48, "y": 70},
+    {"label": "C7", "element": "C", "expected_ppm": 55.7, "window_ppm": 6.0, "x": 100, "y": 220,
+     "note": "methoxy methyl carbon"},
+    {"label": "H2", "element": "H", "expected_ppm": 7.41, "window_ppm": 0.6, "sym_group": "ortho_h", "x": 210, "y": 70},
+    {"label": "H3", "element": "H", "expected_ppm": 6.83, "window_ppm": 0.6, "sym_group": "meta_h", "x": 210, "y": 130},
+    {"label": "H5", "element": "H", "expected_ppm": 6.83, "window_ppm": 0.6, "sym_group": "meta_h", "x": -10, "y": 130},
+    {"label": "H6", "element": "H", "expected_ppm": 7.41, "window_ppm": 0.6, "sym_group": "ortho_h", "x": -10, "y": 70},
+    {"label": "H7", "element": "H", "expected_ppm": 3.79, "window_ppm": 0.6, "x": 100, "y": 280}
+  ],
+  "bonds": [
+    ["C1", "C2"], ["C2", "C3"], ["C3", "C4"], ["C4", "C5"],
+    ["C5", "C6"], ["C6", "C1"], ["C4", "C7"], ["C7", "H7"],
+    ["C2", "H2"], ["C3", "H3"], ["C5", "H5"], ["C6", "H6"]
+  ],
+  "relations": [
+    {"kind": "COSY", "a": "H2", "b": "H3"},
+    {"kind": "COSY", "a": "H5", "b": "H6"},
+    {"kind": "HSQC", "a": "H2", "b": "C2"},
+    {"kind": "HSQC", "a": "H3", "b": "C3"},
+    {"kind": "HSQC", "a": "H5", "b": "C5"},
+    {"kind": "HSQC", "a": "H6", "b": "C6"},
+    {"kind": "HSQC", "a": "H7", "b": "C7"},
+    {"kind": "HMBC", "a": "H2", "b": "C1"},
+    {"kind": "HMBC", "a": "H2", "b": "C4"},
+    {"kind": "HMBC", "a": "H6", "b": "C1"},
+    {"kind": "HMBC", "a": "H6", "b": "C4"},
+    {"kind": "HMBC", "a": "H3", "b": "C1"},
+    {"kind": "HMBC", "a": "H3", "b": "C2"},
+    {"kind": "HMBC", "a": "H5", "b": "C1"},
+    {"kind": "HMBC", "a": "H5", "b": "C6"},
+    {"kind": "HMBC", "a": "H7", "b": "C4"}
+  ]
+}

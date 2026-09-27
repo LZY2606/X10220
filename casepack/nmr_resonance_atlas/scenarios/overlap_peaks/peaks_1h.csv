@@ -1,0 +1,6 @@
+# revision of the 1H peak list: p1b overlaps p1 within 0.03 ppm
+peak,nucleus,shift_ppm,intensity,integration,multiplicity
+p1,1H,7.41,0.88,2.01,d
+p1b,1H,7.40,0.31,0.98,d
+p2,1H,6.83,0.95,2.03,d
+p3,1H,3.79,1.00,3.00,s

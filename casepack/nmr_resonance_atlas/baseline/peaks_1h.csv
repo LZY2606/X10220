@@ -1,0 +1,6 @@
+# 1H peak list, 400.13 MHz, CDCl3, 298.0 K, reference TMS
+# integration in proton-equivalents; intensity in instrument a.u.
+peak,nucleus,shift_ppm,intensity,integration,multiplicity
+p1,1H,7.41,0.88,2.01,d
+p2,1H,6.83,0.95,2.03,d
+p3,1H,3.79,1.00,3.00,s

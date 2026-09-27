@@ -1,0 +1,19 @@
+{
+  "title": "重叠峰：不能强制唯一匹配",
+  "summary": "新增一个与 p1 相距 0.01 ppm 的 p1b；两个峰都必须保留 H2/H6 全部合法候选，影响只限于依赖 1H 源版本的结果。",
+  "actions": [
+    {"type": "compute"},
+    {"type": "commit_source", "kind": "peaks_1h", "file": "peaks_1h.csv"},
+    {"type": "compute"}
+  ],
+  "expected": [
+    {"check": "event_exists", "type": "source_committed"},
+    {"check": "event_exists", "type": "run_computed"},
+    {"check": "candidate_min", "peak_label": "p1b", "count": 2},
+    {"check": "candidate_min", "peak_label": "p1", "count": 2},
+    {"check": "candidate_reason", "peak_label": "p1b", "atom_label": "H2", "contains": "overlap_group"},
+    {"check": "candidate_reason", "peak_label": "p1b", "atom_label": "H6", "contains": "overlap_group"},
+    {"check": "candidate_current", "peak_label": "c1", "atom_label": "C4", "present": true},
+    {"check": "stale_count", "min": 5}
+  ]
+}

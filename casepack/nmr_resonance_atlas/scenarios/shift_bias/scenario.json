@@ -1,0 +1,15 @@
+{
+  "title": "化学位移整体偏置：只发诊断，不改原值",
+  "summary": "全部 1H 位移平移 +0.08 ppm；系统输出 shift_bias_detected 机器事件，原始位移保持不变，候选仍可查看。",
+  "actions": [
+    {"type": "compute"},
+    {"type": "commit_source", "kind": "peaks_1h", "file": "peaks_1h.csv"},
+    {"type": "compute"}
+  ],
+  "expected": [
+    {"check": "event_exists", "type": "shift_bias_detected"},
+    {"check": "event_payload", "type": "shift_bias_detected", "path": "bias_ppm", "approx": 0.08, "tol": 0.02},
+    {"check": "candidate_min", "peak_label": "p1", "count": 2},
+    {"check": "stale_count", "min": 5}
+  ]
+}
