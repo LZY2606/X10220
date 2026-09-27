@@ -1,0 +1,11 @@
+# NMR peak list
+# nucleus: 13C
+# axis: shift_ppm (delta ppm, reference TMS, +downfield)
+# columns: shift_ppm ; intensity_count
+166.3 ; 210
+133.4 ; 640
+130.1 ; 300
+129.7 ; 900
+128.5 ; 880
+68.6 ; 420
+22.0 ; 990

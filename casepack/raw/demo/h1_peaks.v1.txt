@@ -1,0 +1,9 @@
+# NMR peak list
+# nucleus: 1H
+# axis: shift_ppm (delta ppm, reference TMS, +downfield)
+# columns: shift_ppm ; intensity_count ; integral_protons ; multiplicity ; j_hz
+8.05 ; 960 ; 2.00 ; doublet ; 7.8
+7.42 ; 820 ; 2.00 ; triplet ; 7.7
+7.55 ; 480 ; 1.00 ; triplet ; 7.4
+5.25 ; 620 ; 1.00 ; septet ; 6.3
+1.33 ; 900 ; 6.00 ; doublet ; 6.3

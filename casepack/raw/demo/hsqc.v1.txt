@@ -1,0 +1,9 @@
+# 2D correlation peak list
+# experiment: HSQC
+# axes: f2_ppm_H ; f1_ppm_C (delta ppm, reference TMS)
+# columns: h_ppm ; c_ppm ; note
+8.05 ; 129.7 ; aromatic ortho
+7.42 ; 128.5 ; aromatic meta
+7.55 ; 133.4 ; aromatic para
+5.25 ; 68.6 ; O-CH
+1.33 ; 22.0 ; methyl

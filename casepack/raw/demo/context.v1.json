@@ -1,0 +1,11 @@
+{
+  "schema": "nmr-context/1",
+  "sample_id": "IPB-2026-01",
+  "compound_label": "isopropyl benzoate (baseline)",
+  "solvent": "CDCl3",
+  "temperature_k": 298.15,
+  "reference_standard": "TMS",
+  "spectrometer_frequency_h1_mhz": 400.13,
+  "spectrometer_frequency_c13_mhz": 100.61,
+  "notes": "All shift axes are delta ppm relative to the stated reference; frequencies are exact instrument settings as reported."
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "nmr-assignment-params/1",
+  "label": "baseline assignment parameters",
+  "shift_tolerance_h_ppm": 0.10,
+  "shift_tolerance_c_ppm": 1.00,
+  "edge_match_tolerance_ppm": 0.08,
+  "weight_shift": 0.70,
+  "weight_multiplicity": 0.15,
+  "weight_integral": 0.05,
+  "weight_network": 0.10,
+  "global_offset_detect_threshold_ppm": 0.25,
+  "reject_shift_multiples": 2.0,
+  "tie_epsilon_ppm": 0.001
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "nmr-skeleton/1",
+  "compound_label": "isopropyl benzoate",
+  "formula": "C10H12O2",
+  "atoms": [
+    {"id": "C1", "element": "C", "kind": "carbonyl", "x": 300, "y": 120, "expected_shift_ppm": 166.4},
+    {"id": "C2", "element": "C", "kind": "ring_ipso", "x": 120, "y": 120, "expected_shift_ppm": 130.3},
+    {"id": "C3", "element": "C", "kind": "ring", "x": 60, "y": 60, "expected_shift_ppm": 129.7, "equivalence_group": "ortho"},
+    {"id": "C4", "element": "C", "kind": "ring", "x": -60, "y": 60, "expected_shift_ppm": 128.6, "equivalence_group": "meta"},
+    {"id": "C5", "element": "C", "kind": "ring", "x": -120, "y": 120, "expected_shift_ppm": 133.4},
+    {"id": "C6", "element": "C", "kind": "ring", "x": -60, "y": 180, "expected_shift_ppm": 128.6, "equivalence_group": "meta"},
+    {"id": "C7", "element": "C", "kind": "ring", "x": 60, "y": 180, "expected_shift_ppm": 129.7, "equivalence_group": "ortho"},
+    {"id": "C8", "element": "C", "kind": "methine", "x": 420, "y": 220, "expected_shift_ppm": 68.5},
+    {"id": "C9", "element": "C", "kind": "methyl", "x": 400, "y": 330, "expected_shift_ppm": 21.9, "equivalence_group": "isopropyl-methyl"},
+    {"id": "C10", "element": "C", "kind": "methyl", "x": 520, "y": 300, "expected_shift_ppm": 21.9, "equivalence_group": "isopropyl-methyl"},
+    {"id": "O1", "element": "O", "kind": "carbonyl_oxygen", "x": 340, "y": 30},
+    {"id": "O2", "element": "O", "kind": "ester_oxygen", "x": 400, "y": 130}
+  ],
+  "bonds": [
+    {"from": "C1", "to": "C2", "order": 1},
+    {"from": "C1", "to": "O1", "order": 2},
+    {"from": "C1", "to": "O2", "order": 1},
+    {"from": "O2", "to": "C8", "order": 1},
+    {"from": "C2", "to": "C3", "order": 1.5},
+    {"from": "C3", "to": "C4", "order": 1.5},
+    {"from": "C4", "to": "C5", "order": 1.5},
+    {"from": "C5", "to": "C6", "order": 1.5},
+    {"from": "C6", "to": "C7", "order": 1.5},
+    {"from": "C7", "to": "C2", "order": 1.5},
+    {"from": "C8", "to": "C9", "order": 1},
+    {"from": "C8", "to": "C10", "order": 1},
+    {"from": "C8", "to": "H8", "order": 1}
+  ],
+  "proton_sites": [
+    {"id": "H_ortho", "attached_atom": "C3", "equivalence_group": "ortho", "expected_shift_ppm": 8.03, "expected_multiplicity": "doublet", "expected_integral": 2.0,
+     "hsqc_atom": "C3", "cosy_sites": ["H_meta"], "hmbc_atoms": ["C1", "C5"]},
+    {"id": "H_meta", "attached_atom": "C4", "equivalence_group": "meta", "expected_shift_ppm": 7.42, "expected_multiplicity": "triplet", "expected_integral": 2.0,
+     "hsqc_atom": "C4", "cosy_sites": ["H_ortho", "H_para"], "hmbc_atoms": ["C2"]},
+    {"id": "H_para", "attached_atom": "C5", "expected_shift_ppm": 7.55, "expected_multiplicity": "triplet", "expected_integral": 1.0,
+     "hsqc_atom": "C5", "cosy_sites": ["H_meta"], "hmbc_atoms": ["C3"]},
+    {"id": "H8", "attached_atom": "C8", "expected_shift_ppm": 5.26, "expected_multiplicity": "septet", "expected_integral": 1.0,
+     "hsqc_atom": "C8", "cosy_sites": ["H_methyl"], "hmbc_atoms": ["C1"]},
+    {"id": "H_methyl", "attached_atom": "C9", "equivalence_group": "isopropyl-methyl", "expected_shift_ppm": 1.34, "expected_multiplicity": "doublet", "expected_integral": 6.0,
+     "hsqc_atom": "C9", "cosy_sites": ["H8"], "hmbc_atoms": ["C8"]}
+  ],
+  "expected_correlations": {
+    "HSQC": [
+      {"site": "H_ortho", "atom": "C3", "bond": 1},
+      {"site": "H_meta", "atom": "C4", "bond": 1},
+      {"site": "H_para", "atom": "C5", "bond": 1},
+      {"site": "H8", "atom": "C8", "bond": 1},
+      {"site": "H_methyl", "atom": "C9", "bond": 1}
+    ],
+    "COSY": [
+      {"site": "H_ortho", "other_site": "H_meta"},
+      {"site": "H_meta", "other_site": "H_para"},
+      {"site": "H8", "other_site": "H_methyl"}
+    ],
+    "HMBC": [
+      {"site": "H_ortho", "atom": "C1", "bond": 3},
+      {"site": "H_ortho", "atom": "C5", "bond": 3},
+      {"site": "H_meta", "atom": "C2", "bond": 3},
+      {"site": "H8", "atom": "C1", "bond": 3},
+      {"site": "H_methyl", "atom": "C8", "bond": 2}
+    ]
+  }
+}

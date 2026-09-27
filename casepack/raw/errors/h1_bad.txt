@@ -1,0 +1,5 @@
+# NMR peak list
+# nucleus: 1H
+# columns: shift_ppm ; intensity_count ; integral_protons ; multiplicity ; j_hz
+8.05 ; not-a-number ; 2.00 ; doublet ; 7.8
+7.42 ; 820 ; 2.00 ; quartet

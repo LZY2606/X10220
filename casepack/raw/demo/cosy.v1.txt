@@ -1,0 +1,7 @@
+# 2D correlation peak list
+# experiment: COSY
+# axes: f2_ppm_H ; f1_ppm_H (delta ppm, reference TMS)
+# columns: h_ppm_a ; h_ppm_b ; note
+8.05 ; 7.42 ; ortho-meta
+7.42 ; 7.55 ; meta-para
+5.25 ; 1.33 ; methine-methyl

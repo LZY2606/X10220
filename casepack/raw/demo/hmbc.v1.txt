@@ -1,0 +1,9 @@
+# 2D correlation peak list
+# experiment: HMBC
+# axes: f2_ppm_H ; f1_ppm_C (delta ppm, reference TMS)
+# columns: h_ppm ; c_ppm ; note
+8.05 ; 166.3 ; 2J/3J ester carbonyl
+8.05 ; 133.4 ; aromatic
+7.42 ; 130.1 ; meta-to-ipso
+5.25 ; 166.3 ; 3J methine-carbonyl
+1.33 ; 68.6 ; 2J methyl-methine
