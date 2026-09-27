@@ -1,0 +1,33 @@
+{
+  "doc": "NMR 共振经纬案例：4-甲基苯乙酮（教学用合成数据集，坐标为演示构造值）",
+  "molecule": "4-methylacetophenone",
+  "sites": [
+    {"site_id": "C1",  "label": "C=O",        "element": "C", "nucleus": "13C", "xy": [60, 40]},
+    {"site_id": "C7",  "label": "Cipso(acyl)", "element": "C", "nucleus": "13C", "xy": [150, 60]},
+    {"site_id": "C4",  "label": "Cipso(Me)",  "element": "C", "nucleus": "13C", "xy": [240, 60]},
+    {"site_id": "C2",  "label": "C2/C6",      "element": "C", "nucleus": "13C", "symmetry_group": "sg_c_ortho", "equivalents": ["C2", "C6"], "xy": [130, 120]},
+    {"site_id": "C6",  "label": "C6(equiv)",  "element": "C", "nucleus": "13C", "symmetry_group": "sg_c_ortho", "equivalents": ["C2", "C6"], "xy": [170, 120]},
+    {"site_id": "C3",  "label": "C3/C5",      "element": "C", "nucleus": "13C", "symmetry_group": "sg_c_meta", "equivalents": ["C3", "C5"], "xy": [220, 120]},
+    {"site_id": "C5",  "label": "C5(equiv)",  "element": "C", "nucleus": "13C", "symmetry_group": "sg_c_meta", "equivalents": ["C3", "C5"], "xy": [260, 120]},
+    {"site_id": "C8",  "label": "Ar-CH3",     "element": "C", "nucleus": "13C", "xy": [300, 40]},
+    {"site_id": "C10", "label": "CO-CH3",     "element": "C", "nucleus": "13C", "xy": [40, 110]},
+
+    {"site_id": "H2",  "label": "H2/H6",      "element": "H", "nucleus": "1H", "multiplicity": "d", "integral": 1,
+     "symmetry_group": "sg_h_ortho", "equivalents": ["H2", "H6"], "hsqc_carbon": "C2", "coupled": ["H3"], "hmbc_targets": ["C7", "C4"], "xy": [110, 150]},
+    {"site_id": "H6",  "label": "H6(equiv)",  "element": "H", "nucleus": "1H", "multiplicity": "d", "integral": 1,
+     "symmetry_group": "sg_h_ortho", "equivalents": ["H2", "H6"], "hsqc_carbon": "C6", "coupled": ["H5"], "hmbc_targets": ["C7", "C4"], "xy": [190, 150]},
+    {"site_id": "H3",  "label": "H3/H5",      "element": "H", "nucleus": "1H", "multiplicity": "d", "integral": 1,
+     "symmetry_group": "sg_h_meta", "equivalents": ["H3", "H5"], "hsqc_carbon": "C3", "coupled": ["H2"], "hmbc_targets": ["C1", "C8"], "xy": [210, 150]},
+    {"site_id": "H5",  "label": "H5(equiv)",  "element": "H", "nucleus": "13C".replace("13C","1H"), "multiplicity": "d", "integral": 1,
+     "symmetry_group": "sg_h_meta", "equivalents": ["H3", "H5"], "hsqc_carbon": "C5", "coupled": ["H6"], "hmbc_targets": ["C1", "C8"], "xy": [280, 150]},
+    {"site_id": "H8",  "label": "Ar-CH3 (H)", "element": "H", "nucleus": "1H", "multiplicity": "s", "integral": 3,
+     "hsqc_carbon": "C8", "coupled": [], "hmbc_targets": ["C4", "C3"], "xy": [310, 80]},
+    {"site_id": "H10", "label": "CO-CH3 (H)", "element": "H", "nucleus": "1H", "multiplicity": "s", "integral": 3,
+     "hsqc_carbon": "C10", "coupled": [], "hmbc_targets": ["C1"], "xy": [30, 150]}
+  ],
+  "bonds": [
+    ["C7", "C2"], ["C7", "C6"], ["C7", "C1"], ["C4", "C3"], ["C4", "C5"], ["C4", "C8"],
+    ["C2", "C3"], ["C6", "C5"], ["C1", "C10"],
+    ["C2", "H2"], ["C6", "H6"], ["C3", "H3"], ["C5", "H5"], ["C8", "H8"], ["C10", "H10"]
+  ]
+}
