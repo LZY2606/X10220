@@ -1,0 +1,5 @@
+edge_id,experiment,proton_shift_ppm,carbon_shift_ppm,from_peak_id,to_peak_id,from_atom_hint,to_atom_hint,note
+E-HMBC-ALD-IPSO,HMBC,9.85,129.8,,,,aldehyde to ipso carbon
+E-HMBC-ALD-ORTHO,HMBC,9.85,132.0,,,,aldehyde to both ortho carbons
+E-HMBC-META-OME,HMBC,6.98,164.2,,,,meta protons to OMe ipso carbon
+E-HMBC-OME-IPSO,HMBC,3.87,164.2,,,,methoxy long-range evidence

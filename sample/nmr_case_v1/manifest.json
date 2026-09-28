@@ -1,0 +1,23 @@
+{
+  "case_id": "nmr-resonance-evidence-room-v1",
+  "title": "NMR 共振经纬：化学位移、耦合候选与归属证据室",
+  "description": "一维/二维 NMR peak list 的不可覆盖导入、候选网络、人工分支与重放反例档案。",
+  "files": {
+    "structure": "structure.csv",
+    "1H": "proton_peaks.csv",
+    "13C": "carbon_peaks.csv",
+    "COSY": "cosy.csv",
+    "HSQC": "hsqc.csv",
+    "HMBC": "hmbc.csv",
+    "acquisition": "acquisition.json"
+  },
+  "expected_boundaries": [
+    "overlapping_peaks",
+    "symmetric_atoms",
+    "missing_correlation_edge",
+    "missing_peak",
+    "global_shift_bias",
+    "tied_best_candidates",
+    "two_editor_conflict"
+  ]
+}

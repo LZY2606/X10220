@@ -1,0 +1,2 @@
+edge_id,experiment,from_peak_id,to_peak_id,from_atom_hint,to_atom_hint,axis_units,note
+E-COSY-ORTHO-META,COSY,7.82,6.98,,,ppm,"duplicate-shift ortho side: atom identity cannot be forced"

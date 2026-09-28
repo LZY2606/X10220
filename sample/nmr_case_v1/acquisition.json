@@ -1,0 +1,11 @@
+{
+  "sample_name": "NMR resonance evidence-room case DEMO-XY",
+  "solvent": "CDCl3",
+  "temperature_kelvin": 298.0,
+  "reference_standard": "TMS",
+  "proton_frequency_mhz": 400.13,
+  "carbon_frequency_mhz": 100.61,
+  "field_strength_tesla": 9.4,
+  "operator": "structure-group",
+  "notes": "Fictional but chemically structured offline case. Carbonyl carbon peak is intentionally absent from the 1D carbon pick list; HSQC to the aldehyde carbon is intentionally absent."
+}

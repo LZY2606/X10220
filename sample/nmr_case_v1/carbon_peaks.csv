@@ -1,0 +1,6 @@
+peak_id,shift_ppm,intensity_counts,integral_carbon,multiplicity,overlap_group,note
+P-C-ORTHO,132.0,180,2,s,OV-C-ORTHO,symmetric ortho carbons
+P-C-IPSO-CHO,129.8,120,1,s,,aldehyde-bearing quaternary carbon
+P-C-META,114.2,205,2,s,,symmetric meta carbons
+P-C-IPSO-OME,164.2,210,1,s,,methoxy-bearing quaternary carbon
+P-C-OME,55.5,260,1,s,,methoxy carbon

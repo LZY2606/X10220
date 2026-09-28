@@ -1,0 +1,6 @@
+peak_id,shift_ppm,intensity_counts,integral_proton,multiplicity,overlap_group,note
+P-H-ALD,9.85,180,1,s,,aldehyde proton
+P-H-ORTHO-1,7.82,420,1,d,OV-ORTHO,overlapping ortho report 1
+P-H-ORTHO-2,7.82,415,1,d,OV-ORTHO,overlapping ortho report 2
+P-H-META,6.98,430,2,d,,symmetric meta pair
+P-H-OME,3.87,610,3,s,,three equivalent methoxy protons

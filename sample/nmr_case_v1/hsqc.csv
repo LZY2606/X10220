@@ -1,0 +1,4 @@
+edge_id,experiment,proton_shift_ppm,carbon_shift_ppm,from_peak_id,to_peak_id,from_atom_hint,to_atom_hint,note
+E-HSQC-ORTHO,HSQC,7.82,132.0,,,,"overlapping proton reports and symmetric carbons"
+E-HSQC-META,HSQC,6.98,114.2,,,,"symmetric meta pair"
+E-HSQC-OME,HSQC,3.87,55.5,,,,"three equivalent methoxy protons"
